@@ -1,13 +1,13 @@
 ---
 title: 'Langchain'
-description: 'Firecrawl integrates with Langchain as a document loader.'
+description: 'Firecrawl 集成为 Langchain 的文档加载器。'
 og:title: "Langchain | Firecrawl"
-og:description: "Firecrawl integrates with Langchain as a document loader."
+og:description: "Firecrawl 集成为 Langchain 的文档加载器。"
 ---
 
-> Note: this integration is still using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此集成仍在使用 [v0 版本的 Firecrawl API](/v0/introduction)。你可以安装 Python SDK 的 0.0.20 版本或 Node SDK 的 0.0.36 版本。
 
-## Installation
+## 安装
 
 ```bash
 pip install firecrawl-py==0.0.20
@@ -15,8 +15,8 @@ pip install firecrawl-py==0.0.20
 
 
 
-## Usage
-You will need to get your own API key. See https://firecrawl.dev
+## 使用
+你需要获取自己的 API 密钥。请参见 https://firecrawl.dev
 
 ```python
 from langchain_community.document_loaders import FireCrawlLoader
@@ -28,9 +28,9 @@ loader = FireCrawlLoader(
 docs = loader.load()
 ```
 
-### Modes
-Scrape: Scrape single url and return the markdown.
-Crawl: Crawl the url and all accessible sub pages and return the markdown for each one.
+### 模式
+Scrape: 抓取单个 URL 并返回 Markdown。
+Crawl: 抓取 URL 及其所有可访问的子页面，并返回每个页面的 Markdown。
 
 ```python
 loader = FireCrawlLoader(
@@ -44,30 +44,30 @@ data = loader.load()
 
 
 
-### Crawler Options
-You can also pass params to the loader. This is a dictionary of options to pass to the crawler. See the FireCrawl API documentation for more information.
+### 爬虫选项
+你还可以向加载器传递参数。这是一个字典形式的选项，传递给爬虫。更多信息请参阅 FireCrawl API 文档。
 
 
 ## Langchain JS
 
-To use it in Langchain JS, you can install it via npm:
+要在 Langchain JS 中使用它，你可以通过 npm 安装：
 
 ```bash
 npm install @mendableai/firecrawl-js
 ```
 
-Then, you can use it like this:
+然后，你可以这样使用它：
 
 ```typescript
 import { FireCrawlLoader } from "langchain/document_loaders/web/firecrawl";
 
 const loader = new FireCrawlLoader({
-  url: "https://firecrawl.dev", // The URL to scrape
-  apiKey: process.env.FIRECRAWL_API_KEY, // Optional, defaults to `FIRECRAWL_API_KEY` in your env.
-  mode: "scrape", // The mode to run the crawler in. Can be "scrape" for single urls or "crawl" for all accessible subpages
+  url: "https://firecrawl.dev", // 要抓取的 URL
+  apiKey: process.env.FIRECRAWL_API_KEY, // 可选，默认为环境变量中的 `FIRECRAWL_API_KEY`。
+  mode: "scrape", // 运行爬虫的模式。可以是 "scrape"（用于单个 URL）或 "crawl"（用于所有可访问的子页面）
   params: {
-    // optional parameters based on Firecrawl API docs
-    // For API documentation, visit https://docs.firecrawl.dev
+    // 根据 Firecrawl API 文档的可选参数
+    // 查看 API 文档，请访问 https://docs.firecrawl.dev
   },
 });
 

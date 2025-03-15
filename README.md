@@ -1,60 +1,60 @@
-# Firecrawl Docs 🔥
+### Firecrawl 文档 🔥
 
-Welcome to the Firecrawl documentation repository! This repo contains the source files for [docs.firecrawl.dev](https://docs.firecrawl.dev), powered by [Mintlify](https://mintlify.com/).
+欢迎来到 Firecrawl 文档仓库！此仓库包含 [docs.firecrawl.dev](https://docs.firecrawl.dev) 的源代码，由 [Mintlify](https://mintlify.com/) 提供支持。
 
-## About Firecrawl
+## Firecrawl 介绍
 
-Firecrawl is an open-source tool that turns websites into LLM-ready data. With Firecrawl, you can power your AI applications with clean data crawled from any website, making it easier to create powerful and accurate language models.
+Firecrawl 是一个开源工具，可将网站转化为准备好用于大型语言模型（LLM）的数据。借助 Firecrawl，您可以从任何网站抓取干净的数据，为您的 AI 应用程序提供动力，使其更容易创建强大且准确的语言模型。
 
-## Getting Started
+## 开始使用
 
-To get started with the Firecrawl documentation, follow the steps below:
+要开始使用 Firecrawl 文档，请按照以下步骤操作：
 
-### Prerequisites
+### 先决条件
 
-- Node.js (version 19 or higher)
+- Node.js（版本 19 或更高）
 
-### Installation
+### 安装
 
-1. Install Mintlify globally using npm:
+1. 使用 npm 全局安装 Mintlify：
 
    ```bash
    npm install -g mintlify
    ```
 
-   Or if you prefer yarn:
+   或者，如果您更喜欢 yarn：
 
    ```bash
    yarn global add mintlify
    ```
 
-2. Clone this repository and navigate to the directory:
+2. 克隆此仓库并导航到该目录：
 
    ```bash
    git clone https://github.com/hellofirecrawl/docs.git
    cd docs
    ```
 
-3. Start the Mintlify development server:
+3. 启动 Mintlify 开发服务器：
 
    ```bash
    mintlify dev
    ```
 
-4. Open your web browser and visit [http://localhost:3000](http://localhost:3000) to see a local preview of the documentation.
+4. 打开您的网页浏览器并访问 [http://localhost:3000](http://localhost:3000)，查看文档的本地预览。
 
-## Contributing
+## 贡献
 
-We welcome contributions to improve the Firecrawl documentation! If you find any issues or want to suggest enhancements, please open an issue or submit a pull request to this repository.
+我们欢迎对 Firecrawl 文档的改进做出贡献！如果您发现任何问题或想要提出增强建议，请在此仓库中打开一个议题或提交拉取请求。
 
-When contributing, please follow these guidelines:
+在贡献时，请遵循以下指南：
 
-- Keep the documentation clear, concise, and easy to understand.
-- Use proper formatting and adhere to the existing document structure.
-- Test your changes locally before submitting a pull request.
+- 保持文档清晰、简洁且易于理解。
+- 使用适当的格式并遵循现有的文档结构。
+- 在提交拉取请求之前，请在本地测试您的更改。
 
-## Contact
+## 联系方式
 
-If you have any questions or need further assistance, please reach out to us at [hello@firecrawl.dev](mailto:hello@firecrawl.dev).
+如果您有任何问题或需要进一步的帮助，请通过 [hello@firecrawl.dev](mailto:hello@firecrawl.dev) 联系我们。
 
-Happy crawling with Firecrawl! 🔥🕷️
+祝您使用 Firecrawl 愉快！🔥🕷️

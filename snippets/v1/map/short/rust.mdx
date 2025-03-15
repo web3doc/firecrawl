@@ -1,8 +1,8 @@
-```rust Rust
+```rust
 let map_result = app.map_url("https://firecrawl.dev", None).await;
 
 match map_result {
-    Ok(data) => println!("Mapped URLs: {:#?}", data),
-    Err(e) => eprintln!("Map failed: {}", e),
+    Ok(data) => println!("映射的URL: {:#?}", data),
+    Err(e) => eprintln!("映射失败: {}", e),
 }
 ```

@@ -1,71 +1,60 @@
 ---
-title: 'Introduction'
-description: 'Firecrawl API Reference'
+title: '介绍'
+description: 'Firecrawl API 参考'
 ---
 
-
-## Features
+## 功能
 
 <CardGroup cols={2}>
-  <Card title="Scrape" icon="markdown" href="/api-reference/endpoint/scrape" color="FF713C">
-    Extract content from any webpage in markdown or json format.
+  <Card title="抓取" icon="markdown" href="/api-reference/endpoint/scrape" color="FF713C">
+    从任何网页中提取内容，格式为markdown或json。
   </Card>
-  <Card title="Crawl" icon="spider" href="/api-reference/endpoint/crawl-post" color="FF713C">
-    Crawl entire websites, extract their content and metadata.
+  <Card title="爬取" icon="spider" href="/api-reference/endpoint/crawl-post" color="FF713C">
+    爬取整个网站，提取其内容和元数据。
   </Card>
-  <Card title="Map" icon="map" href="/api-reference/endpoint/map" color="FF713C">
-    Get a complete list of URLs from any website quickly and reliably.
+  <Card title="地图" icon="map" href="/api-reference/endpoint/map" color="FF713C">
+    快速且可靠地获取任何网站的完整URL列表。
   </Card>
-  <Card title="Extract" icon="barcode-read" href="/api-reference/endpoint/extract" color="FF713C">
-    Extract structured data from entire webpages using natural language.
+  <Card title="提取" icon="barcode-read" href="/api-reference/endpoint/extract" color="FF713C">
+    使用自然语言从整个网页中提取结构化数据。
   </Card>
-  <Card title="Search" icon="magnifying-glass" href="/api-reference/endpoint/search" color="FF713C">
-    Search the web and get full page content in any format.
+  <Card title="搜索" icon="magnifying-glass" href="/api-reference/endpoint/search" color="FF713C">
+    搜索网络并以任何格式获取完整页面内容。
   </Card>
   
-  {/* <Card title="Deep Research" icon="brain-circuit" href="/api-reference/endpoint/deep-research" color="FF713C">
-    AI-powered web research that autonomously explores and synthesizes information.
+  {/* <Card title="深入研究" icon="brain-circuit" href="/api-reference/endpoint/deep-research" color="FF713C">
+    AI驱动的网络研究，自动探索和合成信息。
   </Card> */}
 </CardGroup>
 
-
-## Base URL
-
-All requests contain the following base URL:
-
+## 基本URL
+所有请求都包含以下基本URL：
 ```bash
 https://api.firecrawl.dev 
 ```
 
-
-## Authentication
-
-For authentication, it's required to include an Authorization header. The header should contain `Bearer fc-123456789`, where `fc-123456789` represents your API Key.
-
+## 认证
+需要包含一个Authorization头来进行认证。该头应包含`Bearer fc-123456789`，其中`fc-123456789`代表您的API密钥。
 ```bash
 Authorization: Bearer fc-123456789
 ```
 ​
+## 响应代码
+Firecrawl使用常规的HTTP状态码来表示请求的结果。
+通常，2xx HTTP状态码表示成功，4xx代码表示与用户相关的失败，而5xx代码表示基础设施问题。
 
-## Response codes
-Firecrawl employs conventional HTTP status codes to signify the outcome of your requests.
+| 状态 | 描述 |
+| --- | --- |
+| 200 | 请求成功。 |
+| 400 | 验证参数的正确性。 |
+| 401 | 未提供API密钥。 |
+| 402 | 需要支付费用。 |
+| 404 | 找不到请求的资源。 |
+| 429 | 超过了速率限制。 |
+| 5xx | 表示Firecrawl服务器错误。 |
 
-Typically, 2xx HTTP status codes denote success, 4xx codes represent failures related to the user, and 5xx codes signal infrastructure problems.
+请参阅错误代码部分以获取所有潜在API错误的详细解释。
 
-Status | Description
---- | ---
-200 | Request was successful.
-400 | Verify the correctness of the parameters.
-401 | The API key was not provided.
-402 | Payment required
-404 | The requested resource could not be located.
-429 | The rate limit has been surpassed.
-5xx | Signifies a server error with Firecrawl.
-
-Refer to the Error Codes section for a detailed explanation of all potential API errors.
-
-​
-## Rate limit
-The Firecrawl API has a rate limit to ensure the stability and reliability of the service. The rate limit is applied to all endpoints and is based on the number of requests made within a specific time frame.
-
-When you exceed the rate limit, you will receive a 429 response code.
+## 速率限制
+Firecrawl API设有速率限制，以确保服务的稳定性和可靠性。速率限制适用于所有端点，基于在特定时间框架内进行的请求数量。
+当您超过速率限制时，将收到429响应代码。

@@ -1,5 +1,5 @@
 ```bash cURL
-# Start LLMs.txt generation
+# 开始生成LLMs.txt
 curl -X POST "https://api.firecrawl.dev/v1/llmstxt" \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
@@ -9,7 +9,7 @@ curl -X POST "https://api.firecrawl.dev/v1/llmstxt" \
     "showFullText": true
   }'
 
-# Check generation status
+# 检查生成状态
 curl -X GET "https://api.firecrawl.dev/v1/llmstxt/job_id" \
   -H "Authorization: Bearer your_api_key"
 ```

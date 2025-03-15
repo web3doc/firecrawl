@@ -1,158 +1,155 @@
 ---
-title: "Running locally"
-description: "Learn how to run Firecrawl locally to run on your own and/or contribute to the project."
-og:title: "Running locally | Firecrawl"
-og:description: "Learn how to run Firecrawl locally to run on your own and/or contribute to the project."
+title: "本地运行"
+description: "了解如何本地运行Firecrawl，以便自行运行和/或为项目做出贡献。"
+og:title: "本地运行 | Firecrawl"
+og:description: "了解如何本地运行Firecrawl，以便自行运行和/或为项目做出贡献。"
 ---
 
-Welcome to [Firecrawl](https://firecrawl.dev) 🔥! Here are some instructions on how to get the project locally so you can run it on your own and contribute.
+欢迎来到[Firecrawl](https://firecrawl.dev) 🔥! 以下是一些关于如何本地获取项目的说明，这样您就可以自行运行并做出贡献了。
 
-If you're contributing, note that the process is similar to other open-source repos, i.e., fork Firecrawl, make changes, run tests, PR.
+如果您想做出贡献，请注意，这个过程与其他开源仓库类似，即：fork Firecrawl，做出更改，运行测试，提交PR。
 
-If you have any questions or would like help getting on board, join our Discord community [here](https://discord.gg/gSmWdAkdwd) for more information or submit an issue on Github [here](https://github.com/mendableai/firecrawl/issues/new/choose)!
+如果您有任何问题或希望得到帮助，请加入我们的Discord社区 [这里](https://discord.gg/gSmWdAkdwd) 以获取更多信息，或者在GitHub上提交问题 [这里](https://github.com/mendableai/firecrawl/issues/new/choose)!
 
-## Running the project locally
+## 本地运行项目
 
-First, start by installing dependencies:
-1. node.js [instructions](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
-2. pnpm [instructions](https://pnpm.io/installation)
-3. redis [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) 
+首先，从安装依赖开始：
+1. node.js [说明](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+2. pnpm [说明](https://pnpm.io/installation)
+3. redis [说明](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/) 
 
 
-Set environment variables in a `.env` file in the `/apps/api/` directory. You can copy over the template in `.env.example`.
+在 `/apps/api/` 目录中设置环境变量。您可以复制 `.env.example` 中的模板。
 
-To start, we won't set up authentication, or any optional sub services (pdf parsing, JS blocking support, AI features)
+一开始，我们不会设置身份验证，也不会设置任何可选的子服务（PDF解析、JS阻塞支持、AI功能）。
 
 ```
 # ./apps/api/.env
 
-# ===== Required ENVS ======
+# ===== 必需的ENV变量 ======
 NUM_WORKERS_PER_QUEUE=8 
 PORT=3002
 HOST=0.0.0.0
 
-#for self-hosting using docker, use redis://redis:6379. For running locally, use redis://localhost:6379
+#自托管使用docker时，使用redis://redis:6379。本地运行时，使用redis://localhost:6379
 REDIS_URL=redis://localhost:6379
 
-#for self-hosting using docker, use redis://redis:6379. For running locally, use redis://localhost:6379
+#自托管使用docker时，使用redis://redis:6379。本地运行时，使用redis://localhost:6379
 REDIS_RATE_LIMIT_URL=redis://localhost:6379 
 PLAYWRIGHT_MICROSERVICE_URL=http://playwright-service:3000/html
 
-## To turn on DB authentication, you need to set up supabase.
+## 要开启数据库身份验证，需要设置supabase。
 USE_DB_AUTHENTICATION=false
 
-# ===== Optional ENVS ======
+# ===== 可选的ENV变量 ======
 
-# Supabase Setup (used to support DB authentication, advanced logging, etc.)
+# Supabase 设置（用于支持数据库身份验证、高级日志记录等）
 SUPABASE_ANON_TOKEN= 
 SUPABASE_URL= 
 SUPABASE_SERVICE_TOKEN=
 
-# Other Optionals
-# use if you've set up authentication and want to test with a real API key
+# 其他可选设置
+# 如果您已经设置了身份验证并想用真实的API密钥进行测试
 TEST_API_KEY=
-# set if you'd like to test the scraping rate limit
+# 如果您想测试抓取速率限制
 RATE_LIMIT_TEST_API_KEY_SCRAPE=
-# set if you'd like to test the crawling rate limit
+# 如果您想测试爬取速率限制
 RATE_LIMIT_TEST_API_KEY_CRAWL=
-# set if you'd like to use scraping Be to handle JS blocking
+# 如果您想使用Scraping Bee处理JS阻塞
 SCRAPING_BEE_API_KEY=
-# add for LLM dependednt features (image alt generation, etc.)
+# 为LLM相关功能添加（图像alt生成等）
 OPENAI_API_KEY=
 BULL_AUTH_KEY=@
-# use if you're configuring basic logging with logtail
+# 如果您正在配置基本日志记录与logtail
 LOGTAIL_KEY=
-# set if you have a llamaparse key you'd like to use to parse pdfs
+# 如果您有llamaparse密钥并想用来解析PDF文件
 LLAMAPARSE_API_KEY=
-# set if you'd like to send slack server health status messages
+# 如果您想发送Slack服务器健康状态消息
 SLACK_WEBHOOK_URL=
-# set if you'd like to send posthog events like job logs
+# 如果您想发送posthog事件，如作业日志
 POSTHOG_API_KEY=
-# set if you'd like to send posthog events like job logs
+# 如果您想发送posthog事件，如作业日志
 POSTHOG_HOST=
 
-# set if you'd like to use the fire engine closed beta
+# 如果您想使用Fire Engine封闭测试版
 FIRE_ENGINE_BETA_URL=
 
-# Proxy Settings for Playwright (Alternative you can can use a proxy service like oxylabs, which rotates IPs for you on every request)
+# Playwright的代理设置（另一种选择是使用oxylabs这样的代理服务，它会在每次请求时为您轮换IP）
 PROXY_SERVER=
 PROXY_USERNAME=
 PROXY_PASSWORD=
-# set if you'd like to block media requests to save proxy bandwidth
+# 如果您想阻止媒体请求以节省代理带宽
 BLOCK_MEDIA=
 
-# Set this to the URL of your webhook when using the self-hosted version of FireCrawl
+# 当使用FireCrawl的自托管版本时，将其设置为您的webhook的URL
 SELF_HOSTED_WEBHOOK_URL=
 
-# Resend API Key for transactional emails
+# 用于事务性电子邮件的Resend API密钥
 RESEND_API_KEY=
 
-# LOGGING_LEVEL determines the verbosity of logs that the system will output.
-# Available levels are:
-# NONE - No logs will be output.
-# ERROR - For logging error messages that indicate a failure in a specific operation.
-# WARN - For logging potentially harmful situations that are not necessarily errors.
-# INFO - For logging informational messages that highlight the progress of the application.
-# DEBUG - For logging detailed information on the flow through the system, primarily used for debugging.
-# TRACE - For logging more detailed information than the DEBUG level.
-# Set LOGGING_LEVEL to one of the above options to control logging output.
+# LOGGING_LEVEL决定了系统将输出的日志详细程度。
+# 可用级别包括：
+# NONE - 不输出日志。
+# ERROR - 用于记录指示特定操作失败的错误消息。
+# WARN - 用于记录可能有害但不一定是错误的情况。
+# INFO - 用于记录突出显示应用程序进度的信息性消息。
+# DEBUG - 用于记录有关系统流程的详细信息，主要用于调试。
+# TRACE - 用于记录比DEBUG级别更详细的信息。
+# 将LOGGING_LEVEL设置为上述选项之一来控制日志输出。
 LOGGING_LEVEL=INFO
 ```
 
-### Installing dependencies
+### 安装依赖
 
-First, install the dependencies using pnpm.
+首先，使用pnpm安装依赖。
 
 ```bash
-# cd apps/api # to make sure you're in the right folder
-pnpm install # make sure you have pnpm version 9+!
+# cd apps/api # 确保您在正确的文件夹中
+pnpm install # 确保您使用的是pnpm版本9+!
 ```
 
-### Running the project
+### 运行项目
 
-You're going to need to open 3 terminals for running the services. Here is [a video guide accurate as of Oct 2024](https://youtu.be/LHqg5QNI4UY) (optional: 4 terminals for running the services and testing).
+您需要打开3个终端来运行服务。这里有[一个截至2024年10月的视频指南](https://youtu.be/LHqg5QNI4UY)（可选：4个终端用于运行服务和测试）。
 
-### Terminal 1 - setting up redis
+### 终端1 - 设置redis
 
-Run the command anywhere within your project
+在项目的任意位置运行以下命令：
 
 ```bash
 redis-server
 ```
 
-### Terminal 2 - setting up workers
+### 终端2 - 设置工作进程
 
-Now, navigate to the apps/api/ directory and run:
+现在，导航到 `apps/api/` 目录并运行：
 ```bash
 pnpm run workers
-# if you are going to use the [llm-extract feature](https://github.com/mendableai/firecrawl/pull/586/), you should also export OPENAI_API_KEY=sk-______
+# 如果您打算使用[llm-extract功能](https://github.com/mendableai/firecrawl/pull/586/)，您还应该导出OPENAI_API_KEY=sk-______
 ```
 
-This will start the workers who are responsible for processing crawl jobs.
+这将启动负责处理爬取任务的工作进程。
 
-### Terminal 3 - setting up the main server
+### 终端3 - 设置主服务器
 
+为此，导航到 `apps/api/` 目录。如果您还没有安装pnpm，可以在这里安装：https://pnpm.io/installation
 
-To do this, navigate to the apps/api/ directory. If you haven’t installed pnpm already, you can do so here: https://pnpm.io/installation
-
-Next, run your server with:
+接下来，运行您的服务器：
 
 ```bash
 pnpm run start
 ```
 
-### *(Optional)* Terminal 4 - sending our first request
+### *(可选)* 终端4 - 发送我们的第一个请求
 
-Alright, now let’s send our first request.
+好的，现在让我们发送我们的第一个请求。
 
 ```curl
 curl -X GET http://localhost:3002/test
 ``` 
-This should return the response Hello, world!
+这应该会返回响应Hello, world!
 
-
-If you’d like to test the crawl endpoint, you can run this 
-
+如果您想测试爬取端点，可以运行这个：
 ```curl
 curl -X POST http://localhost:3002/v0/crawl \
     -H 'Content-Type: application/json' \
@@ -161,10 +158,8 @@ curl -X POST http://localhost:3002/v0/crawl \
     }'
 ```   
     
-## Tests:
+## 测试：
 
-The best way to do this is run the test with `npm run test:local-no-auth` if you'd like to run the tests without authentication.
+最好通过运行 `npm run test:local-no-auth` 来进行测试，如果您希望在没有身份验证的情况下运行测试。
 
-If you'd like to run the tests with authentication, run `npm run test:prod`
-
-
+如果您想在有身份验证的情况下运行测试，请运行 `npm run test:prod`

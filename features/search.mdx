@@ -1,33 +1,33 @@
 ---
-title: "Search"
-description: "Make a serp request, and get all the content with a single API request"
+title: "搜索"
+description: "通过一个API请求进行serp请求，并获取所有内容"
 icon: "magnifying-glass"
-og:title: "Search | Firecrawl"
-og:description: "Make a serp request, and get all the content with a single API request"
+og:title: "搜索 | Firecrawl"
+og:description: "通过一个API请求进行serp请求，并获取所有内容"
 ---
 
-## Searching the web and scraping the results with Firecrawl
+## 使用Firecrawl搜索网页并抓取结果
 
-Firecrawl integrates its SERP (Search Engine Results Page) API with its robust scraping infrastructure to provide a seamless search and scrape functionality through a single endpoint. Here's why:
+Firecrawl将其SERP（搜索引擎结果页面）API与其强大的抓取基础设施集成，通过单一端点提供无缝的搜索和抓取功能。原因如下：
 
-1. **Unified Search Query:**
-   Users submit a search query via the SERP endpoint.
+1. **统一的搜索查询：**
+   用户通过SERP端点提交搜索查询。
 
-2. **Automated Result Scraping:**
-   Firecrawl automatically processes the search results and utilizes its scraping capabilities to extract data from each result page.
+2. **自动化结果抓取：**
+   Firecrawl自动处理搜索结果，并利用其抓取能力从每个结果页面提取数据。
 
-3. **Data Delivery:**
-   The scraped data from all result pages is compiled and delivered in a clean markdown - ready to use.
+3. **数据交付：**
+   从所有结果页面抓取的数据被编译并以干净的markdown格式交付，随时可用。
 
-This integration allows users to efficiently perform web searches and obtain comprehensive, scraped data from multiple sources with minimal effort.
+这种集成使用户能够高效地执行网络搜索，并以最少的努力从多个来源获得全面、抓取的数据。
 
-For more details, refer to the [Search Endpoint Documentation](https://docs.firecrawl.dev/api-reference/endpoint/search).
+有关更多详细信息，请参阅[搜索端点文档](https://docs.firecrawl.dev/api-reference/endpoint/search)。
 
-## Search any query
+## 搜索任何查询
 
-### /search endpoint
+### /search 端点
 
-Used to search the web, get the most relevant results, scrape each page and return the markdown.
+用于搜索网络，获取最相关的结果，抓取每个页面并返回markdown。
 
 ```bash
 curl -X POST https://api.firecrawl.dev/v0/search \
@@ -60,15 +60,15 @@ curl -X POST https://api.firecrawl.dev/v0/search \
 }
 ```
 
-### With Python SDK
+### 使用Python SDK
 
-#### Installing Python SDK
+#### 安装Python SDK
 
 ```bash
 pip install firecrawl-py
 ```
 
-#### Search a query
+#### 搜索查询
 
 ```python
 from firecrawl import FirecrawlApp
@@ -78,40 +78,39 @@ app = FirecrawlApp(api_key="YOUR_API_KEY")
 result = app.search(query="What is firecrawl?")
 ```
 
+响应将与上面的curl命令中显示的内容相似。
 
-The response will be similar to the one shown in the curl command above.
+### 使用JavaScript SDK
 
-### With JavaScript SDK
-
-#### Installing JavaScript SDK
+#### 安装JavaScript SDK
 
 ```bash
 npm install @mendable/firecrawl-js
 ```
 
-#### Search a query
+#### 搜索查询
 
 ```javascript
 import FirecrawlApp from '@mendable/firecrawl-js';
 
-// Initialize the FirecrawlApp with your API key
+// 使用您的API密钥初始化FirecrawlApp
 const app = new FirecrawlApp({ apiKey: 'YOUR_API_KEY' });
 
-// Perform a search
+// 执行搜索
 const result = await app.search('What is firecrawl?');
 ```
 
-The response will be similar to the one shown in the curl command above.
+响应将与上面的curl命令中显示的内容相似。
 
-### With Go SDK
+### 使用Go SDK
 
-#### Installing Go SDK
+#### 安装Go SDK
 
 ```bash
 go get github.com/mendableai/firecrawl-go
 ```
 
-#### Search a query
+#### 搜索查询
 
 ```go
 import (
@@ -136,11 +135,11 @@ func main() {
 }
 ```
 
-### With Rust SDK
+### 使用Rust SDK
 
-#### Installing Rust SDK
+#### 安装Rust SDK
 
-Add the following to your `Cargo.toml`:
+在您的`Cargo.toml`中添加以下内容：
 ```toml
 [dependencies]
 firecrawl = "^0.1"
@@ -153,7 +152,7 @@ uuid = { version = "^1.10", features = ["v4"] }
 tokio = { version = "1", features = ["full"] }
 ```
 
-#### Search a query
+#### 搜索查询
 
 ```rust
 async fn main() {

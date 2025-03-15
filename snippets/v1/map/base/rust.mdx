@@ -1,9 +1,10 @@
+```markdown
 ```rust Rust
 use firecrawl::FirecrawlApp;
 
 #[tokio::main]
 async fn main() {
-    // Initialize the FirecrawlApp with the API key
+    // 使用API密钥初始化FirecrawlApp
     let app = FirecrawlApp::new("fc-YOUR_API_KEY").expect("Failed to initialize FirecrawlApp");
 
     let map_result = app.map_url("https://firecrawl.dev", None).await;
@@ -13,4 +14,5 @@ async fn main() {
         Err(e) => eprintln!("Map failed: {}", e),
     }
 }
+```
 ```

@@ -1,7 +1,8 @@
-```rust Rust
+```Rust
+```go
 let crawl_options = CrawlOptions {
     scrape_options: CrawlScrapeOptions {
-        formats: vec![ CrawlScrapeFormats::Markdown, CrawlScrapeFormats::HTML ].into(),
+        formats: vec![CrawlScrapeFormats::Markdown, CrawlScrapeFormats::HTML].into(),
         ..Default::default()
     }.into(),
     limit: 100.into(),
@@ -13,7 +14,9 @@ let crawl_result = app
     .await;
 
 match crawl_result {
-    Ok(data) => println!("Crawl Result (used {} credits):\n{:#?}", data.credits_used, data.data),
+    Ok(data) => println!("Crawl Result (used {} credits):
+{:#?}", data.credits_used, data.data),
     Err(e) => eprintln!("Crawl failed: {}", e),
 }
+```
 ```

@@ -1,33 +1,32 @@
 ---
-title: 'LLM Extract'
-description: 'Extract structured data from pages via LLMs'
+title: 'LLM 提取'
+description: '通过 LLMs 从页面中提取结构化数据'
 icon: 'file-export'
-og:title: "Extract | Firecrawl"
-og:description: "Extract structured data from pages via LLMs"
+og:title: "提取 | Firecrawl"
+og:description: "通过 LLMs 从页面中提取结构化数据"
 ---
 
+## 使用 Firecrawl 抓取和提取结构化数据
 
-## Scrape and extract structured data with Firecrawl
+Firecrawl 利用大型语言模型（LLMs）高效地从网页中提取结构化数据。操作步骤如下：
 
-Firecrawl leverages Large Language Models (LLMs) to efficiently extract structured data from web pages. Here's how:
+1. **模式定义：**
+   使用 JSON Schema（遵循 OpenAI 工具模式）定义要抓取的 URL 和期望的数据模式。此模式指定了您希望从页面中提取的数据结构。
 
-1. **Schema Definition:**
-   Define the URL to scrape and the desired data schema using JSON Schema (following OpenAI tool schema). This schema specifies the data structure you expect to extract from the page.
+2. **抓取端点：**
+   将 URL 和模式传递给抓取端点。该端点的文档可以在此处找到：
+   [抓取端点文档](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
 
-2. **Scrape Endpoint:**
-   Pass the URL and the schema to the scrape endpoint. Documentation for this endpoint can be found here:
-   [Scrape Endpoint Documentation](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
+3. **结构化数据检索：**
+   接收按照您的模式定义的结构化格式的抓取数据。然后，您可以根据需要在应用程序中使用这些数据或进行进一步处理。
 
-3. **Structured Data Retrieval:**
-   Receive the scraped data in the structured format defined by your schema. You can then use this data as needed in your application or for further processing.
+这种方法简化了数据提取过程，减少了手动处理并提高了效率。
 
-This method streamlines data extraction, reducing manual handling and enhancing efficiency.
+## 提取结构化数据
 
-## Extract structured data
+### /scrape (with extract) 端点
 
-### /scrape (with extract) endpoint
-
-Used to extract structured data from scraped pages.
+用于从抓取的页面中提取结构化数据。
 
 ```bash
 curl -X POST https://api.firecrawl.dev/v0/scrape \
@@ -65,7 +64,6 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
     }'
 ```
 
-
 ```json
 {
     "success": true,
@@ -91,15 +89,14 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
       }
     }
 }
-
 ```
 
-### Using Python SDK
+### 使用 Python SDK
 
 ```python
 from firecrawl import FirecrawlApp
 
-# Initialize the FirecrawlApp with your API key
+# 用您的 API key 初始化 FirecrawlApp
 app = FirecrawlApp(api_key='your_api_key', version='v0')
 
 class ArticleSchema(BaseModel):
@@ -123,7 +120,7 @@ data = app.scrape_url('https://news.ycombinator.com', {
 print(data["llm_extraction"])
 ```
 
-### With JavaScript SDK
+### 使用 JavaScript SDK
 
 ```js
 import FirecrawlApp from "@mendable/firecrawl-js";
@@ -134,7 +131,7 @@ const app = new FirecrawlApp({
   version: "v0"
 });
 
-// Define schema to extract contents into
+// 定义提取内容的架构
 const schema = z.object({
   top: z
     .array(
@@ -146,7 +143,7 @@ const schema = z.object({
       })
     )
     .length(5)
-    .describe("Top 5 stories on Hacker News"),
+    .describe("Hacker News 上的前 5 个故事"),
 });
 
 const scrapeResult = await app.scrapeUrl("https://news.ycombinator.com", {
@@ -156,9 +153,11 @@ const scrapeResult = await app.scrapeUrl("https://news.ycombinator.com", {
 console.log(scrapeResult.data["llm_extraction"]);
 ```
 
-### With Go SDK
+### 使用 Go SDK
 
 ```go Go
+package main
+
 import (
   "fmt"
   "log"
@@ -209,18 +208,18 @@ func main() {
 }
 ```
 
-### With Rust SDK
+### 使用 Rust SDK
 ```rust Rust
 use firecrawl::FirecrawlApp;
 
 #[tokio::main]
 async fn main() {
-    // Initialize the FirecrawlApp with the API key
+    // 用 API key 初始化 FirecrawlApp
     let api_key = "YOUR_API_KEY";
     let api_url = "https://api.firecrawl.dev";
     let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
 
-    // Define schema to extract contents into
+    // 定义提取内容的架构
     let json_schema = json!({
         "type": "object",
         "properties": {
@@ -229,37 +228,4 @@ async fn main() {
                 "items": {
                     "type": "object",
                     "properties": {
-                        "title": {"type": "string"},
-                        "points": {"type": "number"},
-                        "by": {"type": "string"},
-                        "commentsURL": {"type": "string"}
-                    },
-                    "required": ["title", "points", "by", "commentsURL"]
-                },
-                "minItems": 5,
-                "maxItems": 5,
-                "description": "Top 5 stories on Hacker News"
-            }
-        },
-        "required": ["top"]
-    });
-
-    let llm_extraction_params = json!({
-        "extractorOptions": {
-            "extractionSchema": json_schema,
-            "mode": "llm-extraction"
-        },
-        "pageOptions": {
-            "onlyMainContent": true
-        }
-    });
-
-    let llm_extraction_result = app
-        .scrape_url("https://news.ycombinator.com", Some(llm_extraction_params))
-        .await;
-    match llm_extraction_result {
-        Ok(data) => println!("LLM Extraction Result:\n{}", data["llm_extraction"]),
-        Err(e) => eprintln!("LLM Extraction failed: {}", e),
-    }
-}
-```
+                        "title": {"type": "string

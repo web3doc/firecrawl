@@ -1,18 +1,18 @@
 ---
-title: "Scraping behind authentication"
-description: "Learn how to bypass authentication on a website by forwading cookies."
-og:title: "Scraping behind authentication | Firecrawl"
-og:description: "Learn how to bypass authentication on a website by forwading cookies."
+title: "在身份验证后进行抓取"
+description: "学习如何通过转发cookies绕过网站的认证。"
+og:title: "在身份验证后进行抓取 | Firecrawl"
+og:description: "学习如何通过转发cookies绕过网站的认证。"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此示例使用的是[Firecrawl API的v0版本](/v0/introduction)。您可以安装Python SDK的0.0.20版本或Node SDK的0.0.36版本。
 
 
-With Firecrawl, you can send cookies in headers to bypass authentication on a website. This can be useful when you need to scrape content from a website that requires you to be logged in.
+使用Firecrawl，您可以在请求头中发送cookies以绕过网站的认证。当您需要从需要登录的网站抓取内容时，这会很有用。
 
-### Example
+### 示例
 
-To bypass authentication, you need to include the `headers` parameter in your request and set the `Cookies` header with the appropriate cookie values that you can grab from your browser's cookies. If you need help grabbing cookies, take a look at this article: [Grabbing cookies](https://cookie-script.com/documentation/how-to-check-cookies-on-chrome-and-firefox)
+要绕过认证，您需要在请求中包含`headers`参数，并设置`Cookies`头，其中包含可以从浏览器cookies中获取的适当cookie值。如果您需要帮助获取cookie，请查看这篇文章：[获取cookies](https://cookie-script.com/documentation/how-to-check-cookies-on-chrome-and-firefox)
 
 <CodeGroup>
 
@@ -30,7 +30,7 @@ go get github.com/mendableai/firecrawl-go
 
 </CodeGroup>
 
-### Usage
+### 用法
  
 <CodeGroup>
 
@@ -71,10 +71,10 @@ import (
 )
 
 func main() {
-  // Initialize the FirecrawlApp with your API key
+  // 使用您的API密钥初始化FirecrawlApp
   app, err := firecrawl.NewFirecrawlApp("YOUR_API_KEY")
   if err != nil {
-    log.Fatalf("Failed to initialize FirecrawlApp: %v", err)
+    log.Fatalf("无法初始化FirecrawlApp: %v", err)
   }
 
   params := map[string]any{
@@ -86,7 +86,7 @@ func main() {
   }
   scrapedData, err := app.ScrapeURL("docs.firecrawl.dev", params)
   if err != nil {
-    log.Fatalf("Error occurred while scraping: %v", err)
+    log.Fatalf("抓取时出错: %v", err)
   }
   fmt.Println(scrapedData)
 }
@@ -99,7 +99,7 @@ use firecrawl::FirecrawlApp;
 async fn main() {
     let api_key = "YOUR_API_KEY";
     let api_url = "https://api.firecrawl.dev";
-    let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
+    let app = FirecrawlApp::new(api_key, api_url).expect("无法初始化FirecrawlApp");
 
     let scrape_params = json!({
         "pageOptions": {
@@ -111,8 +111,9 @@ async fn main() {
 
     let scrape_result = app.scrape_url("https://docs.firecrawl.dev", Some(scrape_params)).await;
     match scrape_result {
-        Ok(data) => println!("Scrape Result:\n{}", data),
-        Err(e) => eprintln!("Scrape failed: {}", e),
+        Ok(data) => println!("抓取结果:
+{}", data),
+        Err(e) => eprintln!("抓取失败: {}", e),
     }
 }
 ```

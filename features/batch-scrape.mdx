@@ -1,8 +1,8 @@
 ---
-title: "Batch Scrape"
-description: "Batch scrape multiple URLs"
-og:title: "Batch Scrape | Firecrawl"
-og:description: "Batch scrape multiple URLs"
+title: "批量抓取"
+description: "批量抓取多个URLs"
+og:title: "批量抓取 | Firecrawl"
+og:description: "批量抓取多个URLs"
 ---
 
 import BatchScrapePython from "/snippets/v1/batch-scrape/base/python.mdx";
@@ -16,17 +16,17 @@ import BatchScrapeExtractCURL from "/snippets/v1/batch-scrape/extract/curl.mdx";
 import BatchScrapeExtractOutput from "/snippets/v1/batch-scrape/extract/output.mdx";
 import BatchScrapeExtractAsyncOutput from "/snippets/v1/batch-scrape/extract/async-output.mdx";
 
-## Batch scraping multiple URLs
+## 批量抓取多个URLs
 
-You can now batch scrape multiple URLs at the same time. It takes the starting URLs and optional parameters as arguments. The params argument allows you to specify additional options for the batch scrape job, such as the output formats.
+你现在可以同时批量抓取多个URL。它接受起始URL和可选参数作为参数。params参数允许你指定批量抓取作业的额外选项，例如输出格式。
 
-### How it works
+### 工作原理
 
-It is very similar to how the `/crawl` endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape. 
+它与 `/crawl` 端点的工作方式非常相似。它提交一个批量抓取作业并返回一个作业ID，用于检查批量抓取的状态。
 
-The sdk provides 2 methods, synchronous and asynchronous. The synchronous method will return the results of the batch scrape job, while the asynchronous method will return a job ID that you can use to check the status of the batch scrape.
+SDK提供了两种方法，同步和异步。同步方法将返回批量抓取作业的结果，而异步方法将返回一个作业ID，你可以使用该ID来检查批量抓取的状态。
 
-### Usage
+### 使用方法
 
 <CodeGroup>
 
@@ -36,23 +36,23 @@ The sdk provides 2 methods, synchronous and asynchronous. The synchronous method
 
 </CodeGroup>
 
-### Response
+### 响应
 
-If you’re using the sync methods from the SDKs, it will return the results of the batch scrape job. Otherwise, it will return a job ID that you can use to check the status of the batch scrape.
+如果你使用的是SDK的同步方法，它将返回批量抓取作业的结果。否则，它将返回一个作业ID，你可以使用该ID来检查批量抓取的状态。
 
-#### Synchronous
+#### 同步
 
 <BatchScrapeOutput />
 
-#### Asynchronous
+#### 异步
 
-You can then use the job ID to check the status of the batch scrape by calling the `/batch/scrape/{id}` endpoint. This endpoint is meant to be used while the job is still running or right after it has completed **as batch scrape jobs expire after 24 hours**.
+然后你可以使用作业ID通过调用 `/batch/scrape/{id}` 端点来检查批量抓取的状态。这个端点应在作业仍在运行时或在作业刚刚完成后使用 **因为批量抓取作业会在24小时后过期**。
 
 <BatchScrapeAsyncOutput />
 
-## Batch scrape with extraction
+## 带提取的批量抓取
 
-You can also use the batch scrape endpoint to extract structured data from the pages. This is useful if you want to get the same structured data from a list of URLs.
+你也可以使用批量抓取端点从页面中提取结构化数据。如果你想从一个URL列表中获得相同的结构化数据，这将非常有用。
 
 <CodeGroup>
 
@@ -62,15 +62,12 @@ You can also use the batch scrape endpoint to extract structured data from the p
 
 </CodeGroup>
 
-### Response
-#### Synchronous
+### 响应
+#### 同步
 
 <BatchScrapeExtractOutput />
 
 
-#### Asynchronous
+#### 异步
 
 <BatchScrapeExtractAsyncOutput />
-
-
-

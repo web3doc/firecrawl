@@ -1,45 +1,44 @@
 ---
-title: "Build a 'Chat with website' using Groq Llama 3"
-description: "Learn how to use Firecrawl, Groq Llama 3, and Langchain to build a 'Chat with your website' bot."
-og:title: "Build a 'Chat with website' using Groq Llama 3 | Firecrawl"
-og:description: "Learn how to use Firecrawl, Groq Llama 3, and Langchain to build a 'Chat with your website' bot."
+标题: "使用 Groq Llama 3 构建 '与网站聊天'"
+描述: "学习如何使用 Firecrawl、Groq Llama 3 和 Langchain 构建一个 '与您的网站聊天' 机器人。"
+og:title: "使用 Groq Llama 3 构建 '与网站聊天' | Firecrawl"
+og:description: "学习如何使用 Firecrawl、Groq Llama 3 和 Langchain 构建一个 '与您的网站聊天' 机器人。"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此示例使用的是 [Firecrawl API 的 v0 版本](/v0/introduction)。你可以安装 Python SDK 的 0.0.20 版本或 Node SDK 的 0.0.36 版本。
 
+## 设置
 
-## Setup
-
-Install our python dependencies, including langchain, groq, faiss, ollama, and firecrawl-py.
+安装我们的 Python 依赖，包括 langchain、groq、faiss、ollama 和 firecrawl-py。
 
 ```bash
 pip install --upgrade --quiet langchain langchain-community groq faiss-cpu ollama firecrawl-py
 ```
 
-We will be using Ollama for the embeddings, you can download Ollama [here](https://ollama.com/). But feel free to use any other embeddings you prefer.
+我们将使用 Ollama 进行嵌入，你可以在这里下载 Ollama [链接](https://ollama.com/)。但是你也可以自由使用任何你喜欢的其他嵌入。
 
-## Load website with Firecrawl
+## 使用 Firecrawl 加载网站
 
-To be able to get all the data from a website and make sure it is in the cleanest format, we will use Firecrawl. Firecrawl integrates very easily with Langchain as a document loader.
+为了能够从网站获取所有数据并确保其格式最干净，我们将使用 Firecrawl。Firecrawl 可以非常轻松地与 Langchain 集成作为文档加载器。
 
-Here is how you can load a website with Firecrawl:
+以下是如何使用 Firecrawl 加载网站的方法：
 
 ```python
-from langchain_community.document_loaders import FireCrawlLoader  # Importing the FirecrawlLoader
+from langchain_community.document_loaders import FireCrawlLoader  # 导入 FireCrawlLoader
 
 url = "https://firecrawl.dev"
-loader = FirecrawlLoader(
-    api_key="fc-YOUR_API_KEY", # Note: Replace 'YOUR_API_KEY' with your actual FireCrawl API key
-    url=url,  # Target URL to crawl
-    mode="crawl"  # Mode set to 'crawl' to crawl all accessible subpages
+loader = FireCrawlLoader(
+    api_key="fc-YOUR_API_KEY", # 注意：将 'YOUR_API_KEY' 替换为你的实际 FireCrawl API 密钥
+    url=url,  # 要抓取的目标 URL
+    mode="crawl"  # 模式设置为 'crawl' 以抓取所有可访问的子页面
 )
 docs = loader.load()
 ```
 
-## Setup the Vectorstore
+## 设置向量存储库
 
-Next, we will setup the vectorstore. The vectorstore is a data structure that allows us to store and query embeddings. We will use the Ollama embeddings and the FAISS vectorstore.
-We split the documents into chunks of 1000 characters each, with a 200 character overlap. This is to ensure that the chunks are not too small and not too big - and that it can fit into the LLM model when we query it.
+接下来，我们将设置向量存储库。向量存储库是一种数据结构，允许我们存储和查询嵌入。我们将使用 Ollama 嵌入和 FAISS 向量存储库。
+我们将文档分割成每块 1000 个字符，重叠 200 个字符。这是为了确保块既不会太小也不会太大——并且在我们查询时能够适应 LLM 模型。
 
 ```python
 from langchain_community.embeddings import OllamaEmbeddings
@@ -51,18 +50,18 @@ splits = text_splitter.split_documents(docs)
 vectorstore = FAISS.from_documents(documents=splits, embedding=OllamaEmbeddings())
 ```
 
-## Retrieval and Generation
+## 检索和生成
 
-Now that our documents are loaded and the vectorstore is setup, we can, based on user's question, do a similarity search to retrieve the most relevant documents. That way we can use these documents to be fed to the LLM model.
+现在文档已经加载并且向量存储库已设置好，我们可以基于用户的问题进行相似性搜索以检索最相关的文档。这样我们就可以将这些文档提供给 LLM 模型。
 
 ```python
-question = "What is firecrawl?"
+question = "什么是 firecrawl?"
 docs = vectorstore.similarity_search(query=question)
 ```
 
-## Generation
+## 生成
 
-Last but not least, you can use the Groq to generate a response to a question based on the documents we have loaded.
+最后但同样重要的是，你可以使用 Groq 根据我们加载的文档生成对问题的响应。
 
 ```python
 from groq import Groq
@@ -76,7 +75,12 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "user",
-            "content": f"You are a friendly assistant. Your job is to answer the users question based on the documentation provided below:\nDocs:\n\n{docs}\n\nQuestion: {question}"
+            "content": f"你是一个友好的助手。你的工作是根据以下提供的文档回答用户的问题:
+文档:
+
+{docs}
+
+问题: {question}"
         }
     ],
     temperature=1,
@@ -89,8 +93,8 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message)
 ```
 
-## And Voila!
+## 大功告成！
 
-You have now built a 'Chat with your website' bot using Llama 3, Groq Llama 3, Langchain, and Firecrawl. You can now use this bot to answer questions based on the documentation of your website.
+你现在已经使用 Llama 3、Groq Llama 3、Langchain 和 Firecrawl 构建了一个 '与您的网站聊天' 机器人。你现在可以使用这个机器人基于你网站的文档来回答问题了。
 
-If you have any questions or need help, feel free to reach out to us at [Firecrawl](https://firecrawl.dev).
+如果你有任何问题或需要帮助，请随时通过 [Firecrawl](https://firecrawl.dev) 联系我们。

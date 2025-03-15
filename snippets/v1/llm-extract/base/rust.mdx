@@ -1,4 +1,5 @@
-```rust Rust
+```markdown
+```rust
 let json_schema = json!({
     "type": "object",
     "properties": {
@@ -36,7 +37,8 @@ let llm_extraction_result = app
     .await;
 
 match llm_extraction_result {
-    Ok(data) => println!("LLM Extraction Result:\n{:#?}", data.extract.unwrap()),
+    Ok(data) => println!("LLM Extraction Result:
+{:#?}", data.extract.unwrap()),
     Err(e) => eprintln!("LLM Extraction failed: {}", e),
 }
 ```

@@ -1,22 +1,21 @@
 ---
 title: "Camel AI"
-description: "Firecrawl integrates with Camel AI as a data loader."
+description: "Firecrawl 集成了 Camel AI 作为数据加载器。"
 og:title: "Camel AI | Firecrawl"
-og:description: "Firecrawl integrates with Camel AI as a data loader."
+og:description: "Firecrawl 集成了 Camel AI 作为数据加载器。"
 ---
 
-## Installation
+## 安装
 
 ```bash
 pip install camel-ai
-
 ```
 
-## Usage
+## 使用
 
-With Camel AI and Firecrawl you can quickly build multi-agent systems than use data from the web.
+通过 Camel AI 和 Firecrawl，你可以快速构建使用网络数据的多代理系统。
 
-### Using Firecrawl to Gather an Entire Website
+### 使用 Firecrawl 抓取整个网站
 
 ```python
 mock_app = MockFirecrawlApp.return_value
@@ -29,7 +28,7 @@ mock_app.crawl_url.return_value = respons
 result = firecrawl.markdown_crawl(url)
 ```
 
-### Using Firecrawl to Gather a Single Page
+### 使用 Firecrawl 抓取单个页面
 
 ```python
 mock_app = MockFirecrawlApp.return_value

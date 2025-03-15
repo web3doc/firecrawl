@@ -1,37 +1,37 @@
 ---
-title: "Build an agent that checks for website contradictions"
-description: "Using Firecrawl and Claude to scrape your website's data and look for contradictions"
-og:title: "Build an agent that checks for website contradictions | Firecrawl"
-og:description: "Using Firecrawl and Claude to scrape your website's data and look for contradictions"
+title: "构建一个检查网站矛盾的代理"
+description: "使用Firecrawl和Claude抓取您的网站数据并寻找矛盾之处"
+og:title: "构建一个检查网站矛盾的代理 | Firecrawl"
+og:description: "使用Firecrawl和Claude抓取您的网站数据并寻找矛盾之处"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：这个示例使用的是[Firecrawl API的v0版本](/v0/introduction)。您可以安装Python SDK的0.0.20版本或Node SDK的0.0.36版本。
 
 <img
   className="block"
   src="/images/articles/hero-contradiction.png"
-  alt="Image showing a website with a contradiction."
+  alt="显示有矛盾的网站的图片。"
 />
 
-In this quick tutorial you will learn how to use Firecrawl and Claude to scrape your website's data and look for contradictions and inconsistencies in a few lines of code. When you are shipping fast, data is bound to get stale, with Firecrawl and LLMs you can make sure your public web data is always consistent! We will be using Opus's huge 200k context window and Firecrawl's parellization, making this process accurate and fast.
+在这个快速教程中，您将学习如何使用Firecrawl和Claude在几行代码内抓取您的网站数据并寻找矛盾和不一致性。当您快速发布时，数据难免会变得陈旧，通过Firecrawl和LLMs，您可以确保您的公共网络数据始终保持一致！我们将使用Opus的巨大200k上下文窗口和Firecrawl的并行化，使这一过程既准确又快速。
 
-## Setup
+## 设置
 
-Install our python dependencies, including anthropic and firecrawl-py.
+安装我们的Python依赖项，包括anthropic和firecrawl-py。
 
 ```bash
 pip install firecrawl-py anthropic
 ```
 
-## Getting your Claude and Firecrawl API Keys
+## 获取您的Claude和Firecrawl API密钥
 
-To use Claude Opus and Firecrawl, you will need to get your API keys. You can get your Anthropic API key from [here](https://www.anthropic.com/) and your Firecrawl API key from [here](https://firecrawl.dev).
+要使用Claude Opus和Firecrawl，您需要获取您的API密钥。您可以从[此处](https://www.anthropic.com/)获取您的Anthropic API密钥，从[此处](https://firecrawl.dev)获取您的Firecrawl API密钥。
 
-## Load website with Firecrawl
+## 使用Firecrawl加载网站
 
-To be able to get all the data from our website page put it into an easy to read format for the LLM, we will use [Firecrawl](https://firecrawl.dev). It handles by-passing JS-blocked websites, extracting the main content, and outputting in a LLM-readable format for increased accuracy.
+为了能够将我们网站页面的所有数据放入易于阅读的格式以供LLM使用，我们将使用[Firecrawl](https://firecrawl.dev)。它处理绕过JS封锁的网站、提取主要内容并以LLM可读格式输出以提高准确性。
 
-Here is how we will scrape a website url using Firecrawl-py
+以下是我们如何使用Firecrawl-py抓取网站URL的方法：
 
 ```python
 from firecrawl import FirecrawlApp
@@ -43,11 +43,11 @@ crawl_result = app.crawl_url('docs.firecrawl.dev', {'crawlerOptions': {'excludes
 print(crawl_result)
 ```
 
-With all of the web data we want scraped and in a clean format, we can move onto the next step.
+现在我们已经有了所有想要抓取的网络数据，并且格式清晰，我们可以进入下一步了。
 
-## Combination and Generation
+## 组合与生成
 
-Now that we have the website data, let's pair up every page and run every combination through Opus for analysis.
+既然我们已经拥有了网站数据，让我们将每一页配对，并将每一种组合通过Opus进行分析。
 
 ```python
 from itertools import combinations
@@ -55,13 +55,17 @@ from itertools import combinations
 page_combinations = []
 
 for first_page, second_page in combinations(crawl_result, 2):
-    combined_string = "First Page:\n" + first_page['markdown'] + "\n\nSecond Page:\n" + second_page['markdown']
+    combined_string = "第一页:
+" + first_page['markdown'] + "
+
+第二页:
+" + second_page['markdown']
     page_combinations.append(combined_string)
 
 import anthropic
 
 client = anthropic.Anthropic(
-    # defaults to os.environ.get("ANTHROPIC_API_KEY")
+    # 默认为os.environ.get("ANTHROPIC_API_KEY")
     api_key="YOUR-KEY",
 )
 
@@ -69,23 +73,24 @@ final_output = []
 
 for page_combination in page_combinations:
 
-    prompt = "Here are two pages from a companies website, your job is to find any contradictions or differences in opinion between the two pages, this could be caused by outdated information or other. If you find any contradictions, list them out and provide a brief explanation of why they are contradictory or differing. Make sure the explanation is specific and concise. It is okay if you don't find any contradictions, just say 'No contradictions found' and nothing else. Here are the pages: " + "\n\n".join(page_combination)
+    prompt = "这是一家公司网站的两页内容，您的任务是找出这两页之间的任何矛盾或观点差异，这可能由过时的信息或其他原因引起。如果您发现任何矛盾，请列出它们并提供为什么它们是矛盾或不同的简要解释。确保解释具体且简洁。如果没有发现矛盾，只需说'未发现矛盾'即可。以下是页面内容: " + "
+
+".join(page_combination)
 
     message = client.messages.create(
         model="claude-3-opus-20240229",
         max_tokens=1000,
         temperature=0.0,
-        system="You are an assistant that helps find contradictions or differences in opinion between pages in a company website and knowledge base. This could be caused by outdated information in the knowledge base.",
+        system="您是一个帮助查找公司网站和知识库中页面之间矛盾或观点差异的助手。这可能由知识库中的过时信息引起。",
         messages=[
             {"role": "user", "content": prompt}
         ]
     )
     final_output.append(message.content)
-
 ```
 
-## That's about it!
+## 就这些了！
 
-You have now built an agent that looks at your website and spots any inconsistencies it might have.
+现在您已经构建了一个代理，可以查看您的网站并发现任何可能存在的矛盾。
 
-If you have any questions or need help, feel free to reach out to us at [Firecrawl](https://firecrawl.dev).
+如果您有任何问题或需要帮助，请随时联系我们[Firecrawl](https://firecrawl.dev)。

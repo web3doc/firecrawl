@@ -1,28 +1,28 @@
-```python Python
+```python
 from firecrawl import FirecrawlApp
 
-# Initialize the client
+# 初始化客户端
 firecrawl = FirecrawlApp(api_key="your_api_key")
 
-# Define research parameters
+# 定义研究参数
 params = {
-    "maxDepth": 5,  # Number of research iterations
-    "timeLimit": 180,  # Time limit in seconds
-    "maxUrls": 15  # Maximum URLs to analyze
+    "maxDepth": 5,  # 研究迭代次数
+    "timeLimit": 180,  # 时间限制（秒）
+    "maxUrls": 15  # 分析的最大URL数量
 }
 
-# Start research with real-time updates
+# 开始实时更新的研究
 def on_activity(activity):
     print(f"[{activity['type']}] {activity['message']}")
 
-# Run deep research
+# 运行深度研究
 results = firecrawl.deep_research(
-    query="What are the latest developments in quantum computing?",
+    query="量子计算的最新发展是什么？",
     params=params,
     on_activity=on_activity
 )
 
-# Access research findings
-print(f"Final Analysis: {results['data']['finalAnalysis']}")
-print(f"Sources: {len(results['data']['sources'])} references") 
+# 访问研究发现
+print(f"最终分析：{results['data']['finalAnalysis']}")
+print(f"来源：{len(results['data']['sources'])} 参考文献")
 ```

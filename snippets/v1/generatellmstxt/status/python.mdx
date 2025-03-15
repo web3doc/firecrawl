@@ -1,10 +1,10 @@
 ```python Python
 from firecrawl import FirecrawlApp
 
-# Initialize the client
+# 初始化客户端
 firecrawl = FirecrawlApp(api_key="your_api_key")
 
-# Create async job
+# 创建异步任务
 job = firecrawl.async_generate_llms_text(
     url="https://example.com",
 )
@@ -12,15 +12,15 @@ job = firecrawl.async_generate_llms_text(
 if job['success']:
     job_id = job['id']
 
-# Check LLMs.txt generation status
+# 检查 LLMs.txt 生成状态
 status = firecrawl.check_generate_llms_text_status("job_id")
 
-# Print current status
+# 打印当前状态
 print(f"Status: {status['status']}")
 
 if status['status'] == 'completed':
-    print("LLMs.txt Content:", status['data']['llmstxt'])
+    print("LLMs.txt 内容:", status['data']['llmstxt'])
     if 'llmsfulltxt' in status['data']:
-        print("Full Text Content:", status['data']['llmsfulltxt'])
-    print(f"Processed URLs: {len(status['data']['processedUrls'])}")
+        print("完整文本内容:", status['data']['llmsfulltxt'])
+    print(f"处理过的 URLs: {len(status['data']['processedUrls'])}")
 ```

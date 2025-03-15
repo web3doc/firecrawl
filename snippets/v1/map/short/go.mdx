@@ -1,8 +1,8 @@
 ```go Go
-// Map a website
+// 映射一个网站
 mapResult, err := app.MapUrl("https://firecrawl.dev", nil)
 if err != nil {
-  log.Fatalf("Failed to map URL: %v", err)
+  log.Fatalf("无法映射 URL: %v", err)
 }
 
 fmt.Println(mapResult)

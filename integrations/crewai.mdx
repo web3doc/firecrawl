@@ -1,30 +1,30 @@
 ---
 title: "CrewAI"
-description: "Learn how to use Firecrawl with CrewAI"
+description: "学习如何在CrewAI中使用Firecrawl"
 og:title: "CrewAI | Firecrawl"
-og:description: "Learn how to use Firecrawl on CrewAI"
+og:description: "学习如何在CrewAI中使用Firecrawl"
 ---
 
-## Using Firecrawl with CrewAI
+## 在CrewAI中使用Firecrawl
 
-Firecrawl is integrated with [CrewAI, the framework for orchestrating AI agents](https://www.crewai.com/). This page introduces all of the Firecrawl tools added to the framework.
+Firecrawl与[CrewAI，一个用于协调AI代理的框架](https://www.crewai.com/)集成。本页面介绍了添加到该框架中的所有Firecrawl工具。
 
-### Installing Firecrawl Tools inside of CrewAI
+### 在CrewAI中安装Firecrawl工具
 
-- Get an API key from your [firecrawl.dev dashboard](https://firecrawl.dev) and set it in environment variables (`FIRECRAWL_API_KEY`).
-- Install the [Firecrawl SDK](https://github.com/mendableai/firecrawl) along with `crewai[tools]` package:
+- 从您的[firecrawl.dev仪表板](https://firecrawl.dev)获取API密钥，并将其设置在环境变量中（`FIRECRAWL_API_KEY`）。
+- 安装[Firecrawl SDK](https://github.com/mendableai/firecrawl)和`crewai[tools]`包：
 
 ```
 pip install firecrawl-py 'crewai[tools]'
 ```
 
-## Tools
+## 工具
 
 ### FirecrawlCrawlWebsiteTool
 
-#### Example
+#### 示例
 
-Utilize the FirecrawlScrapeFromWebsiteTool as follows to allow your agent to load websites:
+如下使用FirecrawlScrapeFromWebsiteTool，以允许您的代理加载网站：
 
 ```python
 from crewai_tools import FirecrawlCrawlWebsiteTool
@@ -32,28 +32,28 @@ from crewai_tools import FirecrawlCrawlWebsiteTool
 tool = FirecrawlCrawlWebsiteTool(url='firecrawl.dev')
 ```
 
-#### Arguments
+#### 参数
 
-- `api_key`: Optional. Specifies Firecrawl API key. Defaults is the `FIRECRAWL_API_KEY` environment variable.
-- `url`: The base URL to start crawling from.
-- `page_options`: Optional.
-  - `onlyMainContent`: Optional. Only return the main content of the page excluding headers, navs, footers, etc.
-  - `includeHtml`: Optional. Include the raw HTML content of the page. Will output a html key in the response.
-- `crawler_options`: Optional. Options for controlling the crawling behavior.
-  - `includes`: Optional. URL patterns to include in the crawl.
-  - `exclude`: Optional. URL patterns to exclude from the crawl.
-  - `generateImgAltText`: Optional. Generate alt text for images using LLMs (requires a paid plan).
-  - `returnOnlyUrls`: Optional. If true, returns only the URLs as a list in the crawl status. Note: the response will be a list of URLs inside the data, not a list of documents.
-  - `maxDepth`: Optional. Maximum depth to crawl. Depth 1 is the base URL, depth 2 includes the base URL and its direct children, and so on.
-  - `mode`: Optional. The crawling mode to use. Fast mode crawls 4x faster on websites without a sitemap but may not be as accurate and shouldn't be used on heavily JavaScript-rendered websites.
-  - `limit`: Optional. Maximum number of pages to crawl.
-  - `timeout`: Optional. Timeout in milliseconds for the crawling operation.
+- `api_key`: 可选。指定Firecrawl API密钥。默认为`FIRECRAWL_API_KEY`环境变量。
+- `url`: 要开始爬取的基础URL。
+- `page_options`: 可选。
+  - `onlyMainContent`: 可选。仅返回页面的主要内容，不包括标题、导航栏、页脚等。
+  - `includeHtml`: 可选。包括页面的原始HTML内容。将在响应中输出一个html键。
+- `crawler_options`: 可选。控制爬取行为的选项。
+  - `includes`: 可选。包含在爬取中的URL模式。
+  - `exclude`: 可选。从爬取中排除的URL模式。
+  - `generateImgAltText`: 可选。使用LLM生成图片的alt文本（需要付费计划）。
+  - `returnOnlyUrls`: 可选。如果为真，则只返回URL列表作为爬取状态。注意：响应将是data内的URL列表，而不是文档列表。
+  - `maxDepth`: 可选。最大爬取深度。深度1是基础URL，深度2包括基础URL及其直接子项，依此类推。
+  - `mode`: 可选。使用的爬取模式。快速模式在没有站点地图的网站上爬取速度提高4倍，但可能不如JavaScript渲染密集型网站准确。
+  - `limit`: 可选。要爬取的最大页面数。
+  - `timeout`: 可选。爬取操作的超时时间（毫秒）。
 
 ### FirecrawlScrapeWebsiteTool
 
-#### Example
+#### 示例
 
-Utilize the FirecrawlScrapeWebsiteTool as follows to allow your agent to load websites:
+如下使用FirecrawlScrapeWebsiteTool，以允许您的代理加载网站：
 
 ```python
 from crewai_tools import FirecrawlScrapeWebsiteTool
@@ -61,24 +61,24 @@ from crewai_tools import FirecrawlScrapeWebsiteTool
 tool = FirecrawlScrapeWebsiteTool(url='firecrawl.dev')
 ```
 
-#### Arguments
+#### 参数
 
-- `api_key`: Optional. Specifies Firecrawl API key. Defaults is the `FIRECRAWL_API_KEY` environment variable.
-- `url`: The URL to scrape.
-- `page_options`: Optional.
-  - `onlyMainContent`: Optional. Only return the main content of the page excluding headers, navs, footers, etc.
-  - `includeHtml`: Optional. Include the raw HTML content of the page. Will output a html key in the response.
-- `extractor_options`: Optional. Options for LLM-based extraction of structured information from the page content
-  - `mode`: The extraction mode to use, currently supports 'llm-extraction'
-  - `extractionPrompt`: Optional. A prompt describing what information to extract from the page
-  - `extractionSchema`: Optional. The schema for the data to be extracted
-- `timeout`: Optional. Timeout in milliseconds for the request
+- `api_key`: 可选。指定Firecrawl API密钥。默认为`FIRECRAWL_API_KEY`环境变量。
+- `url`: 要抓取的URL。
+- `page_options`: 可选。
+  - `onlyMainContent`: 可选。仅返回页面的主要内容，不包括标题、导航栏、页脚等。
+  - `includeHtml`: 可选。包括页面的原始HTML内容。将在响应中输出一个html键。
+- `extractor_options`: 可选。基于LLM从页面内容中提取结构化信息的选项
+  - `mode`: 使用的提取模式，当前支持'llm-extraction'
+  - `extractionPrompt`: 可选。描述从页面中提取哪些信息的提示
+  - `extractionSchema`: 可选。要提取的数据的模式
+- `timeout`: 可选。请求的超时时间（毫秒）
 
 ### FirecrawlSearchTool
 
-#### Example
+#### 示例
 
-Utilize the FirecrawlSearchTool as follows to allow your agent to load websites:
+如下使用FirecrawlSearchTool，以允许您的代理加载网站：
 
 ```python
 from crewai_tools import FirecrawlSearchTool
@@ -86,13 +86,13 @@ from crewai_tools import FirecrawlSearchTool
 tool = FirecrawlSearchTool(query='what is firecrawl?')
 ```
 
-#### Arguments
+#### 参数
 
-- `api_key`: Optional. Specifies Firecrawl API key. Defaults is the `FIRECRAWL_API_KEY` environment variable.
-- `query`: The search query string to be used for searching.
-- `page_options`: Optional. Options for result formatting.
-  - `onlyMainContent`: Optional. Only return the main content of the page excluding headers, navs, footers, etc.
-  - `includeHtml`: Optional. Include the raw HTML content of the page. Will output a html key in the response.
-  - `fetchPageContent`: Optional. Fetch the full content of the page.
-- `search_options`: Optional. Options for controlling the crawling behavior.
-  - `limit`: Optional. Maximum number of pages to crawl.
+- `api_key`: 可选。指定Firecrawl API密钥。默认为`FIRECRAWL_API_KEY`环境变量。
+- `query`: 用于搜索的查询字符串。
+- `page_options`: 可选。结果格式化选项。
+  - `onlyMainContent`: 可选。仅返回页面的主要内容，不包括标题、导航栏、页脚等。
+  - `includeHtml`: 可选。包括页面的原始HTML内容。将在响应中输出一个html键。
+  - `fetchPageContent`: 可选。获取页面的全部内容。
+- `search_options`: 可选。控制爬取行为的选项。
+  - `limit`: 可选。要爬取的最大页面数。

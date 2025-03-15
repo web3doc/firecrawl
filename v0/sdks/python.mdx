@@ -1,40 +1,39 @@
 ---
 title: 'Python'
-description: 'Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Python SDK 是 Firecrawl API 的封装，帮助您轻松将网站转换为 Markdown。'
 icon: 'python'
 og:title: "Python SDK | Firecrawl"
-og:description: "Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Python SDK 是 Firecrawl API 的封装，帮助您轻松将网站转换为 Markdown。"
 ---
 
-> Note: this is using [v0 version of the Firecrawl API](/v0/introduction) which is being deprecated. We recommend switching to [v1](/sdks/python).
+> 注意：这是使用已弃用的 [Firecrawl API v0 版本](/v0/introduction)。我们建议切换到 [v1](/sdks/python)。
 
-## Installation
+## 安装
 
-To install the Firecrawl Python SDK, you can use pip:
+要安装 Firecrawl Python SDK，可以使用 pip：
 
 ```bash
 pip install firecrawl-py==0.0.16
 ```
 
-## Usage
+## 使用
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` class.
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取 API 密钥。
+2. 将 API 密钥设置为环境变量 `FIRECRAWL_API_KEY`，或将其作为参数传递给 `FirecrawlApp` 类。
 
-
-Here's an example of how to use the SDK:
+以下是如何使用 SDK 的示例：
 
 ```python
 from firecrawl import FirecrawlApp
 
-# Initialize the FirecrawlApp with your API key
+# 使用您的 API 密钥初始化 FirecrawlApp
 app = FirecrawlApp(api_key='your_api_key')
 
-# Scrape a single URL
+# 抓取单个 URL
 url = 'https://docs.firecrawl.dev'
 scraped_data = app.scrape_url(url)
 
-# Crawl a website
+# 爬取网站
 crawl_url = 'https://docs.firecrawl.dev'
 params = {
     'pageOptions': {
@@ -44,18 +43,18 @@ params = {
 crawl_result = app.crawl_url(crawl_url, params=params)
 ```
 
-### Scraping a URL
+### 抓取 URL
 
-To scrape a single URL, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要抓取单个 URL，请使用 `scrape_url` 方法。它接受 URL 作为参数，并返回抓取的数据作为字典。
 
 ```python
 url = 'https://example.com'
 scraped_data = app.scrape_url(url)
 ```
 
-### Extracting structured data from a URL
+### 从 URL 提取结构化数据
 
-With LLM extraction, you can easily extract structured data from any URL. We support pydantic schemas to make it easier for you too. Here is how you to use it:
+使用 LLM 提取，您可以轻松地从任何 URL 中提取结构化数据。我们支持 pydantic 模式，以使操作更加简便。以下是使用方法：
 
 ```python
 class ArticleSchema(BaseModel):
@@ -79,18 +78,19 @@ data = app.scrape_url('https://news.ycombinator.com', {
 print(data["llm_extraction"])
 ```
 
-### Crawling a Website
+### 爬取网站
 
-To crawl a website, use the `crawl_url` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要爬取网站，请使用 `crawl_url` 方法。它接受起始 URL 和可选参数作为参数。`params` 参数允许您指定爬取作业的其他选项，如最大页面数、允许的域名以及输出格式。
 
-The `wait_until_done` parameter determines whether the method should wait for the crawl job to complete before returning the result. If set to `True`, the method will periodically check the status of the crawl job until it is completed or the specified `timeout` (in seconds) is reached. If set to `False`, the method will return immediately with the job ID, and you can manually check the status of the crawl job using the `check_crawl_status` method.
+`wait_until_done` 参数决定该方法是否应等待爬取作业完成再返回结果。如果设置为 `True`，该方法将定期检查爬取作业的状态，直到完成或达到指定的 `timeout`（秒）。如果设置为 `False`，该方法将立即返回作业 ID，您可以手动使用 `check_crawl_status` 方法检查爬取作业的状态。
+
 
 ```python
 crawl_url = 'https://example.com'
 params = {
     'crawlerOptions': {
         'excludes': ['blog/*'],
-        'includes': [], # leave empty for all pages
+        'includes': [], # 留空表示所有页面
         'limit': 1000,
     },
     'pageOptions': {
@@ -100,26 +100,27 @@ params = {
 crawl_result = app.crawl_url(crawl_url, params=params, wait_until_done=True, timeout=5)
 ```
 
-If `wait_until_done` is set to `True`, the `crawl_url` method will return the crawl result once the job is completed. If the job fails or is stopped, an exception will be raised.
+如果 `wait_until_done` 设置为 `True`，`crawl_url` 方法将在作业完成后返回爬取结果。如果作业失败或停止，将引发异常。
 
-### Checking Crawl Status
 
-To check the status of a crawl job, use the `check_crawl_status` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+### 检查爬取状态
+
+要检查爬取作业的状态，请使用 `check_crawl_status` 方法。它接受作业 ID 作为参数，并返回当前爬取作业的状态。
 
 ```python
 job_id = crawl_result['jobId']
 status = app.check_crawl_status(job_id)
 ```
 
-### Search for a query
+### 搜索查询
 
-Used to search the web, get the most relevant results, scrap each page and return the markdown.
+用于搜索网络，获取最相关的结果，抓取每个页面并返回 Markdown。
 
 ```python
 query = 'what is mendable?'
 search_result = app.search(query)
 ```
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK 处理 Firecrawl API 返回的错误，并引发适当的异常。如果在请求期间发生错误，将引发带有描述性错误消息的异常。

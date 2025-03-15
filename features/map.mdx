@@ -1,11 +1,11 @@
 ---
-title: 'Map'
-description: 'Input a website and get all the urls on the website - extremely fast'
-og:title: "Map | Firecrawl"
-og:description: "Go from a single url to a map of the entire website"
+title: '地图'
+description: '输入一个网站并获取网站上的所有URL - 极快'
+og:title: "地图 | Firecrawl"
+og:description: "从一个单一的URL到整个网站的地图"
 icon: "map"
 version: "v1"
-sidebarTitle: "Map"
+sidebarTitle: "地图"
 ---
 
 import InstallationPython from "/snippets/v1/installation/python.mdx";
@@ -19,27 +19,25 @@ import MapRust from "/snippets/v1/map/base/rust.mdx";
 import MapCURL from "/snippets/v1/map/base/curl.mdx";
 import MapResponse from "/snippets/v1/map/base/output.mdx";
 
-## Introducing /map
+## 介绍 /map
 
-The easiest way to go from a single url to a map of the entire website. This is extremely useful for:
-- When you need to prompt the end-user to choose which links to scrape
-- Need to quickly know the links on a website
-- Need to scrape pages of a website that are related to a specific topic (use the `search` parameter)
-- Only need to scrape specific pages of a website
+从单一URL到整个网站的地图的最简单方法。这在以下情况下非常有用：
+- 当您需要提示最终用户选择要抓取的链接时
+- 需要快速了解网站上的链接时
+- 需要抓取与特定主题相关的网站页面时（使用 `search` 参数）
+- 只需要抓取网站的特定页面时
 
-## Alpha Considerations
+## Alpha考虑事项
 
-This endpoint prioritizes speed, so it may not capture all website links. We are working on improvements. Feedback and suggestions are very welcome.
+这个端点优先考虑速度，因此可能无法捕获所有网站链接。我们正在改进中。非常欢迎反馈和建议。
 
+## 映射
 
-## Mapping
+### /map端点
 
-### /map endpoint
+用于映射URL并获取网站的URL。这将返回网站上存在的大多数链接。
 
-Used to map a URL and get urls of the website. This returns most links present on the website.
-
-
-### Installation 
+### 安装
 
 <CodeGroup>
 
@@ -50,7 +48,7 @@ Used to map a URL and get urls of the website. This returns most links present o
 
 </CodeGroup>
 
-### Usage
+### 使用
 
 <CodeGroup>
 
@@ -62,15 +60,15 @@ Used to map a URL and get urls of the website. This returns most links present o
 
 </CodeGroup>
 
-### Response
+### 响应
 
-SDKs will return the data object directly. cURL will return the payload exactly as shown below.
+SDK将直接返回数据对象。cURL将返回如下所示的有效载荷。
 
 <MapResponse />
 
-#### Map with search
+#### 带搜索的映射
 
-Map with `search` param allows you to search for specific urls inside a website.
+带 `search` 参数的映射允许您在网站内搜索特定URL。
 
 ```bash cURL
 curl -X POST https://api.firecrawl.dev/v1/map \
@@ -82,7 +80,7 @@ curl -X POST https://api.firecrawl.dev/v1/map \
     }'
 ```
 
-Response will be an ordered list from the most relevant to the least relevant.
+响应将是一个按相关性排序的有序列表，从最相关到最不相关。
 
 ```json
 {
@@ -93,3 +91,4 @@ Response will be an ordered list from the most relevant to the least relevant.
     "https://docs.firecrawl.dev/learn/rag-llama3",
   ]
 }
+```

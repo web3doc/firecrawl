@@ -1,10 +1,10 @@
 ---
-title: 'Get Crawl Status'
+title: '获取爬取状态'
 openapi: 'v0-openapi GET /crawl/status/{jobId}'
 ---
 
 
-This endpoint retrieves the status of a crawl job. If the job is not completed, the response includes content within `partial_data`. Once the job is completed, the content is available under `data`.
+此端点检索爬取作业的状态。如果作业未完成，响应中将包含在 `partial_data` 内的内容。一旦作业完成，内容将在 `data` 下可用。
 
 
-**We recommend keeping track of the crawl jobs yourself as the crawl status results can expire after 24 hours.**
+**我们建议自行跟踪爬取作业，因为爬取状态结果在24小时后可能会过期。**

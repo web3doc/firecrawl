@@ -1,9 +1,9 @@
 ---
 title: 'Go'
-description: 'Firecrawl Go SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Go SDK 是 Firecrawl API 的一个包装器，帮助您轻松将网站转换为 Markdown。'
 icon: 'golang'
 og:title: "Go SDK | Firecrawl"
-og:description: "Firecrawl Go SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Go SDK 是 Firecrawl API 的一个包装器，帮助您轻松将网站转换为 Markdown。"
 ---
 
 import InstallGoSDK from "/snippets/v1/installation/go.mdx";
@@ -13,48 +13,48 @@ import CrawlGoShort from "/snippets/v1/crawl/short/go.mdx";
 import CheckCrawlStatusGoShort from "/snippets/v1/crawl-status/short/go.mdx";
 import MapGoShort from "/snippets/v1/map/short/go.mdx";
 
-## Installation
+## 安装
 
-To install the Firecrawl Go SDK, you can use go get:
+要安装 Firecrawl Go SDK，您可以使用 go get：
 
 <InstallGoSDK />
 
-## Usage
+## 使用方法
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the `API key` as a parameter to the `FirecrawlApp` struct.
-3. Set the `API URL` and/or pass it as a parameter to the `FirecrawlApp` struct. Defaults to `https://api.firecrawl.dev`.
-4. Set the `version` and/or pass it as a parameter to the `FirecrawlApp` struct. Defaults to `v1`.
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取一个 API key
+2. 将 `API key` 作为参数设置到 `FirecrawlApp` 结构体中。
+3. 设置 `API URL` 和/或将其作为参数传递到 `FirecrawlApp` 结构体中。默认为 `https://api.firecrawl.dev`。
+4. 设置 `version` 和/或将其作为参数传递到 `FirecrawlApp` 结构体中。默认为 `v1`。
 
 
-Here's an example of how to use the SDK with error handling:
+下面是如何使用该 SDK 并处理错误的示例：
 
 <ScrapeAndCrawlGoExample />
 
-### Scraping a URL
+### 抓取一个 URL
 
-To scrape a single URL with error handling, use the `ScrapeURL` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要抓取单个 URL 并处理错误，请使用 `ScrapeURL` 方法。它接受 URL 作为参数，并返回抓取的数据作为一个字典。
 
 <ScrapeGoShort />
 
-### Crawling a Website
+### 爬取一个网站
 
-To crawl a website, use the `CrawlUrl` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要爬取一个网站，请使用 `CrawlUrl` 方法。它接受起始 URL 和可选参数作为参数。`params` 参数允许您指定额外的选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 <CrawlGoShort />
 
-### Checking Crawl Status
+### 检查爬取状态
 
-To check the status of a crawl job, use the `CheckCrawlStatus` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+要检查爬取任务的状态，请使用 `CheckCrawlStatus` 方法。它接受任务 ID 作为参数，并返回爬取任务的当前状态。
 
 <CheckCrawlStatusGoShort />
 
-### Map a Website
+### 映射一个网站
 
-Use `MapUrl` to generate a list of URLs from a website. The `params` argument let you customize the mapping process, including options to exclude subdomains or to utilize the sitemap.
+使用 `MapUrl` 来生成网站的 URL 列表。`params` 参数让您可以自定义映射过程，包括排除子域或利用站点地图的选项。
 
 <MapGoShort />
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK 会处理 Firecrawl API 返回的错误并抛出适当的异常。如果在请求过程中发生错误，将抛出带有描述性错误消息的异常。

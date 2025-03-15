@@ -1,56 +1,56 @@
 ---
 title: "Dify"
-description: "Learn how to use Firecrawl on Dify"
+description: "了解如何在Dify上使用Firecrawl"
 og:title: "Dify | Firecrawl"
-og:description: "Learn how to use Firecrawl on Dify"
+og:description: "了解如何在Dify上使用Firecrawl"
 ---
 
-## Sync Data from Websites for Dify workflows
+## 为Dify工作流同步网站数据
 
-Firecrawl can be used inside of [Dify the LLM workflow builder](https://cloud.dify.ai/). This page introduces how to scrape data from a web page, parse it into Markdown, and import it into the Dify knowledge base using their Firecrawl integration.
+Firecrawl可以在[Dify的LLM工作流构建器](https://cloud.dify.ai/)中使用。本页介绍了如何从网页中抓取数据，将其解析为Markdown，并使用他们的Firecrawl集成将其导入到Dify知识库中。
 
-### Configuring Firecrawl
+### 配置Firecrawl
 
-First, you need to configure Firecrawl credentials in the Data Source section of the Settings page.
+首先，您需要在设置页面的数据源部分配置Firecrawl凭证。
 
 <img
   className="block"
   src="/images/fc_dify_config.avif"
-  alt="Configure Firecrawl key"
+  alt="配置Firecrawl密钥"
 />
 
-Log in to your Firecrawl account and get your API Key, and then enter and save it in Dify.
+登录您的Firecrawl账户并获取您的API Key，然后在Dify中输入并保存它。
 
 <img
   className="block"
   src="/images/fc_dify_savekey.png"
-  alt="Save Firecrawl key"
+  alt="保存Firecrawl密钥"
 />
 
-### Scrape target webpage
+### 抓取目标网页
 
-Now comes the fun part, scraping and crawling. On the knowledge base creation page, select Sync from website and enter the URL to be scraped.
+现在是有趣的部分，抓取和爬取。在知识库创建页面上，选择“从网站同步”并输入要抓取的URL。
 
 <img
   className="block"
   src="/images/fc_dify_webscrape.webp"
-  alt="Scraping setup"
+  alt="抓取设置"
 />
 
-The configuration options include: Whether to crawl sub-pages, Page crawling limit, Page scraping max depth, Excluded paths, Include only paths, and Content extraction scope. After completing the configuration, click Run to preview the parsed pages.
+配置选项包括：是否爬取子页面、页面爬取限制、页面抓取最大深度、排除路径、仅包含路径以及内容提取范围。完成配置后，点击“运行”以预览解析后的页面。
 
 <img
   className="block"
   src="/images/fc_dify_fcoptions.webp"
-  alt="Set Firecrawl configuration"
+  alt="设置Firecrawl配置"
 />
 
-### Review import results
+### 查看导入结果
 
-After importing the parsed text from the webpage, it is stored in the knowledge base documents. View the import results and click Add URL to continue importing new web pages.
+将网页解析后的文本导入后，它会存储在知识库文档中。查看导入结果并点击“添加URL”继续导入新的网页。
 
 <img
   className="block"
   src="/images/fc_dify_results.webp"
-  alt="See results of the Firecrawl scrape"
+  alt="查看Firecrawl抓取的结果"
 />

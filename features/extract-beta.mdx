@@ -1,8 +1,8 @@
 ---
-title: 'Extract'
-description: 'Extract structured data from pages using LLMs'
-og:title: "Extract | Firecrawl"
-og:description: "Extract structured data from pages using LLMs"
+title: '提取'
+description: '使用大型语言模型（LLMs）从页面中提取结构化数据'
+og:title: "提取 | Firecrawl"
+og:description: "使用大型语言模型（LLMs）从页面中提取结构化数据"
 ---
 
 import ExtractCURL from "/snippets/v1/extract/base/curl.mdx";
@@ -16,32 +16,32 @@ import ExtractStatusPending from "/snippets/v1/extract/status/pending.mdx";
 import ExtractStatusAsync from "/snippets/v1/extract/async-response/async.mdx";
 import ExtractStatusDone from "/snippets/v1/extract/status/completed.mdx";
 
-## Introducing /extract (Beta)
+## 介绍 /extract (Beta)
 
 <Warning>
- [Please use the new /extract Open Beta docs by clicking here 🔥](/features/extract)
+ [请通过点击此处使用新的 /extract Open Beta 文档 🔥](/features/extract)
 </Warning>
 
-Extract structured data from a single, multiple URLs, or entire websites using Large Language Models (LLMs). Our new `/extract` endpoint allows you to:
-- Extract structured data from full websites at once
-- Connect or build data enrichment applications that need structured data from websites
-- Develop AI applications that need clean data from multiple websites
+使用大型语言模型（LLMs）从单个、多个 URL 或整个网站中提取结构化数据。我们的新 `/extract` 端点允许您：
+- 一次性从整个网站中提取结构化数据
+- 连接或构建需要来自网站的结构化数据的数据丰富应用程序
+- 开发需要来自多个网站的干净数据的 AI 应用程序
 
-## Considerations
+## 考虑事项
 
-The `/extract` endpoint provides flexible data extraction with customizable schemas. Results can be improved through prompt tuning. It is currently in beta and we welcome your feedback.
+`/extract` 端点提供灵活的可定制模式的数据提取。结果可以通过提示调整得到改进。它目前处于测试阶段，我们欢迎您的反馈。
 
-## Extracting Data
+## 提取数据
 
-### /extract endpoint
+### /extract 端点
 
-Used to extract structured data from entire websites.
+用于从整个网站中提取结构化数据。
 
-When specifying URLs, you can append `/*` to the URL to extract information from the entire website path rather than just a single page. 
+指定 URL 时，可以在 URL 后附加 `/*` 以从整个网站路径而不是仅从一个页面中提取信息。
 
-For example, `https://firecrawl.dev/*` will attempt to extract data from all pages on the firecrawl.dev domain. The `/*` is still in under testing so please let us know if you have any issues by emailing help@firecrawl.dev.
+例如，`https://firecrawl.dev/*` 将尝试从 firecrawl.dev 域名上的所有页面中提取数据。`/*` 仍在测试中，因此如果您遇到任何问题，请通过发送电子邮件至 help@firecrawl.dev 告知我们。
 
-### Usage
+### 用法
 <CodeGroup>
 
 <ExtractPython />
@@ -50,23 +50,23 @@ For example, `https://firecrawl.dev/*` will attempt to extract data from all pag
 
 </CodeGroup>
 
-For more details about the parameters, refer to the [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/extract).
+有关参数的更多详细信息，请参考 [API 参考](https://docs.firecrawl.dev/api-reference/endpoint/extract)。
 
-### Response (sdks)
+### 响应 (sdks)
 
 <ExtractOutput />
 
-### Response (async or not using sdks)
+### 响应 (异步或不使用 sdks)
 <ExtractStatusAsync />
 
 
-### Checking extract status
+### 检查提取状态
 
-You can use the `/extract/ID` endpoint to check the status of an extract job.
+您可以使用 `/extract/ID` 端点来检查提取作业的状态。
 
 
 
-<Note>This endpoint only works for extract jobs that are in progress or extract jobs that have completed recently (within the last 24 hours). </Note>
+<Note>此端点仅适用于正在进行中的提取作业或最近完成（在最后24小时内）的提取作业。</Note>
 
 <CodeGroup>
 
@@ -74,24 +74,24 @@ You can use the `/extract/ID` endpoint to check the status of an extract job.
 
 </CodeGroup>
 
-#### Pending Response
-Extract jobs can have one of the following states:
-- `completed`: The extract job has finished successfully.
-- `pending`: The extract job is still in progress.
-- `failed`: The extract job encountered an error and did not complete.
-- `cancelled`: The extract job was cancelled by the user.
+#### 待处理响应
+提取作业可以有以下状态之一：
+- `completed`: 提取作业已成功完成。
+- `pending`: 提取作业仍在进行中。
+- `failed`: 提取作业遇到错误并未完成。
+- `cancelled`: 提取作业被用户取消。
 
 <ExtractStatusPending />
 
-#### Completed Response
+#### 完成响应
 
 <ExtractStatusDone />
 
 
 
-### Extracting without schema
+### 无模式提取
 
-You can now extract without a schema by just passing a `prompt` to the endpoint. The LLM chooses the structure of the data.
+您现在可以通过仅传递一个 `prompt` 到端点来进行无模式提取。LLM 选择数据的结构。
 
 <CodeGroup>
 
@@ -100,11 +100,11 @@ You can now extract without a schema by just passing a `prompt` to the endpoint.
 </CodeGroup>
 
 
-### Improving Results with Web Search & External Links
+### 使用网络搜索和外部链接改进结果
 
-If you want to improve the results of the extraction, you can pass an `enableWebSearch` parameter to the endpoint. This will allow it to attempt to find the data from external links - outside the scope of the provided URLs.
+如果您想改善提取结果，可以向端点传递一个 `enableWebSearch` 参数。这将允许它尝试从外部链接中找到数据 - 超出提供的 URL 的范围。
 
 
-### Billing
+### 计费
 
-While `/extract` is in beta, we are charging 5 credits per URL scraped used to form the final response. This is to prevent abuse. This will be changed in the future.
+虽然 `/extract` 处于测试阶段，但我们对每个用于形成最终响应的抓取的 URL 收取5个积分。这是为了防止滥用。将来会有所改变。

@@ -1,34 +1,34 @@
 ---
-title: "Scrape"
-description: "Turn any url into clean data"
+title: "抓取"
+description: "将任何URL转换为干净的数据"
 icon: "markdown"
-og:title: "Scrape | Firecrawl"
-og:description: "Turn any url into clean data"
+og:title: "抓取 | Firecrawl"
+og:description: "将任何URL转换为干净的数据"
 ---
 
-## Scraping with Firecrawl
+## 使用Firecrawl进行抓取
 
-Firecrawl converts web pages into markdown, ideal for LLM applications. Here's why:
+Firecrawl将网页转换为Markdown，非常适合LLM应用程序。原因如下：
 
-1. **Complexities Managed:**
-   Handles proxies, caching, rate limits, and JavaScript-blocked content for smooth scraping.
+1. **管理复杂性：**
+   处理代理、缓存、速率限制和JavaScript阻止的内容，以实现顺畅的抓取。
 
-2. **Dynamic Content:**
-   Gathers data from JavaScript-rendered websites, pdfs, images etc.
+2. **动态内容：**
+   从JavaScript渲染的网站、pdf、图片等中收集数据。
 
-3. **Markdown or Structured data conversion:**
-   Converts collected data into clean markdown or structured output, perfect for LLM processing or any other task.
+3. **Markdown或结构化数据转换：**
+   将收集到的数据转换为干净的Markdown或结构化输出，非常适合LLM处理或其他任务。
 
-For more details, refer to the [Scrape Endpoint API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+更多详情，请参阅[抓取端点API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
 
-## Scrape a URL
+## 抓取一个URL
 
-### /scrape endpoint
+### /scrape端点
 
-Used to scrape a URL and get its content.
+用于抓取URL并获取其内容。
 
-### Installation 
+### 安装
 
 <CodeGroup>
 
@@ -59,7 +59,7 @@ tokio = { version = "1", features = ["full"] }
 
 </CodeGroup>
 
-### Usage
+### 使用示例
 
 <CodeGroup>
 
@@ -106,17 +106,18 @@ use firecrawl::FirecrawlApp;
 
 #[tokio::main]
 async fn main() {
-    // Initialize the FirecrawlApp with the API key
+    // 用API密钥初始化FirecrawlApp
     let api_key = "YOUR_API_KEY";
     let api_url = "https://api.firecrawl.dev";
     let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
 
-    // Scrape the URL
+    // 抓取URL
     let scrape_result = app.scrape_url("https://mendable.ai", None).await;
 
-    // Print the scrape result
+    // 打印抓取结果
   match scrape_result {
-    Ok(data) => println!("Scrape Result:\n{}", data["markdown"]),
+    Ok(data) => println!("Scrape Result:
+{}", data["markdown"]),
     Err(e) => eprintln!("Scrape failed: {}", e),
   }
 }
@@ -133,16 +134,16 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
 
 </CodeGroup>
 
-### Response
+### 响应
 
-SDKs will return the data object directly. cURL will return the payload exactly as shown below.
+SDK将直接返回数据对象。cURL将返回如下所示的负载。
 
 ```json
 {
   "success": true,
   "data": {
-    "content": "Raw Content ",
-    "markdown": "# Markdown Content",
+    "content": "原始内容 ",
+    "markdown": "# Markdown内容",
     "provider": "web-scraper",
     "metadata": {
       "title": "Mendable | AI for CX and Sales",
@@ -153,5 +154,3 @@ SDKs will return the data object directly. cURL will return the payload exactly 
   }
 }
 ```
-
-

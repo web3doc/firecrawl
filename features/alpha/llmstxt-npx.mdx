@@ -1,77 +1,77 @@
 ---
-title: "Generate LLMs.txt with NPX"
-description: "Generate LLMs.txt files from any website using our NPX package"
-og:title: "LLMs.txt NPX Generator | Firecrawl"
-og:description: "Transform websites into clean, LLM-ready text files using NPX"
+title: "使用NPX生成LLMs.txt"
+description: "使用我们的NPX包从任何网站生成LLMs.txt文件"
+og:title: "LLMs.txt NPX生成器 | Firecrawl"
+og:description: "使用NPX将网站转化为干净的、适合LLM的文本文件"
 icon: "file-text"
-sidebarTitle: "Generate with NPX"
+sidebarTitle: "使用NPX生成"
 ---
 
 ## generate-llmstxt
 
-A simple NPX package that generates LLMs.txt files using the Firecrawl API. This package creates two files in your specified output directory (defaults to 'public' folder):
-- `llms.txt`: Contains a summary of the LLM-related content
-- `llms-full.txt`: Contains the full text content
+一个简单的NPX包，使用Firecrawl API生成LLMs.txt文件。此包会在您指定的输出目录中创建两个文件（默认为'public'文件夹）：
+- `llms.txt`：包含与LLM相关内容的摘要
+- `llms-full.txt`：包含完整的文本内容
 
-## Usage
+## 使用方法
 
-You can run this package using NPX without installing it. There are two ways to provide your Firecrawl API key:
+您可以使用NPX运行此包而无需安装。提供您的Firecrawl API密钥有两种方法：
 
-### 1. Using Command Line Arguments
+### 1. 使用命令行参数
 
 ```bash
 npx generate-llmstxt --api-key YOUR_FIRECRAWL_API_KEY
 ```
 
-### 2. Using Environment Variables
+### 2. 使用环境变量
 
-Create a `.env` file in your project root and add your API key:
+在项目根目录下创建一个`.env`文件并添加您的API密钥：
 
 ```env
 FIRECRAWL_API_KEY=your_api_key_here
 ```
 
-Then run the command without the --api-key option:
+然后不带--api-key选项运行以下命令：
 
 ```bash
 npx generate-llmstxt
 ```
 
-### Options
+### 选项
 
-- `-k, --api-key <key>` (optional if set in .env): Your Firecrawl API key
-- `-u, --url <url>` (optional): URL to analyze (default: https://example.com)
-- `-m, --max-urls <number>` (optional): Maximum number of URLs to analyze (default: 50)
-- `-o, --output-dir <path>` (optional): Output directory path (default: 'public')
+- `-k, --api-key <key>` (如果已在.env中设置则为可选)：您的Firecrawl API密钥
+- `-u, --url <url>` (可选)：要分析的URL（默认：https://example.com）
+- `-m, --max-urls <number>` (可选)：要分析的最大URL数量（默认：50）
+- `-o, --output-dir <path>` (可选)：输出目录路径（默认：'public'）
 
-### Examples
+### 示例
 
 ```bash
-# Using command line argument with default output directory
+# 使用命令行参数和默认输出目录
 npx generate-llmstxt -k your_api_key -u https://your-website.com -m 20
 
-# Using .env file with default output directory
+# 使用.env文件和默认输出目录
 npx generate-llmstxt -u https://your-website.com -m 20
 
-# Specifying a custom output directory
+# 指定自定义输出目录
 npx generate-llmstxt -k your_api_key -u https://your-website.com -o custom/path/to/output
 
-# Using .env file and custom output directory
+# 使用.env文件和自定义输出目录
 npx generate-llmstxt -u https://your-website.com -o content/llms
 ```
 
-## Requirements
+## 要求
 
-- Node.js 14 or higher
-- A valid Firecrawl API key (via command line or .env file)
+- Node.js 14或更高版本
+- 有效的Firecrawl API密钥（通过命令行或.env文件）
 
-## Output
+## 输出
 
-The package will create two files in your specified output directory (defaults to 'public'):
+该包将在您指定的输出目录中创建两个文件（默认为'public'）：
 
-1. `llms.txt`: Contains a summary of the LLM-related content
-2. `llms-full.txt`: Contains the full text content
+1. `llms.txt`：包含与LLM相关内容的摘要
+2. `llms-full.txt`：包含完整的文本内容
 
-## License
+## 许可证
 
-MIT 
+MIT

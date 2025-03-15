@@ -1,10 +1,10 @@
 ---
-title: "Generate LLMs.txt with an API"
-description: "Generate LLMs.txt files from any website for LLM training and analysis"
-og:title: "LLMs.txt Generator | Firecrawl"
-og:description: "Transform websites into clean, LLM-ready text files"
+title: "使用API生成LLMs.txt"
+description: "从任何网站生成LLMs.txt文件，用于LLM训练和分析"
+og:title: "LLMs.txt生成器 | Firecrawl"
+og:description: "将网站转换为干净、适用于LLM的文本文件"
 icon: "file-text"
-sidebarTitle: "Generate with API"
+sidebarTitle: "使用API生成"
 ---
 
 import GenerateLLMsTxtCURL from "/snippets/v1/generatellmstxt/base/curl.mdx";
@@ -16,20 +16,20 @@ import CheckStatusNode from "/snippets/v1/generatellmstxt/status/js.mdx";
 import StatusPending from "/snippets/v1/generatellmstxt/status/pending.mdx";
 import StatusCompleted from "/snippets/v1/generatellmstxt/status/completed.mdx";
 
-## Introducing LLMs.txt Generator Endpoint (Alpha) 📃
+## LLMs.txt生成器端点介绍（Alpha）📃
 
-The `/llmstxt` endpoint allows you to transform any website into clean, [LLM-ready text files](https://www.firecrawl.dev/blog/How-to-Create-an-llms-txt-File-for-Any-Website). Simply provide a URL, and Firecrawl will crawl the site and generate both `llms.txt` and `llms-full.txt` files that can be used for training or analysis with any LLM.
+`/llmstxt`端点允许您将任何网站转换为干净的[LLM准备就绪的文本文件](https://www.firecrawl.dev/blog/How-to-Create-an-llms-txt-File-for-Any-Website)。只需提供网址，Firecrawl就会爬取该网站并生成可用于与任何LLM进行训练或分析的`llms.txt`和`llms-full.txt`文件。
 
-## How It Works
+## 工作原理
 
-The LLMs.txt Generator:
-1. Crawls the provided website URL and its linked pages
-2. Extracts clean, meaningful text content
-3. Generates two formats:
-   - `llms.txt`: Concise summaries and key information
-   - `llms-full.txt`: Complete text content with more detail
+LLMs.txt生成器：
+1. 爬取提供的网址及其链接页面
+2. 提取干净、有意义的文本内容
+3. 生成两种格式：
+   - `llms.txt`: 简洁总结和关键信息
+   - `llms-full.txt`: 更详细的完整文本内容
 
-### Example Usage
+### 示例用法
 
 <CodeGroup>
 
@@ -39,17 +39,17 @@ The LLMs.txt Generator:
 
 </CodeGroup>
 
-**Key Parameters:**
+**关键参数：**
 
-- **url**: The website URL to generate LLMs.txt files from
-- **maxUrls** (Optional): Maximum number of pages to crawl (1-100, default: 10)
-- **showFullText** (Optional): Generate llms-full.txt in addition to llms.txt (default: false)
+- **url**: 要生成LLMs.txt文件的网站URL
+- **maxUrls** (可选): 要爬取的最大页面数（1-100，默认值：10）
+- **showFullText** (可选): 除了`llms.txt`外，还生成`llms-full.txt`（默认值：false）
 
-See [API Reference](/api-reference/endpoint/llmstxt) for more details.
+有关更多详细信息，请参见[API参考](/api-reference/endpoint/llmstxt)。
 
-## Checking Generation Status
+## 检查生成状态
 
-LLMs.txt generation runs asynchronously. Make the aync call and monitor the status with:
+LLMs.txt生成是异步进行的。进行异步调用并监控状态：
 
 <CodeGroup>
 
@@ -59,32 +59,32 @@ LLMs.txt generation runs asynchronously. Make the aync call and monitor the stat
 
 </CodeGroup>
 
-### Status Examples
+### 状态示例
 
-#### In Progress
+#### 进行中
 
 <StatusPending />
 
-#### Completed
+#### 已完成
 
 <StatusCompleted />
 
-## Known Limitations (Alpha)
+## 已知限制（Alpha）
 
-1. **Access Restrictions**  
-Only publicly accessible pages can be processed. Login-protected or paywalled content is not supported.
+1. **访问限制**  
+只能处理公开可访问的页面。登录保护或付费墙内容不受支持。
 
-2. **Site Size**  
-We are only are allowing processing for up to 5000 URLs during the alpha stage.
+2. **站点大小**  
+在alpha阶段，我们只允许处理最多5000个URL。
 
-3. **Alpha State**  
-As an Alpha feature, the output format and processing may evolve based on feedback.
+3. **Alpha状态**  
+作为一个Alpha功能，输出格式和处理可能会根据反馈而演变。
 
-## Billing and Usage
+## 计费和使用
 
-Billing is based on the number of URLs processed:
+计费基于处理的URL数量：
 
-- Base cost: 1 credit per URL processed
-- Control URL costs with `maxUrls` parameter
+- 基础费用：每个处理的URL收费1个积分
+- 使用`maxUrls`参数控制URL成本
 
-Have feedback or need help? Email [help@firecrawl.dev](mailto:help@firecrawl.dev).
+有反馈或需要帮助吗？发送邮件至 [help@firecrawl.dev](mailto:help@firecrawl.dev)。

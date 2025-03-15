@@ -1,18 +1,17 @@
-
-```python Python
+```python
 from firecrawl import FirecrawlApp
 
-# Initialize the client
+# 初始化客户端
 firecrawl = FirecrawlApp(api_key="your_api_key")
 
-# Check research status
+# 检查研究状态
 status = firecrawl.check_deep_research_status("job_id")
 
-# Print current progress
-print(f"Status: {status['status']}")
-print(f"Progress: {status['currentDepth']}/{status['maxDepth']} iterations")
+# 打印当前进度
+print(f"状态: {status['status']}")
+print(f"进度: {status['currentDepth']}/{status['maxDepth']} 迭代")
 
 if status['status'] == 'completed':
-    print(f"Final Analysis: {status['data']['finalAnalysis']}")
-    print(f"Sources found: {len(status['data']['sources'])}") 
+    print(f"最终分析: {status['data']['finalAnalysis']}")
+    print(f"找到的来源: {len(status['data']['sources'])}")
 ```

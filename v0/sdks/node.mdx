@@ -1,45 +1,44 @@
 ---
 title: 'Node'
-description: 'Firecrawl Node SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Node SDK 是 Firecrawl API 的包装器，帮助您轻松将网站转换为 Markdown。'
 icon: 'node'
 og:title: "Node SDK | Firecrawl"
-og:description: "Firecrawl Node SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Node SDK 是 Firecrawl API 的包装器，帮助您轻松将网站转换为 Markdown。"
 ---
 
-> Note: this is using [v0 version of the Firecrawl API](/v0/introduction) which is being deprecated. We recommend switching to [v1](/sdks/node).
+> 注意：这是使用 [v0 版本的 Firecrawl API](/v0/introduction)，该版本已被弃用。我们建议切换到 [v1](/sdks/node)。
 
-## Installation
+## 安装
 
-To install the Firecrawl Node SDK, you can use npm:
+要安装 Firecrawl Node SDK，您可以使用 npm：
 
 ```bash
 npm install @mendable/firecrawl-js@0.0.36
 ```
 
-## Usage
+## 用法
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` class.
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取一个 API 密钥
+2. 将 API 密钥设置为名为 `FIRECRAWL_API_KEY` 的环境变量，或将其作为参数传递给 `FirecrawlApp` 类。
 
-
-Here's an example of how to use the SDK with error handling:
+以下是如何使用 SDK 并处理错误的示例：
 
 ```js
 import FirecrawlApp from '@mendable/firecrawl-js';
 
-// Initialize the FirecrawlApp with your API key
+// 使用您的 API 密钥初始化 FirecrawlApp
 const app = new FirecrawlApp({ apiKey: "YOUR_API_KEY" });
 
-// Scrape a single URL
+// 抓取单个 URL
 const url = 'https://docs.firecrawl.dev';
 const scrapedData = await app.scrapeUrl(url);
 
-// Crawl a website
+// 爬取一个网站
 const crawlUrl = 'https://docs.firecrawl.dev';
 const params = {
   crawlerOptions: {
     excludes: ['blog/'],
-    includes: [], // leave empty for all pages 
+    includes: [], // 留空以爬取所有页面
     limit: 1000,
   },
   pageOptions: {
@@ -50,19 +49,18 @@ const params = {
 const crawlResult = await app.crawlUrl(crawlUrl, params);
 ```
 
-### Scraping a URL
+### 抓取一个 URL
 
-To scrape a single URL with error handling, use the `scrapeUrl` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要使用错误处理抓取单个 URL，请使用 `scrapeUrl` 方法。它接受 URL 作为参数，并返回抓取的数据作为一个字典。
 
 ```js
 const url = 'https://example.com';
 const scrapedData = await app.scrapeUrl(url);
 ```
 
+### 爬取一个网站
 
-### Crawling a Website
-
-To crawl a website with error handling, use the `crawlUrl` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要使用错误处理爬取一个网站，请使用 `crawlUrl` 方法。它接受起始 URL 和可选参数作为参数。`params` 参数允许您指定爬取作业的其他选项，例如要爬取的最大页面数、允许的域名和输出格式。
 
 ```js
 const crawlUrl = 'https://example.com';
@@ -70,7 +68,7 @@ const crawlUrl = 'https://example.com';
 const params = {
   crawlerOptions: {
     excludes: ['blog/'],
-    includes: [], // leave empty for all pages
+    includes: [], // 留空以爬取所有页面
     limit: 1000,
   },
   pageOptions: {
@@ -89,19 +87,18 @@ const crawlResult = await app.crawlUrl(
 );
 ```
 
+### 检查爬取状态
 
-### Checking Crawl Status
-
-To check the status of a crawl job with error handling, use the `checkCrawlStatus` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+要使用错误处理检查爬取作业的状态，请使用 `checkCrawlStatus` 方法。它接受作业 ID 作为参数，并返回爬取作业的当前状态。
 
 ```js
 const status = await app.checkCrawlStatus(jobId);
 ```
 
-### Extracting structured data from a URL
+### 从 URL 提取结构化数据
 
-With LLM extraction, you can easily extract structured data from any URL. We support zod schema to make it easier for you too. Here is how you to use it:
- 
+使用 LLM 提取，您可以轻松地从任何 URL 中提取结构化数据。我们支持 zod 模式，使您也更容易使用。以下是如何使用它的示例：
+
 ```js
 import FirecrawlApp from "@mendable/firecrawl-js";
 import { z } from "zod";
@@ -110,7 +107,7 @@ const app = new FirecrawlApp({
   apiKey: "fc-YOUR_API_KEY",
 });
 
-// Define schema to extract contents into
+// 定义模式以提取内容到其中
 const schema = z.object({
   top: z
     .array(
@@ -122,7 +119,7 @@ const schema = z.object({
       })
     )
     .length(5)
-    .describe("Top 5 stories on Hacker News"),
+    .describe("Hacker News 上的前五个故事"),
 });
 
 const scrapeResult = await app.scrapeUrl("https://firecrawl.dev", {
@@ -132,20 +129,20 @@ const scrapeResult = await app.scrapeUrl("https://firecrawl.dev", {
 console.log(scrapeResult.data["llm_extraction"]);
 ```
 
-### Search for a query
+### 搜索查询
 
-With the `search` method, you can search for a query in a search engine and get the top results along with the page content for each result. The method takes the query as a parameter and returns the search results.
+使用 `search` 方法，您可以在搜索引擎中搜索查询，并获得顶部结果以及每个结果的页面内容。该方法接受查询作为参数，并返回搜索结果。
+
 
 ```js
 const query = 'what is mendable?';
 const searchResults = await app.search(query, {
   pageOptions: {
-    fetchPageContent: true // Fetch the page content for each search result
+    fetchPageContent: true // 为每个搜索结果获取页面内容
   }
 });
 ```
 
+## 错误处理
 
-## Error Handling
-
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message. The examples above demonstrate how to handle these errors using `try/catch` blocks.
+SDK 处理由 Firecrawl API 返回的错误并引发适当的异常。如果在请求过程中发生错误，将会引发带有描述性错误消息的异常。以上示例展示了如何使用 `try/catch` 块来处理这些错误。

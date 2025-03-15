@@ -1,9 +1,9 @@
 ---
 title: 'Rust'
-description: 'Firecrawl Rust SDK is a library to help you easily scrape and crawl websites, and output the data in a format ready for use with language models (LLMs).'
+description: 'Firecrawl Rust SDK 是一个库，可以帮助您轻松抓取和爬取网站，并将数据以适用于语言模型（LLMs）的格式输出。'
 icon: 'rust'
 og:title: "Rust SDK | Firecrawl"
-og:description: "Firecrawl Rust SDK is a library to help you easily scrape and crawl websites, and output the data in a format ready for use with language models (LLMs)."
+og:description: "Firecrawl Rust SDK 是一个库，可以帮助您轻松抓取和爬取网站，并将数据以适用于语言模型（LLMs）的格式输出。"
 ---
 
 import InstallationRust from '/snippets/v1/installation/rust.mdx'
@@ -14,51 +14,52 @@ import CrawlAsyncRustShort from '/snippets/v1/crawl-async/short/rust.mdx'
 import MapRustShort from '/snippets/v1/map/short/rust.mdx'
 import LLMExtractRust from '/snippets/v1/llm-extract/base/rust.mdx'
 
-## Installation
+## 安装
 
-To install the Firecrawl Rust SDK, add the following to your `Cargo.toml`:
+要安装 Firecrawl Rust SDK，请在您的 `Cargo.toml` 中添加以下内容：
 
 <InstallationRust />
 
-## Usage
+## 使用
 
-First, you need to obtain an API key from [firecrawl.dev](https://firecrawl.dev). Then, you need to initialize the `FirecrawlApp`. From there, you can access functions like `FirecrawlApp::scrape_url`, which let you use our API.
+首先，您需要从 [firecrawl.dev](https://firecrawl.dev) 获取一个 API 密钥。然后，您需要初始化 `FirecrawlApp`。从这里，您可以访问像 `FirecrawlApp::scrape_url` 这样的函数，让您使用我们的 API。
 
-Here's an example of how to use the SDK in Rust:
+以下是如何在 Rust 中使用 SDK 的示例：
 
 <ScrapeAndCrawlRustExample />
 
-### Scraping a URL
+### 抓取 URL
 
-To scrape a single URL, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a `Document`.
+要抓取单个 URL，请使用 `scrape_url` 方法。它接受 URL 作为参数并返回抓取的数据作为 `Document`。
 
 <ScrapeRustShort />
 
-### Scraping with Extract
+### 带提取的抓取
 
-With Extract, you can easily extract structured data from any URL. You need to specify your schema in the JSON Schema format, using the `serde_json::json!` macro.
+使用 Extract，您可以轻松地从任何 URL 中提取结构化数据。您需要使用 JSON Schema 格式指定您的模式，使用 `serde_json::json!` 宏。
 
 <LLMExtractRust />
 
-### Crawling a Website
+### 抓取网站
 
-To crawl a website, use the `crawl_url` method. This will wait for the crawl to complete, which may take a long time based on your starting URL and your options.
+要抓取网站，请使用 `crawl_url` 方法。这将等待抓取完成，这可能需要很长时间，具体取决于您的起始 URL 和您的选项。
 
 <CrawlRustShort />
 
-#### Crawling asynchronously
+#### 异步抓取
 
-To crawl without waiting for the result, use the `crawl_url_async` method. It takes the same parameters, but it returns a `CrawlAsyncRespone` struct, containing the crawl's ID. You can use that ID with the `check_crawl_status` method to check the status at any time. Do note that completed crawls are deleted after 24 hours.
+要抓取而不等待结果，请使用 `crawl_url_async` 方法。它接受相同的参数，但它返回一个 `CrawlAsyncRespone` 结构体，包含抓取的 ID。您可以使用该 ID 与 `check_crawl_status` 方法随时检查状态。请注意，完成的抓取将在 24 小时后删除。
 
 <CrawlAsyncRustShort />
 
-### Map a URL
+### 映射 URL
 
-Map all associated links from a starting URL.
+映射从一个起始 URL 关联的所有链接。
 
 <MapRustShort />
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and by our dependencies, and combines them into the `FirecrawlError` enum, implementing `Error`, `Debug` and `Display`. All of our methods return a `Result<T, FirecrawlError>`.
+SDK 处理由 Firecrawl API 和我们的依赖项返回的错误，并将它们组合到 `FirecrawlError` 枚举中，实现 `Error`、`Debug` 和 `Display`。我们的所有方法都返回一个 `Result<T, FirecrawlError>`。
 
+<ErrorHandlingRust />

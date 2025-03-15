@@ -1,85 +1,88 @@
 ---
-title: "Using LLM Extraction for Customer Insights"
-description: "Using LLM Extraction for Insights and Lead Generation using Make and Firecrawl."
-og:title: "Using LLM Extraction for Customer Insights | Firecrawl"
-og:description: "Using LLM Extraction for Insights and Lead Generation using Make and Firecrawl."
+title: "使用LLM提取客户洞察"
+description: "使用LLM提取洞察和潜在客户生成，利用Make和Firecrawl。"
+og:title: "使用LLM提取客户洞察 | Firecrawl"
+og:description: "使用LLM提取洞察和潜在客户生成，利用Make和Firecrawl。"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此示例使用了[Firecrawl API的v0版本](/v0/introduction)。您可以安装Python SDK的0.0.20版本或Node SDK的0.0.36版本。
 
-### Introduction
+### 引言
 
-Understanding our customers - not just who they are, but what they do—is crucial to tailoring our products and services effectively. When running a self-serve motion, you have so many customers come in the door with little to no knowledge of them. The process of proactively understanding who these folks are has traditionally been time-intensive, involving manual data collection and analysis to gather actionable insights.
+了解我们的客户——不仅仅是他们是谁，还有他们做什么——对于有效地定制我们的产品与服务至关重要。在自助服务模式中，您会遇到许多对您知之甚少的客户。主动了解这些人的过程传统上是耗时的，涉及手动数据收集和分析以获取可行的见解。
 
-However, with the power of LLMs and their capacity for advanced data extraction, we've automated this process. Using LLM extraction and analysis of customer data, LLM we’ve significantly reduced our workload, allowing us to understand and serve our customer base more effectively than ever before.
+然而，借助大型语言模型（LLMs）的力量及其高级数据提取能力，我们已将这一过程自动化。通过使用LLM提取和分析客户数据，我们显著减轻了工作负担，使我们能够比以前更有效地理解和服务于我们的客户群。
 
-If you have limited technical knowledge, you can build an automation that gets targeted information about your customers for the purposes of product direction and lead gen. Here’s how you can do this yourself with [Make](https://make.com/) and [Firecrawl](https://www.firecrawl.dev/).
+如果您的技术知识有限，您可以构建一个自动化工具，以获取有关您的客户的针对性信息，用于产品方向和潜在客户生成。以下是如何使用[Make](https://make.com/)和[Firecrawl](https://www.firecrawl.dev/)来实现这一点的方法。
 
 ---
 
-### Overview of the Tools
+### 工具概述
 
 **Firecrawl**
 
-Firecrawl is a platform for scraping, search, and extraction. It allows you to take data from the web and translate it into LLM-legible markdown or structured data.
+Firecrawl是一个用于抓取、搜索和提取的平台。它允许您从网络获取数据并将其转换为LLM可读的Markdown或结构化数据。
 
-When we want to get information about our customers, we can use Firecrawl’s LLM extraction functionality to specify the specific information we want from their websites.
+当我们想要获取关于我们客户的信息时，我们可以使用Firecrawl的LLM提取功能来指定我们希望从他们的网站获取的具体信息。
 
-**Make.com (formerly Integromat)**
+**Make.com（前身为Integromat）**
 
-Make is an automation platform that allows users to create customized workflows to connect various apps and services without needing deep technical knowledge. It uses a visual interface where users can drag and drop elements to design their automations.
+Make是一个自动化平台，允许用户创建自定义工作流程以连接各种应用程序和服务，而无需深厚的技术知识。它使用一个可视化界面，用户可以在其中拖放元素来设计他们的自动化流程。
 
-We can use Make to connect a spreadsheet of user data to Firecrawl, allowing us to do extraction with just a bit of JSON.
+我们可以使用Make将用户数据的电子表格连接到Firecrawl，只需一点JSON即可进行提取。
 
-### Setting Up the Scenario
+### 设置场景
 
-- Step-by-step guide on setting up the data extraction process.
-- **Connecting Google Sheets to Make.com**
-  - How user data is initially collected and stored.
-- **Configuring the HTTP Request in Make.com**
-  - Description of setting up API requests to Firecrawl.
-  - Purpose of these requests (e.g., extracting company information).
+- 逐步指南，用于设置数据提取过程。
+- **将Google Sheets连接到Make.com**
+  - 如何初步收集和存储用户数据。
+- **在Make.com中配置HTTP请求**
+  - 设置API请求到Firecrawl的描述。
+  - 这些请求的目的（例如，提取公司信息）。
 
-### Preparing our Data
+### 准备我们的数据
 
-Before we get started, we want to make sure we prepare our data for Firecrawl. In this case, I created a simple spreadsheet with imported users from our database. We want to take the email domains of our users and transform them into links using the https:// format:
+在我们开始之前，我们想确保为Firecrawl准备好我们的数据。在这个案例中，我创建了一个包含从我们的数据库导入的用户简单电子表格。我们想获取用户的电子邮件域名，并将它们转换为使用https://格式的链接：
 
 ![](https://i.imgur.com/gssynZa.png)
 
-We also want to add some attributes that we’d like to know about these companies. For me, I want to understand a bit about the company, their industry, and their customers. I’ve set these in columns as:
+我们还想添加一些我们希望了解的公司的属性。对我来说，我想了解一下公司、它们的行业以及它们的客户。我在列中设置了这些属性：
 company_description
 company_type
 who_they_serve
 
-Now that we have our data prepared, we can start setting up our automation in Make!
+现在我们的数据准备好了，我们可以开始在Make中设置我们的自动化流程了！
 
-## Setting up our automation
+## 设置我们的自动化流程
 
-To get our automation running, we simply need to follow a three step process in Make. Here, we will choose three apps in our scenario:
+要让我们自动化运行，我们只需在Make中遵循一个简单的三步过程。在这里，我们将选择我们场景中的三个应用程序：
 
-Google Sheets - Get range values
-HTTP - Make an API key auth request
-Google Sheets - Update a row
+Google Sheets - 获取范围值
+HTTP - 制作API密钥认证请求
+Google Sheets - 更新一行
 
-We’ll also want to add the ignore flow control tool in case we run into any errors. This will keep the automation going.
+我们还将添加忽略流控制工具，以防遇到任何错误。这将保持自动化的运行。
 
 ![](https://i.imgur.com/MdCWv30.png)
 
-This automation will allow us to extract a set of links from our spreadsheet, send them to Firecrawl for data extraction, then repopulate our spreadsheet with the desired info.
+这个自动化将允许我们从电子表格中提取一组链接，将它们发送到Firecrawl进行数据提取，然后用所需的信息重新填充我们的电子表格。
 
-Let’s start by configuring our first app. Our goal is to export all of the URLs so that we can send them to Firecrawl for extraction. Here is the configuration for pulling these URLs:
+首先，我们配置我们的第一个应用程序。我们的目标是导出所有的URL，以便我们可以将它们发送到Firecrawl进行提取。以下是拉取这些URL的配置：
 
 ![](https://i.imgur.com/WHa91kY.png)
 
-\*_Important_ - we want to make sure we start pulling data from the second row. If you include the header, you will eventually run into an error.
+\*_重要提示_ - 我们想确保我们从第二行开始拉取数据。如果你包括标题行，你最终会遇到错误。
 
 ---
 
-Great! Now that we have that configured, we want to prepare to set up our HTTP request. To do this, we will go to https://firecrawl.dev to sign up and get our API key (you can get started for free!). Once you sign up, you can go to https://firecrawl.dev/account to see your API key.
+太好了！现在我们已经配置好了，我们准备设置我们的HTTP请求。为此，我们将前往https://firecrawl.dev注册并获取我们的API密钥（你可以免费开始！）。注册后，你可以前往https://firecrawl.dev/account查看你的API密钥。
 
-We will be using Firecrawl’s Scrape Endpoint. This endpoint will allow us to pull information from a single URL, translate it into clean markdown, and use it to extract the data we need. I will be filling out all the necessary conditions in our Make HTTP request using the API reference in their documentation.
 
-Now in Make, I configure the API call using the documentation from Firecrawl. We will be using POST as the HTTP method and have two headers.
+我们将使用Firecrawl的Scrape端点。这个端点将允许我们从单个URL拉取信息，将其转换为干净的Markdown，并用它来提取我们需要的数据。我将使用他们的文档中的API参考来填写Make HTTP请求中的所有必要条件。
+
+
+现在在Make中，我使用Firecrawl的文档来配置API调用。我们将使用POST作为HTTP方法，并有两个头信息。
+
 
 ```
 Header 1:
@@ -92,16 +95,16 @@ Value: application/json
 ```
 
 ![](https://i.imgur.com/LJ8g142.png)
-We also want to set our body and content types. Here we will do:
+我们还想设置我们的正文和内容类型。在这里，我们将这样做：
 
 ```
 Body type: Raw
 Content type: Json (application/json)
 ```
 
-We will also click ‘yes’ for parsing our response. This will automatically parse our response into JSON.
+我们还将点击“是”以解析我们的响应。这将自动将我们的响应解析为JSON。
 
-The request content is the main meat of what we want to achieve. Here is the request content we will use for this use case:
+请求内容是我们想要实现的主要部分。以下是我们将用于此用例的请求内容：
 
 ```
 {
@@ -138,65 +141,42 @@ The request content is the main meat of what we want to achieve. Here is the req
 
 ![](https://i.imgur.com/DrMc1g2.png)
 
-\*_Note_ the green field in the screenshot is a dynamic item that you can choose in the Make UI. Instead of `url (B)`, the block may be the first URL in your data.
+\*_注意_ 截图中的绿色字段是一个你可以在Make UI中选择的动态项。而不是`url (B)`，该块可能是你的数据中的第一个URL。
+
 
 ![](https://i.imgur.com/D4HCBNe.png)
 
-Fantastic! Now we have configured our HTTP request. Let’s test it to make sure everything is working as it should be. Click ‘run once’ in Make and we should be getting data back.
+太棒了！现在我们已经配置好了HTTP请求。让我们测试一下，确保一切按预期工作。在Make中点击“运行一次”，我们应该会收到数据返回。
 
 ![](https://i.imgur.com/QuQZs0U.png)
 
-When we run, let’s check our first operation. In the output, we should be getting a `status code: 200`, meaning that our API request was successful. In the output, click on data to make sure we got the data we needed.
+当我们运行时，让我们检查我们的第一个操作。在输出中，我们应该得到一个`状态码: 200`，这意味着我们的API请求成功了。在输出中，点击数据以确保我们得到了所需的数据。
 
 ![](https://i.imgur.com/pm614VA.png)
 
-Our output looks successful! In the llm_extraction we are seeing the three attributes of data that we wanted from the website.
+我们的输出看起来很成功！在llm_extraction中，我们看到我们想要从网站获取的三个属性的数据。
 
-\*_Note_ if you are getting a `500` error on your first operation and `200` responses on the subsequent ones, this may be because the operation is trying to be performed on the first row of your data (the header row). This will cause issues importing the data back into sheets! Make sure you start from the second row as mentioned before.
 
-Now that we know the HTTP request is working correctly, all that’s left is to take the outputted JSON from Firecrawl and put it back into our spreadsheet.
+\*_注意_ 如果你的第一个操作出现`500`错误，而后续的操作返回`200`响应，这可能是因为操作试图在你的数据的第一行（标题行）上执行。这将导致问题，因为无法将数据重新导入到表格中！确保如前所述从第二行开始。
+现在我们知道HTTP请求工作正常，剩下的就是将Firecrawl输出的JSON放回我们的电子表格中。
 
 ---
 
-Now we need to take our extracted data and put it back into our spreadsheet. To do this, we will take the outputted JSON from our HTTP request and export the text into the relevant tables.
+现在我们需要将我们提取的数据放回电子表格中。为此，我们将从HTTP请求中输出的JSON中提取文本，并将其导出到相关表格中。
 
-Let’s start by connecting the same google sheet and specifying the Row Number criteria. Here we will just use the Make UI to choose ‘row number’
+让我们从连接相同的Google表格开始，并指定行号标准。在这里，我们将仅使用Make UI来选择“行号”
 
 ![](https://i.imgur.com/BYpPabk.png)
 
-All that’s left is to specify which LLM extracted data goes into which column. Here, we can simply use the UI in Make to set this up.
-
+剩下的就是指定哪些LLM提取的数据进入哪个列。在这里，我们可以简单地使用Make中的UI来进行设置。
 ![](https://i.imgur.com/219tft2.png)
 
-That’s it, now it’s time to test our automation!
-
+就这样，现在是时候测试我们的自动化流程了！
 ---
 
-Let’s click `run once` on the Make UI and make sure everything is running smoothly. The automation should start iterating through link-by-link and populating our spreadsheet in real time.
-
+让我们在Make UI上点击“运行一次”，并确保一切运行顺畅。自动化应该开始逐个链接迭代，并实时填充我们的电子表格。
 ![](https://i.imgur.com/vU1CJlt.png)
 
-We have success! Using Make and Firecrawl, we have been able to extract specific information about our customers without the need of manually going to each of their websites.
+我们成功了！使用Make和Firecrawl，我们能够提取有关我们客户的特定信息，而无需手动访问他们的每个网站。
 
-Looking at the data, we are starting to get a better understanding of our customers. However, we are not limited to these specific characteristics. If we want, we can customize our JSON and Extraction Prompt to find out other information about these companies.
-
-### Use Cases
-
-LLM extraction allows us to quickly get specific information from the web that’s relevant to our business. We can use these automations to do a variety of tasks.
-
-**Product:**
-Especially for self-serve companies, we can understand the trends in industries using our product. What are the top 2-3 industries using our tech and what are they using it for? This will allow us to make better product decisions by prioritizing the right customers to focus on.
-
-**Business Development:**
-By understanding who our users are, we can look for similar companies who could benefit from our product as well. By doing a similar automation, we can extract positive indicators from prospects that would benefit from our product.
-
-We can also use this data to generate better outreach emails that are more specific to the individual prospect.
-
-**Market Research:**
-Market research firms spend tons of time doing secondary research, especially in niche sectors. We can streamline data collection by automating the extraction and organization of data from diverse sources. This automation helps boost efficiency and scales with growing data needs, making it a valuable tool for strategic decision-making in fast-evolving industries.
-
-### Going a step further
-
-This was just a simple example of how we can use LLMs to extract relevant data from websites using a static spreadsheet. You can always make this more advanced by connecting this dynamically to your sign ups. Additionally, you could connect this to other tools to further accelerate your productivity. For example, using the extracted content to generate more personalized copy for prospecting.
-
-If you found this useful, feel free to let me know! I’d love to hear your feedback or learn about what you’re building. You can reach me at eric@mendable.ai. Good luck and happy building!
+查看数据，我们开始更好地了解我们的客户。然而，我们并不仅限于这些具体特征。如果需要，

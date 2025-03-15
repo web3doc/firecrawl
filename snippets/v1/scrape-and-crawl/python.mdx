@@ -1,16 +1,16 @@
-```python Python
+```python
 from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
 
-# Scrape a website:
+# 抓取一个网站:
 scrape_status = app.scrape_url(
   'https://firecrawl.dev', 
   params={'formats': ['markdown', 'html']}
 )
 print(scrape_status)
 
-# Crawl a website:
+# 爬取一个网站:
 crawl_status = app.crawl_url(
   'https://firecrawl.dev', 
   params={

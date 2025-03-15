@@ -1,16 +1,16 @@
 ---
 title: 'Rust'
-description: 'Firecrawl Rust SDK is a library to help you easily scrape and crawl websites, and output the data in a format ready for use with language models (LLMs).'
+description: 'Firecrawl Rust SDK 是一个库，可帮助您轻松抓取和爬取网站，并将数据以适合语言模型（LLMs）使用的格式输出。'
 icon: 'rust'
 og:title: "Rust SDK | Firecrawl"
-og:description: "Firecrawl Rust SDK is a library to help you easily scrape and crawl websites, and output the data in a format ready for use with language models (LLMs)."
+og:description: "Firecrawl Rust SDK 是一个库，可帮助您轻松抓取和爬取网站，并将数据以适合语言模型（LLMs）使用的格式输出。"
 ---
 
-> Note: this is using [v0 version of the Firecrawl API](/v0/introduction) which is being deprecated. We recommend switching to [v1](/sdks/rust).
+> 注意：此文档使用的是 [v0 版本的 Firecrawl API](/v0/introduction)，该版本已被弃用。我们建议切换到 [v1](/sdks/rust)。
 
-## Installation
+## 安装
 
-To install the Firecrawl Rust SDK, add the following to your `Cargo.toml`:
+要安装 Firecrawl Rust SDK，请在您的 `Cargo.toml` 文件中添加以下内容：
 
 ```toml
 [dependencies]
@@ -24,13 +24,12 @@ uuid = { version = "^1.10", features = ["v4"] }
 tokio = { version = "1", features = ["full"] }
 ```
 
+## 使用
 
-## Usage
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取 API 密钥。
+2. 将 API 密钥设置为环境变量 `FIRECRAWL_API_KEY` 或将其作为参数传递给 `FirecrawlApp` 结构体。
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` struct.
-
-Here's an example of how to use the SDK in Rust:
+以下是如何在 Rust 中使用 SDK 的示例：
 
 ```rust
 use firecrawl::FirecrawlApp;
@@ -41,13 +40,13 @@ async fn main() {
   let api_url = "https://api.firecrawl.dev";
   let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
 
-  // Scrape a single URL
+  // 抓取单个 URL
   let scrape_result = app.scrape_url("https://docs.firecrawl.dev", None).await;
   match scrape_result {
     Ok(data) => println!("Scraped Data: {}", data),
     Err(e) => eprintln!("Error occurred while scraping: {}", e),
   }
-  // Crawl a website
+  // 爬取一个网站
   let crawl_params = json!({
     "pageOptions": {
       "onlyMainContent": true
@@ -63,9 +62,9 @@ async fn main() {
 }
 ```
 
-### Scraping a URL
+### 抓取 URL
 
-To scrape a single URL with error handling, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a `serde_json::Value`.
+使用 `scrape_url` 方法抓取单个 URL，并处理错误。它接受 URL 作为参数，并返回抓取的数据作为 `serde_json::Value`。
 
 ```rust
 let scrape_result = app.scrape_url("https://docs.firecrawl.dev", None).await;
@@ -76,15 +75,16 @@ match scrape_result {
 }
 ```
 
-### Crawling a Website
+### 爬取网站
 
-To crawl a website, use the `crawl_url` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+使用 `crawl_url` 方法爬取网站。它接受起始 URL 和可选参数作为参数。`params` 参数允许您指定爬取任务的其他选项，例如要爬取的最大页面数、允许的域和输出格式。
+
 
 ```rust
 let crawl_params = json!({
   "crawlerOptions": {
     "excludes": ["blog/"],
-    "includes": [], // leave empty for all pages
+    "includes": [], // 留空表示所有页面
     "limit": 1000
   },
   "pageOptions": {
@@ -99,10 +99,10 @@ match crawl_result {
 }
 ```
 
+### 检查爬取状态
 
-### Checking Crawl Status
+使用 `check_crawl_status` 方法检查爬取任务的状态。它接受任务 ID 作为参数，并返回当前爬取任务的状态。
 
-To check the status of a crawl job, use the `check_crawl_status` method. It takes the job ID as a parameter and returns the current status of the crawl job.
 
 ```rust
 let job_id = "your_job_id_here";
@@ -114,9 +114,10 @@ match status {
 }
 ```
 
-### Canceling a Crawl Job
+### 取消爬取任务
 
-To cancel a crawl job, use the `cancel_crawl_job` method. It takes the job ID as a parameter and returns the cancellation status of the crawl job.
+使用 `cancel_crawl_job` 方法取消爬取任务。它接受任务 ID 作为参数，并返回爬取任务的取消状态。
+
 
 ```rust
 let job_id = "your_job_id_here";
@@ -128,10 +129,9 @@ match canceled {
 }
 ```
 
+### 从 URL 提取结构化数据
 
-### Extracting structured data from a URL
-
-With LLM extraction, you can easily extract structured data from any URL. Here is how you to use it:
+通过 LLM 提取，您可以从任何 URL 中轻松提取结构化数据。以下是如何使用它的方法：
 
 ```rust
 let json_schema = json!({
@@ -171,10 +171,9 @@ match scrape_result {
 }
 ```
 
+### 搜索查询
 
-### Search for a query
-
-To search the web, get the most relevant results, scrape each page and return the markdown, use the `search` method. The method takes the query as a parameter and returns the search results.
+要搜索网页，获取最相关的结果，抓取每个页面并返回 Markdown 格式的内容，可以使用 `search` 方法。该方法接受查询作为参数，并返回搜索结果。
 
 ```rust
 let query = "What is firecrawl?";
@@ -186,6 +185,6 @@ match search_result {
 }
 ```
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK 会处理 Firecrawl API 返回的错误，并在请求过程中发生错误时抛出适当的异常。如果请求过程中出现错误，将抛出带有描述性错误消息的异常。

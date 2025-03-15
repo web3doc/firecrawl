@@ -1,60 +1,58 @@
 ---
-title: "Rate Limits"
-description: "Rate limits for different pricing plans and API requests"
-og:title: "Rate Limits | Firecrawl"
-og:description: "Rate limits for different pricing plans and API requests"
+title: "速率限制"
+description: "不同定价计划和API请求的速率限制"
+og:title: "速率限制 | Firecrawl"
+og:description: "不同定价计划和API请求的速率限制"
 ---
 
-## Standard Plans
+## 标准计划
 
-| Plan       | /scrape (requests/min) | /map (requests/min) | /crawl (requests/min) | /search (requests/min) |
-|------------|------------------------|--------------------|-----------------------|------------------------|
-| Free       | 10                     | 10                 | 1                     | 5                      |
-| Hobby      | 100                    | 100                | 15                    | 50                     |
-| Standard        | 500                    | 500                | 50                    | 250                    |
-| Growth | 5000                   | 5000               | 250                   | 2500                   |
+| 计划       | /scrape (请求/分钟) | /map (请求/分钟) | /crawl (请求/分钟) | /search (请求/分钟) |
+|------------|----------------------|------------------|--------------------|---------------------|
+| 免费       | 10                   | 10               | 1                  | 5                   |
+| 业余爱好   | 100                  | 100              | 15                 | 50                  |
+| 标准       | 500                  | 500              | 50                 | 250                 |
+| 成长型     | 5000                 | 5000             | 250                | 2500                |
 
-## Concurrent Requests
+## 并发请求
 
-| Plan       | Concurrent Browsers |
-|------------|-----------------------------|
-| Free       | 2                           |
-| Hobby      | 5                           |
-| Standard   | 50                          |
-| Growth     | 100                         |
+| 计划       | 并发浏览器数量 |
+|------------|----------------|
+| 免费       | 2              |
+| 业余爱好   | 5              |
+| 标准       | 50             |
+| 成长型     | 100            |
 
+|          | /crawl/status (请求/分钟) |
+|----------|-------------------------|
+| 默认      | 1500                    |
 
+这些速率限制是为了确保公平使用并保证所有用户都能访问API。如果您需要更高的限制，请联系我们 [hello@firecrawl.com](mailto:hello@firecrawl.com) 讨论定制计划。
 
-|        | /crawl/status (requests/min) |
-|------------|-----------------------------|
-| Default    | 1500                         |
+### 批量端点
 
-These rate limits are enforced to ensure fair usage and availability of the API for all users. If you require higher limits, please contact us at [hello@firecrawl.com](mailto:hello@firecrawl.com) to discuss custom plans.
+批量端点遵循 /crawl 速率限制。
 
-### Batch Endpoints
+## 提取
 
-Batch endpoints follow the /crawl rate limit.
+| 计划      | /extract (请求/分钟) |
+|-----------|----------------------|
+| 免费      | 10                   |
+| 业余爱好   | 100                  |
+| 标准       | 500                  |
+| 成长型     | 5000                 |
+| 企业版     | 定制                  |
 
-## Extract
+|          | /extract/status (请求/分钟) |
+|----------|--------------------------|
+| 免费      | 500                      |
 
-| Plan      | /extract (requests/min) |
-|-----------|------------------------|
-| Free      | 10                     |
-| Hobby     | 100                    |
-| Standard  | 500                    |
-| Growth    | 5000                   |
-| Enterprise | Custom                  |
+## 旧版计划
 
-|        | /extract/status (requests/min) |
-|--------|--------------------------------|
-| Free | 500                       |
+| 计划             | /scrape (请求/分钟) | /crawl (并发请求) | /search (请求/分钟) |
+|------------------|----------------------|--------------------|---------------------|
+| Starter          | 100                  | 15                 | 100                 |
+| 标准旧版         | 200                  | 200                | 200                 |
+| 扩展旧版         | 250                  | 100                | 250                 |
 
-## Legacy Plans
-
-| Plan             | /scrape (requests/min) | /crawl (concurrent req) | /search (requests/min) |
-|------------------|------------------------|-------------------------|------------------------|
-| Starter          | 100                    | 15                      | 100                    |
-| Standard Legacy  | 200                    | 200                     | 200                    |
-| Scaled Legacy    | 250                    | 100                    | 250                    |
-
-If you require higher limits, please contact us at [hello@firecrawl.com](mailto:hello@firecrawl.com) to discuss custom plans.
+如果您需要更高的限制，请联系我们 [hello@firecrawl.com](mailto:hello@firecrawl.com) 讨论定制计划。

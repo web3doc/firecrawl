@@ -3,18 +3,18 @@ import FirecrawlApp, { CrawlParams, CrawlStatusResponse } from '@mendable/firecr
 
 const app = new FirecrawlApp({apiKey: "fc-YOUR_API_KEY"});
 
-// Scrape a website
+// 抓取网站内容
 const scrapeResponse = await app.scrapeUrl('https://firecrawl.dev', {
   formats: ['markdown', 'html'],
 });
 
 if (!scrapeResponse.success) {
-  throw new Error(`Failed to scrape: ${scrapeResponse.error}`)
+  throw new Error(`抓取失败: ${scrapeResponse.error}`);
 }
 
-console.log(scrapeResponse)
+console.log(scrapeResponse);
 
-// Crawl a website
+// 爬取网站内容
 const crawlResponse = await app.crawlUrl('https://firecrawl.dev', {
   limit: 100,
   scrapeOptions: {
@@ -23,8 +23,8 @@ const crawlResponse = await app.crawlUrl('https://firecrawl.dev', {
 });
 
 if (!crawlResponse.success) {
-  throw new Error(`Failed to crawl: ${crawlResponse.error}`)
+  throw new Error(`爬取失败: ${crawlResponse.error}`);
 }
 
-console.log(crawlResponse)
+console.log(crawlResponse);
 ```

@@ -1,15 +1,15 @@
 ---
-title: "Advanced Scraping Guide"
-description: "Learn how to improve your Firecrawl scraping with advanced options."
-og:title: "Advanced Scraping Guide | Firecrawl"
-og:description: "Learn how to improve your Firecrawl scraping with advanced options."
+title: "高级抓取指南"
+description: "了解如何使用高级选项改进您的Firecrawl抓取。"
+og:title: "高级抓取指南 | Firecrawl"
+og:description: "了解如何使用高级选项改进您的Firecrawl抓取。"
 ---
 
-This guide will walk you through the different endpoints of Firecrawl and how to use them fully with all its parameters.
+本指南将引导您了解Firecrawl的不同端点，以及如何充分利用其所有参数使用它们。
 
-## Basic scraping with Firecrawl (/scrape)
+## 使用Firecrawl进行基本抓取 (/scrape)
 
-To scrape a single page and get clean markdown content, you can use the `/scrape` endpoint.
+要抓取单个页面并获得干净的Markdown内容，您可以使用`/scrape`端点。
 
 <CodeGroup>
 
@@ -51,25 +51,26 @@ func main() {
 
   content, err := app.ScrapeURL("docs.firecrawl.dev", nil)
   if err != nil {
-    log.Fatalf("Failed)
+    log.Fatalf("Failed")
   }
 }
 ```
 
 ```rust Rust
-// Install the firecrawl_rs crate with Cargo
+// 使用Cargo安装firecrawl_rs包
 
 use firecrawl_rs::FirecrawlApp;
 #[tokio::main]
 async fn main() {
-  // Initialize the FirecrawlApp with the API key
+  // 使用API密钥初始化FirecrawlApp
   let api_key = "YOUR_API_KEY";
   let api_url = "https://api.firecrawl.dev";
   let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
 
   let scrape_result = app.scrape_url("https://docs.firecrawl.dev", None).await;
   match scrape_result {
-    Ok(data) => println!("Scrape Result:\n{}", data["markdown"]),
+    Ok(data) => println!("Scrape Result:
+{}", data["markdown"]),
     Err(e) => eprintln!("Scrape failed: {}", e),
   }
 }
@@ -86,51 +87,50 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
 
 </CodeGroup>
 
-## Scraping pdfs
+## 抓取PDF文件
 
-**Firecrawl supports scraping pdfs by default.** You can use the `/scrape` endpoint to scrape a pdf link and get the text content of the pdf. You can disable this by setting `pageOptions.parsePDF` to `false`.
-
-## Page Options
-
-When using the `/scrape` endpoint, you can customize the scraping behavior with the `pageOptions` parameter. Here are the available options:
-
-### Getting cleaner content with `onlyMainContent`
-
-- **Type**: `boolean`
-- **Description**: Only return the main content of the page, excluding headers, navigation bars, footers, etc.
-- **Default**: `false`
-
-### Getting the HTML with `includeHtml`
-
-- **Type**: `boolean`
-- **Description**: Include the HTML version content of the page. This will add an `html` key in the response.
-- **Default**: `false`
-
-### Getting the raw HTML with `includeRawHtml`
-
-- **Type**: `boolean`
-- **Description**: Include the raw HTML content of the page. This will add an `rawHtml` key in the response.
-- **Default**: `false`
-
-### Getting a screenshot of the page with `screenshot`
-
-- **Type**: `boolean`
-- **Decription**: Include a screenshot of the top of the page that you are scraping.
-- **Default**: `false`
-
-### Waiting for the page to load with `waitFor`
-
-- **Type**: `integer`
-- **Description**: To be used only as a last resort. Wait for a specified amount of milliseconds for the page to load before fetching content.
-- **Default**: `0`
+**Firecrawl默认支持抓取PDF文件。** 您可以使用`/scrape`端点来抓取PDF链接并获取PDF的文本内容。您可以通过设置`pageOptions.parsePDF`为`false`来禁用此功能。
 
 
-### Example Usage
+## 页面选项
+
+在使用`/scrape`端点时，您可以使用`pageOptions`参数自定义抓取行为。以下是可用的选项：
+
+### 仅返回主内容 (`onlyMainContent`)
+
+- **类型**: `boolean`
+- **描述**: 仅返回页面的主内容，排除头部、导航栏、页脚等。
+- **默认值**: `false`
+
+### 包含HTML内容 (`includeHtml`)
+
+- **类型**: `boolean`
+- **描述**: 包括页面的HTML版本内容。这将在响应中添加一个`html`键。
+- **默认值**: `false`
+
+### 包含原始HTML内容 (`includeRawHtml`)
+
+- **类型**: `boolean`
+- **描述**: 包括页面的原始HTML内容。这将在响应中添加一个`rawHtml`键。
+- **默认值**: `false`
+
+### 获取页面截图 (`screenshot`)
+
+- **类型**: `boolean`
+- **描述**: 包括您正在抓取页面顶部的截图。
+- **默认值**: `false`
+
+### 等待页面加载 (`waitFor`)
+
+- **类型**: `integer`
+- **描述**: 仅作为最后手段使用。等待指定的毫秒数以加载页面内容。
+- **默认值**: `0`
+
+### 示例用法
 
 ```bash
 curl -X POST https://api.firecrawl.dev/v0/scrape \
-    -H '
-    Content-Type: application/json' \
+    -H 'Content-Type: application/json' \
     -H 'Authorization : Bearer YOUR_API_KEY' \
     -d '{
       "url": "https://docs.firecrawl.dev",
@@ -144,36 +144,34 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
     }'
 ```
 
-In this example, the scraper will:
+在此示例中，抓取器将执行以下操作：
 
-- Return only the main content of the page.
-- Include the raw HTML content in the response in the `html` key.
-- Wait for 5000 milliseconds (5 seconds) for the page to load before fetching the content.
+- 仅返回页面的主内容。
+- 包括响应中的原始HTML内容。
+- 在抓取内容前等待5000毫秒（5秒）。
 
-Here is the API Reference for it: [Scrape Endpoint Documentation](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
+这里是API参考：[抓取端点文档](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
 
-## Extractor Options
+## 提取器选项
 
-When using the `/scrape` endpoint, you can specify options for **extracting structured information** from the page content using the `extractorOptions` parameter. Here are the available options:
+在使用`/scrape`端点时，您可以使用`extractorOptions`参数指定从页面内容中**提取结构化信息**的选项。以下是可用的选项：
 
 ### mode
 
-- **Type**: `string`
-- **Enum**: `["llm-extraction", "llm-extraction-from-raw-html"]`
-- **Description**: The extraction mode to use.
+- **类型**: `string`
+- **枚举**: `["llm-extraction", "llm-extraction-from-raw-html"]`
+- **描述**: 使用的提取模式。
 
-  - `llm-extraction`: Extracts information from the cleaned and parsed content.
-  - `llm-extraction-from-raw-html`: Extracts information directly from the raw HTML.
-
-- **Type**: `string`
-- **Description**: A prompt describing what information to extract from the page.
+  - `llm-extraction`: 从清理和解析的内容中提取信息。
+  - `llm-extraction-from-raw-html`: 直接从原始HTML中提取信息。
+- **类型**: `string`
+- **描述**: 描述从页面中提取哪些信息的提示。
 
 ### extractionSchema
 
-- **Type**: `object`
-- **Description**: The schema for the data to be extracted. This defines the structure of the extracted data.
-
-### Example Usage
+- **类型**: `object`
+- **描述**: 要提取的数据的模式。这定义了提取数据的结构。
+### 示例用法
 
 ```bash
 curl -X POST https://api.firecrawl.dev/v0/scrape \
@@ -223,172 +221,4 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
       "ogTitle": "Mendable",
       "ogDescription": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
       "ogUrl": "https://docs.firecrawl.dev/",
-      "ogImage": "https://docs.firecrawl.dev/mendable_new_og1.png",
-      "ogLocaleAlternate": [],
-      "ogSiteName": "Mendable",
-      "sourceURL": "https://docs.firecrawl.dev/"
-    },
-    "llm_extraction": {
-      "company_mission": "Train a secure AI on your technical resources that answers customer and employee questions so your team doesn't have to",
-      "supports_sso": true,
-      "is_open_source": false,
-      "is_in_yc": true
-    }
-  }
-}
-```
-
-## Adjusting Timeout
-
-You can adjust the timeout for the scraping process using the `timeout` parameter in milliseconds.
-
-### Example Usage
-
-```bash
-curl -X POST https://api.firecrawl.dev/v0/scrape \
-    -H '
-    Content-Type: application/json' \
-    -H 'Authorization: Bearer YOUR_API_KEY' \
-    -d '{
-      "url": "https://docs.firecrawl.dev",
-      "timeout": 50000
-    }'
-```
-
-## Crawling Multiple Pages
-
-To crawl multiple pages, you can use the `/crawl` endpoint. This endpoint allows you to specify a base URL you want to crawl and all accessible subpages will be crawled.
-
-```bash
-curl -X POST https://api.firecrawl.dev/v0/crawl \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer YOUR_API_KEY' \
-    -d '{
-      "url": "https://docs.firecrawl.dev"
-    }'
-```
-
-Returns a jobId
-
-```json
-{ "jobId": "1234-5678-9101" }
-```
-
-### Check Crawl Job
-
-Used to check the status of a crawl job and get its result.
-
-```bash
-curl -X GET https://api.firecrawl.dev/v0/crawl/status/1234-5678-9101 \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer YOUR_API_KEY'
-```
-
-### Crawler Options
-
-When using the `/crawl` endpoint, you can customize the crawling behavior with the `crawlerOptions` parameter. Here are the available options:
-
-#### `includes`
-
-- **Type**: `array`
-- **Description**: URL patterns to include in the crawl. Only URLs matching these patterns will be crawled.
-- **Example**: `["/blog/*", "/products/*"]`
-
-#### `excludes`
-
-- **Type**: `array`
-- **Description**: URL patterns to exclude from the crawl. URLs matching these patterns will be skipped.
-- **Example**: `["/admin/*", "/login/*"]`
-
-#### `returnOnlyUrls`
-
-- **Type**: `boolean`
-- **Description**: If set to `true`, the response will only include a list of URLs instead of the full document data.
-- **Default**: `false`
-
-#### `maxDepth`
-
-- **Type**: `integer`
-- **Description**: Maximum depth to crawl relative to the entered URL. A maxDepth of 0 scrapes only the entered URL. A maxDepth of 1 scrapes the entered URL and all pages one level deep. A maxDepth of 2 scrapes the entered URL and all pages up to two levels deep. Higher values follow the same pattern.
-- **Example**: `2`
-
-#### `mode`
-
-- **Type**: `string`
-- **Enum**: `["default", "fast"]`
-- **Description**: The crawling mode to use. `fast` mode crawls websites without a sitemap 4x faster but may be less accurate and is not recommended for heavily JavaScript-rendered websites.
-- **Default**: `default`
-
-#### `limit`
-
-- **Type**: `integer`
-- **Description**: Maximum number of pages to crawl.
-- **Default**: `10000`
-
-### Example Usage
-
-```bash
-curl -X POST https://api.firecrawl.dev/v0/crawl \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization : Bearer YOUR_API_KEY' \
-    -d '{
-      "url": "https://docs.firecrawl.dev",
-      "crawlerOptions": {
-        "includes": ["/blog/*", "/products/*"],
-        "excludes": ["/admin/*", "/login/*"],
-        "returnOnlyUrls": false,
-        "maxDepth": 2,
-        "mode": "fast",
-        "limit": 1000
-      }
-    }'
-```
-
-In this example, the crawler will:
-
-- Only crawl URLs that match the patterns `/blog/*` and `/products/*`.
-- Skip URLs that match the patterns `/admin/*` and `/login/*`.
-- Return the full document data for each page.
-- Crawl up to a maximum depth of 2.
-- Use the fast crawling mode.
-- Crawl a maximum of 1000 pages.
-
-## Page Options + Crawler Options
-
-You can combine the `pageOptions` and `crawlerOptions` parameters to customize both the full crawling behavior.
-
-### Example Usage
-
-```bash
-curl -X POST https://api.firecrawl.dev/v0/crawl \
-    -H 'Content-Type: application/json' \
-    -H 'Authorization: Bearer YOUR_API_KEY' \
-    -d '{
-      "url": "https://docs.firecrawl.dev",
-      "pageOptions": {
-        "onlyMainContent": true,
-        "includeHtml": true,
-        "includeRawHtml": true,
-        "screenshot": true,
-        "waitFor": 5000
-      },
-      "crawlerOptions": {
-        "includes": ["/blog/*", "/products/*"],
-        "maxDepth": 2,
-        "mode": "fast",
-      }
-    }'
-```
-
-In this example, the crawler will:
-
-- Return only the main content for each page.
-- Include the raw HTML content for each page.
-- Wait for 5000 milliseconds for each page to load before fetching its content.
-- Only crawl URLs that match the patterns `/blog/*` and `/products/*`.
-- Crawl up to a maximum depth of 2.
-- Use the fast crawling mode.
-
-## Extractor Options + Crawler Options
-
-Coming soon...
+      "og

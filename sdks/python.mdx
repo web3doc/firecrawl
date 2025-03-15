@@ -1,9 +1,9 @@
 ---
 title: 'Python'
-description: 'Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Python SDK 是 Firecrawl API 的包装器，帮助你轻松将网站转换为 Markdown。'
 icon: 'python'
 og:title: "Python SDK | Firecrawl"
-og:description: "Firecrawl Python SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Python SDK 是 Firecrawl API 的包装器，帮助你轻松将网站转换为 Markdown。"
 ---
 
 import InstallationPython from '/snippets/v1/installation/python.mdx'
@@ -17,71 +17,72 @@ import ExtractPythonShort from '/snippets/v1/extract/short/python.mdx'
 import ScrapeAndCrawlExamplePython from '/snippets/v1/scrape-and-crawl/python.mdx'
 import CrawlWebSocketPythonBase from '/snippets/v1/crawl-websocket/base/python.mdx'
 
-## Installation
+## 安装
 
-To install the Firecrawl Python SDK, you can use pip:
+要安装 Firecrawl Python SDK，可以使用 pip：
 
 <InstallationPython />
 
-## Usage
+## 使用
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` class.
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取一个 API 密钥
+2. 将 API 密钥设置为名为 `FIRECRAWL_API_KEY` 的环境变量，或者将其作为参数传递给 `FirecrawlApp` 类。
 
 
-Here's an example of how to use the SDK:
+以下是一个如何使用 SDK 的示例：
 
 <ScrapeAndCrawlExamplePython />
 
-### Scraping a URL
+### 抓取 URL
 
-To scrape a single URL, use the `scrape_url` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+要抓取单个 URL，请使用 `scrape_url` 方法。它接受 URL 作为参数，并返回抓取到的数据作为字典。
 
 <ScrapePythonShort />
 
-### Crawling a Website
+### 爬取网站
 
-To crawl a website, use the `crawl_url` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要爬取网站，请使用 `crawl_url` 方法。它接受起始 URL 和可选参数作为参数。`params` 参数允许你指定爬取作业的其他选项，例如要爬取的最大页面数、允许的域和输出格式。
 
 <CrawlPythonShort />
 
-### Asynchronous Crawling
+### 异步爬取
 
-To crawl a website asynchronously, use the `crawl_url_async` method. It returns the crawl `ID` which you can use to check the status of the crawl job. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要异步爬取网站，请使用 `crawl_url_async` 方法。它返回爬取作业的 `ID`，你可以用它来检查爬取作业的状态。它接受起始 URL 和可选参数作为参数。`params` 参数允许你指定爬取作业的其他选项，例如要爬取的最大页面数、允许的域和输出格式。
 
 <CrawlAsyncPythonShort />
 
 
-### Checking Crawl Status
+### 检查爬取状态
 
-To check the status of a crawl job, use the `check_crawl_status` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+要检查爬取作业的状态，请使用 `check_crawl_status` 方法。它接受作业 ID 作为参数，并返回爬取作业的当前状态。
 
 <CheckCrawlStatusPythonShort />
 
-### Cancelling a Crawl
+### 取消爬取
 
-To cancel an asynchronous crawl job, use the `cancel_crawl` method. It takes the job ID of the asynchronous crawl as a parameter and returns the cancellation status.
+要取消异步爬取作业，请使用 `cancel_crawl` 方法。它接受异步爬取作业的作业 ID 作为参数，并返回取消状态。
 
 <CancelCrawlPythonShort />
 
-### Map a Website
+### 绘制网站图
 
-Use `map_url` to generate a list of URLs from a website. The `params` argument let you customize the mapping process, including options to exclude subdomains or to utilize the sitemap.
+使用 `map_url` 生成网站的 URL 列表。`params` 参数允许你自定义绘图过程，包括排除子域或利用站点地图的选项。
 
 <MapPythonShort />
 
-{/* ### Extracting Structured Data from Websites
+{/* ### 从网站中提取结构化数据
 
-To extract structured data from websites, use the `extract` method. It takes the URLs to extract data from, a prompt, and a schema as arguments. The schema is a Pydantic model that defines the structure of the extracted data.
+要从网站中提取结构化数据，请使用 `extract` 方法。它接受要提取数据的 URL、提示和架构作为参数。架构是一个 Pydantic 模型，定义了提取数据的结构。
 
 <ExtractPythonShort /> */}
 
-### Crawling a Website with WebSockets
+### 使用 WebSockets 爬取网站
 
-To crawl a website with WebSockets, use the `crawl_url_and_watch` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+要使用 WebSockets 爬取网站，请使用 `crawl_url_and_watch` 方法。它接受起始 URL 和可选参数作为参数。`params` 参数允许你指定爬取作业的其他选项，例如要爬取的最大页面数、允许的域和输出格式。
+
 
 <CrawlWebSocketPythonBase />
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK 处理 Firecrawl API 返回的错误并抛出适当的异常。如果请求过程中发生错误，将会抛出带有描述性错误消息的异常。

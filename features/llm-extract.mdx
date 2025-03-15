@@ -1,8 +1,8 @@
 ---
-title: 'LLM Extract'
-description: 'Extract structured data from pages via LLMs'
-og:title: "Extract | Firecrawl"
-og:description: "Extract structured data from pages via LLMs"
+title: 'LLM 提取'
+description: '通过LLM从页面中提取结构化数据'
+og:title: "提取 | Firecrawl"
+og:description: "通过LLM从页面中提取结构化数据"
 ---
 
 import ExtractCURL from "/snippets/v1/llm-extract/base/curl.mdx";
@@ -13,29 +13,29 @@ import ExtractNoSchemaCURL from "/snippets/v1/llm-extract/no-schema/curl.mdx";
 import ExtractNoSchemaOutput from "/snippets/v1/llm-extract/no-schema/output.mdx";
 
 
-## Scrape and extract structured data with Firecrawl
+## 使用Firecrawl抓取和提取结构化数据
 
-{/* <Warning>Scrape LLM Extract will be deprecated in future versions. Please use the new [Extract](/features/extract) endpoint.</Warning> */}
+{/* <Warning>LLM提取将在未来的更新版本中被弃用。请使用新的[提取](/features/extract)端点。</Warning> */}
 
-Firecrawl leverages Large Language Models (LLMs) to efficiently extract structured data from web pages. Here's how:
+Firecrawl利用大型语言模型（LLM）高效地从网页中提取结构化数据。以下是操作步骤：
 
-1. **Schema Definition:**
-   Define the URL to scrape and the desired data schema using JSON Schema (following OpenAI tool schema). This schema specifies the data structure you expect to extract from the page.
+1. **模式定义：**
+   使用JSON Schema（遵循OpenAI工具模式）定义要抓取的URL和所需的数据模式。该模式指定了您期望从页面中提取的数据结构。
 
-2. **Scrape Endpoint:**
-   Pass the URL and the schema to the scrape endpoint. Documentation for this endpoint can be found here:
-   [Scrape Endpoint Documentation](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
+2. **抓取端点：**
+   将URL和模式传递给抓取端点。该端点的文档可以在这里找到：
+   [抓取端点文档](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
 
-3. **Structured Data Retrieval:**
-   Receive the scraped data in the structured format defined by your schema. You can then use this data as needed in your application or for further processing.
+3. **结构化数据检索：**
+   以您定义的模式接收抓取到的数据。然后，您可以根据需要在应用程序中使用这些数据或进行进一步处理。
 
-This method streamlines data extraction, reducing manual handling and enhancing efficiency.
+这种方法简化了数据提取过程，减少了手动操作并提高了效率。
 
-## Extract structured data
+## 提取结构化数据
 
-### /scrape (with extract) endpoint
+### /scrape（带提取）端点
 
-Used to extract structured data from scraped pages.
+用于从抓取的页面中提取结构化数据。
 
 <CodeGroup>
 
@@ -45,13 +45,13 @@ Used to extract structured data from scraped pages.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractOutput />
 
-### Extracting without schema (New)
+### 无模式提取（新功能）
 
-You can now extract without a schema by just passing a `prompt` to the endpoint. The llm chooses the structure of the data.
+现在可以通过仅传递一个`prompt`给端点来进行无模式提取。LLM会选择数据的结构。
 
 <CodeGroup>
 
@@ -59,14 +59,14 @@ You can now extract without a schema by just passing a `prompt` to the endpoint.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractNoSchemaOutput />
 
-### Extract object
+### 提取对象
 
-The `extract` object accepts the following parameters:
+`extract`对象接受以下参数：
 
-- `schema`: The schema to use for the extraction.
-- `systemPrompt`: The system prompt to use for the extraction.
-- `prompt`: The prompt to use for the extraction without a schema.
+- `schema`: 用于提取的模式。
+- `systemPrompt`: 用于提取的系统提示。
+- `prompt`: 用于无模式提取的提示。

@@ -1,15 +1,16 @@
+```markdown
 ```rust Rust
 use firecrawl::{crawl::{CrawlOptions, CrawlScrapeOptions, CrawlScrapeFormats}, FirecrawlApp};
 
 #[tokio::main]
 async fn main() {
-    // Initialize the FirecrawlApp with the API key
-    let app = FirecrawlApp::new("fc-YOUR_API_KEY").expect("Failed to initialize FirecrawlApp");
+    // 使用API密钥初始化FirecrawlApp
+    let app = FirecrawlApp::new("fc-YOUR_API_KEY").expect("无法初始化FirecrawlApp");
 
-    // Crawl a website
+    // 爬取网站
     let crawl_options = CrawlOptions {
         scrape_options: CrawlScrapeOptions {
-            formats: vec![ CrawlScrapeFormats::Markdown, CrawlScrapeFormats::HTML ].into(),
+            formats: vec![CrawlScrapeFormats::Markdown, CrawlScrapeFormats::HTML].into(),
             ..Default::default()
         }.into(),
         limit: 100.into(),
@@ -21,8 +22,10 @@ async fn main() {
         .await;
 
     match crawl_result {
-        Ok(data) => println!("Crawl Result (used {} credits):\n{:#?}", data.credits_used, data.data),
-        Err(e) => eprintln!("Crawl failed: {}", e),
+        Ok(data) => println!("爬取结果（使用了{}积分）：
+{:#?}", data.credits_used, data.data),
+        Err(e) => eprintln!("爬取失败：{}", e),
     }
 }
+```
 ```

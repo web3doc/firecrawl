@@ -1,8 +1,9 @@
-```python Python
-# inside an async function...
+```python
+Python
+# 在一个异步函数中...
 nest_asyncio.apply()
 
-# Define event handlers
+# 定义事件处理程序
 def on_document(detail):
     print("DOC", detail)
 
@@ -12,19 +13,19 @@ def on_error(detail):
 def on_done(detail):
     print("DONE", detail['status'])
 
-    # Function to start the crawl and watch process
+# 启动爬取和监视过程的函数
 async def start_crawl_and_watch():
-    # Initiate the crawl job and get the watcher
+    # 初始化爬取任务并获取监视器
     watcher = app.crawl_url_and_watch('firecrawl.dev', { 'excludePaths': ['blog/*'], 'limit': 5 })
 
-    # Add event listeners
+    # 添加事件监听器
     watcher.add_event_listener("document", on_document)
     watcher.add_event_listener("error", on_error)
     watcher.add_event_listener("done", on_done)
 
-    # Start the watcher
+    # 启动监视器
     await watcher.connect()
 
-# Run the event loop
+# 运行事件循环
 await start_crawl_and_watch()
 ```

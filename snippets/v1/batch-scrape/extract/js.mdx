@@ -1,9 +1,9 @@
-```js Node
+```js
 import FirecrawlApp, { ScrapeResponse } from '@mendable/firecrawl-js';
 
 const app = new FirecrawlApp({apiKey: "fc-YOUR_API_KEY"});
 
-// Define schema to extract contents into
+// 定义要提取内容的架构
 const schema = {
   type: "object",
   properties: {
@@ -13,31 +13,32 @@ const schema = {
   required: ["title", "description"]
 };
 
-// Scrape multiple websites (synchronous):
+// 同步抓取多个网站：
 const batchScrapeResult = await app.batchScrapeUrls(['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], { 
   formats: ['extract'],
   extract: {
-    prompt: "Extract the title and description from the page.",
+    prompt: "从页面中提取标题和描述。",
     schema: schema
   }
 });
 
 if (!batchScrapeResult.success) {
-  throw new Error(`Failed to scrape: ${batchScrapeResult.error}`)
+  throw new Error(`抓取失败: ${batchScrapeResult.error}`)
 }
-// Output all the results of the batch scrape:
+// 输出批量抓取的所有结果：
 console.log(batchScrapeResult)
 
-// Or, you can use the asynchronous method:
+// 或者，你可以使用异步方法：
 const batchScrapeJob = await app.asyncBulkScrapeUrls(['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], { 
   formats: ['extract'],
   extract: {
-    prompt: "Extract the title and description from the page.",
+    prompt: "从页面中提取标题和描述。",
     schema: schema
   }
 });
 console.log(batchScrapeJob)
 
-// (async) You can then use the job ID to check the status of the batch scrape:
+// (异步) 然后可以使用作业ID检查批量抓取的状态：
 const batchScrapeStatus = await app.checkBatchScrapeStatus(batchScrapeJob.id);
 console.log(batchScrapeStatus)
+```

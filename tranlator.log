@@ -1,0 +1,1997 @@
+nohup: ignoring input
+Found 211 files, 211 need to be translated...
+(node:1347276) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Translating v1-welcome.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b671e@dx1959ac05decb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 3061, completion_tokens: 2052, total_tokens: 5113 }
+}
+Translated file saved to: v1-welcome.mdx
+Translating rate-limits.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6835@dx1959ac14043b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 757, completion_tokens: 703, total_tokens: 1460 }
+}
+Translated file saved to: rate-limits.mdx
+Translating quickstart.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6888@dx1959ac18b45b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 935, completion_tokens: 819, total_tokens: 1754 }
+}
+Translated file saved to: quickstart.mdx
+Translating migrating-from-v0.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6779@dx1959ac1dfc4b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1349, completion_tokens: 1258, total_tokens: 2607 }
+}
+Translated file saved to: migrating-from-v0.mdx
+Translating launch-week.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b656d@dx1959ac25b789a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 2461, completion_tokens: 2049, total_tokens: 4510 }
+}
+Translated file saved to: launch-week.mdx
+Translating introduction.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b66a8@dx1959ac330409a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 4797, completion_tokens: 2069, total_tokens: 6866 }
+}
+Translated file saved to: introduction.mdx
+Translating integrations.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6a45@dx1959ac413d6b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 910, completion_tokens: 866, total_tokens: 1776 }
+}
+Translated file saved to: integrations.mdx
+Translating development.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6870@dx1959ac469cc9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 815, completion_tokens: 726, total_tokens: 1541 }
+}
+Translated file saved to: development.mdx
+Translating advanced-scraping-guide.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6b17@dx1959ac4b5fcb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 5286, completion_tokens: 2050, total_tokens: 7336 }
+}
+Translated file saved to: advanced-scraping-guide.mdx
+Translating README.md...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6e16@dx1959ac5a53eb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 532, completion_tokens: 496, total_tokens: 1028 }
+}
+Translated file saved to: README.md
+Translating v0/introduction.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7087@dx1959ac5dab2b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 5011, completion_tokens: 2068, total_tokens: 7079 }
+}
+Translated file saved to: v0/introduction.mdx
+Translating v0/advanced-scraping-guide.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b71f1@dx1959ac6c5bbb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 3833, completion_tokens: 2054, total_tokens: 5887 }
+}
+Translated file saved to: v0/advanced-scraping-guide.mdx
+Translating v0/sdks/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b6f09@dx1959ac79e94b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1957, completion_tokens: 1873, total_tokens: 3830 }
+}
+Translated file saved to: v0/sdks/rust.mdx
+Translating v0/sdks/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b742e@dx1959ac85e8ab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1307, completion_tokens: 1188, total_tokens: 2495 }
+}
+Translated file saved to: v0/sdks/python.mdx
+Translating v0/sdks/overview.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7283@dx1959ac8da1eb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 285, completion_tokens: 244, total_tokens: 529 }
+}
+Translated file saved to: v0/sdks/overview.mdx
+Translating v0/sdks/node.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b70dc@dx1959ac8f6b5b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1338, completion_tokens: 1258, total_tokens: 2596 }
+}
+Translated file saved to: v0/sdks/node.mdx
+Translating v0/sdks/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7184@dx1959ac97c17b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1730, completion_tokens: 1627, total_tokens: 3357 }
+}
+Translated file saved to: v0/sdks/go.mdx
+Translating v0/features/scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b76c3@dx1959aca2fd9b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1272, completion_tokens: 1185, total_tokens: 2457 }
+}
+Translated file saved to: v0/features/scrape.mdx
+Translating v0/features/extract.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b70e6@dx1959acaac6c9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 2422, completion_tokens: 2054, total_tokens: 4476 }
+}
+Translated file saved to: v0/features/extract.mdx
+Translating v0/features/crawl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b788f@dx1959acb80a3b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1885, completion_tokens: 1821, total_tokens: 3706 }
+}
+Translated file saved to: v0/features/crawl.mdx
+Translating v0/api-reference/introduction.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b76c4@dx1959acc3782b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 424, completion_tokens: 347, total_tokens: 771 }
+}
+Translated file saved to: v0/api-reference/introduction.mdx
+Translating v0/api-reference/endpoint/status.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7702@dx1959acc5b65b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 151, completion_tokens: 104, total_tokens: 255 }
+}
+Translated file saved to: v0/api-reference/endpoint/status.mdx
+Translating v0/api-reference/endpoint/search.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7718@dx1959acc68d2b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 162, completion_tokens: 117, total_tokens: 279 }
+}
+Translated file saved to: v0/api-reference/endpoint/search.mdx
+Translating v0/api-reference/endpoint/scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b79db@dx1959acc774db8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 69, completion_tokens: 26, total_tokens: 95 }
+}
+Translated file saved to: v0/api-reference/endpoint/scrape.mdx
+Translating v0/api-reference/endpoint/llm-extract.mdx...
+Translation error: 500 ClientMsgError:(01:14:09.211) user content is empty (sid: cha000b7312@dx1959acc83829a4b532)
+InternalServerError: 500 ClientMsgError:(01:14:09.211) user content is empty (sid: cha000b7312@dx1959acc83829a4b532)
+    at APIError.generate (file:///home/neo/github/web3doc/translator/node_modules/openai/error.mjs:62:20)
+    at OpenAI.makeStatusError (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:293:25)
+    at OpenAI.makeRequest (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:337:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async translateContent (file:///home/neo/github/web3doc/translator/src/index.js:54:22)
+    at async processFile (file:///home/neo/github/web3doc/translator/src/index.js:88:31)
+    at async main (file:///home/neo/github/web3doc/translator/src/index.js:140:7) {
+  status: 500,
+  headers: {
+    'access-control-allow-origin': '*',
+    'cache-control': 'no-cache',
+    connection: 'keep-alive',
+    'content-length': '162',
+    'content-type': 'application/json',
+    date: 'Sat, 15 Mar 2025 17:14:09 GMT',
+    via: 'kong/1.3.0',
+    'x-kong-proxy-latency': '1',
+    'x-kong-upstream-latency': '65'
+  },
+  request_id: undefined,
+  error: {
+    message: 'ClientMsgError:(01:14:09.211) user content is empty (sid: cha000b7312@dx1959acc83829a4b532)',
+    type: 'api_error',
+    param: null,
+    code: '10003'
+  },
+  code: '10003',
+  param: null,
+  type: 'api_error'
+}
+Translating v0/api-reference/endpoint/crawl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7313@dx1959acc83ef9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 68, completion_tokens: 26, total_tokens: 94 }
+}
+Translated file saved to: v0/api-reference/endpoint/crawl.mdx
+Translating v0/api-reference/endpoint/crawl-cancel.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b79f5@dx1959acc898cb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 76, completion_tokens: 34, total_tokens: 110 }
+}
+Translated file saved to: v0/api-reference/endpoint/crawl-cancel.mdx
+Translating snippets/snippet-intro.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b75e9@dx1959acc9088b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 103, completion_tokens: 40, total_tokens: 143 }
+}
+Translated file saved to: snippets/snippet-intro.mdx
+Translating snippets/v1/scrape-and-crawl/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b75f1@dx1959acc9766b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 518, completion_tokens: 470, total_tokens: 988 }
+}
+Translated file saved to: snippets/v1/scrape-and-crawl/rust.mdx
+Translating snippets/v1/scrape-and-crawl/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a3a@dx1959accc76eb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 219, completion_tokens: 178, total_tokens: 397 }
+}
+Translated file saved to: snippets/v1/scrape-and-crawl/python.mdx
+Translating snippets/v1/scrape-and-crawl/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7377@dx1959accda839a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 292, completion_tokens: 250, total_tokens: 542 }
+}
+Translated file saved to: snippets/v1/scrape-and-crawl/js.mdx
+Translating snippets/v1/scrape-and-crawl/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b739b@dx1959accf7519a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 479, completion_tokens: 433, total_tokens: 912 }
+}
+Translated file saved to: snippets/v1/scrape-and-crawl/go.mdx
+Translating snippets/v1/scrape/short/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7684@dx1959acd29b9b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 178, completion_tokens: 142, total_tokens: 320 }
+}
+Translated file saved to: snippets/v1/scrape/short/rust.mdx
+Translating snippets/v1/scrape/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7810@dx1959acd3e00b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 96, completion_tokens: 54, total_tokens: 150 }
+}
+Translated file saved to: snippets/v1/scrape/short/python.mdx
+Translating snippets/v1/scrape/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b76a9@dx1959acd44dfb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 131, completion_tokens: 87, total_tokens: 218 }
+}
+Translated file saved to: snippets/v1/scrape/short/js.mdx
+Translating snippets/v1/scrape/short/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ad8@dx1959acd4f39b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 135, completion_tokens: 93, total_tokens: 228 }
+}
+Translated file saved to: snippets/v1/scrape/short/go.mdx
+Translating snippets/v1/scrape/mobile/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b741b@dx1959acd5beb9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 143, completion_tokens: 101, total_tokens: 244 }
+}
+Translated file saved to: snippets/v1/scrape/mobile/python.mdx
+Translating snippets/v1/scrape/mobile/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7430@dx1959acd67ba9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 190, completion_tokens: 147, total_tokens: 337 }
+}
+Translated file saved to: snippets/v1/scrape/mobile/js.mdx
+Translating snippets/v1/scrape/mobile/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7867@dx1959acd79cbb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 135, completion_tokens: 95, total_tokens: 230 }
+}
+Translated file saved to: snippets/v1/scrape/mobile/curl.mdx
+Translating snippets/v1/scrape/location/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b745a@dx1959acd84b39a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 167, completion_tokens: 125, total_tokens: 292 }
+}
+Translated file saved to: snippets/v1/scrape/location/python.mdx
+Translating snippets/v1/scrape/location/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b2f@dx1959acd92cfb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 210, completion_tokens: 166, total_tokens: 376 }
+}
+Translated file saved to: snippets/v1/scrape/location/js.mdx
+Translating snippets/v1/scrape/location/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b789f@dx1959acda6cdb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 159, completion_tokens: 119, total_tokens: 278 }
+}
+Translated file saved to: snippets/v1/scrape/location/curl.mdx
+Translating snippets/v1/scrape/base/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b78b7@dx1959acdb5f4b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 276, completion_tokens: 228, total_tokens: 504 }
+}
+Translated file saved to: snippets/v1/scrape/base/rust.mdx
+Translating snippets/v1/scrape/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b774e@dx1959acdd09fb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 129, completion_tokens: 87, total_tokens: 216 }
+}
+Translated file saved to: snippets/v1/scrape/base/python.mdx
+Translating snippets/v1/scrape/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b93@dx1959acddad1b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 394, completion_tokens: 343, total_tokens: 737 }
+}
+Translated file saved to: snippets/v1/scrape/base/output.mdx
+Translating snippets/v1/scrape/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b74f2@dx1959acdff5f9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 189, completion_tokens: 146, total_tokens: 335 }
+}
+Translated file saved to: snippets/v1/scrape/base/js.mdx
+Translating snippets/v1/scrape/base/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7bdd@dx1959ace120ab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 295, completion_tokens: 249, total_tokens: 544 }
+}
+Translated file saved to: snippets/v1/scrape/base/go.mdx
+Translating snippets/v1/scrape/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c07@dx1959ace306cb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 140, completion_tokens: 100, total_tokens: 240 }
+}
+Translated file saved to: snippets/v1/scrape/base/curl.mdx
+Translating snippets/v1/scrape/actions/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7534@dx1959ace3c779a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 335, completion_tokens: 293, total_tokens: 628 }
+}
+Translated file saved to: snippets/v1/scrape/actions/python.mdx
+Translating snippets/v1/scrape/actions/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7990@dx1959ace5b04b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 464, completion_tokens: 417, total_tokens: 881 }
+}
+Translated file saved to: snippets/v1/scrape/actions/output.mdx
+Translating snippets/v1/scrape/actions/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b79c7@dx1959ace880fb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 360, completion_tokens: 316, total_tokens: 676 }
+}
+Translated file saved to: snippets/v1/scrape/actions/js.mdx
+Translating snippets/v1/scrape/actions/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7846@dx1959acea938b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 315, completion_tokens: 275, total_tokens: 590 }
+}
+Translated file saved to: snippets/v1/scrape/actions/curl.mdx
+Translating snippets/v1/map/short/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b786c@dx1959acec58ab894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 121, completion_tokens: 78, total_tokens: 199 }
+}
+Translated file saved to: snippets/v1/map/short/rust.mdx
+Translating snippets/v1/map/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a12@dx1959acecf72b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 77, completion_tokens: 37, total_tokens: 114 }
+}
+Translated file saved to: snippets/v1/map/short/python.mdx
+Translating snippets/v1/map/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a1d@dx1959aced529b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 104, completion_tokens: 64, total_tokens: 168 }
+}
+Translated file saved to: snippets/v1/map/short/js.mdx
+Translating snippets/v1/map/short/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7886@dx1959acedd6cb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 107, completion_tokens: 66, total_tokens: 173 }
+}
+Translated file saved to: snippets/v1/map/short/go.mdx
+Translating snippets/v1/map/base/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a34@dx1959acee807b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 200, completion_tokens: 163, total_tokens: 363 }
+}
+Translated file saved to: snippets/v1/map/base/rust.mdx
+Translating snippets/v1/map/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7610@dx1959acefdc99a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 110, completion_tokens: 70, total_tokens: 180 }
+}
+Translated file saved to: snippets/v1/map/base/python.mdx
+Translating snippets/v1/map/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b78a7@dx1959acf065cb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 145, completion_tokens: 105, total_tokens: 250 }
+}
+Translated file saved to: snippets/v1/map/base/output.mdx
+Translating snippets/v1/map/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b78b9@dx1959acf155eb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 158, completion_tokens: 117, total_tokens: 275 }
+}
+Translated file saved to: snippets/v1/map/base/js.mdx
+Translating snippets/v1/map/base/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b78cd@dx1959acf2447b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 265, completion_tokens: 221, total_tokens: 486 }
+}
+Translated file saved to: snippets/v1/map/base/go.mdx
+Translating snippets/v1/map/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d37@dx1959acf3d91b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 122, completion_tokens: 82, total_tokens: 204 }
+}
+Translated file saved to: snippets/v1/map/base/curl.mdx
+Translating snippets/v1/llm-extract/no-schema/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ac2@dx1959acf4752b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 327, completion_tokens: 279, total_tokens: 606 }
+}
+Translated file saved to: snippets/v1/llm-extract/no-schema/output.mdx
+Translating snippets/v1/llm-extract/no-schema/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b793e@dx1959acf6796b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 160, completion_tokens: 120, total_tokens: 280 }
+}
+Translated file saved to: snippets/v1/llm-extract/no-schema/curl.mdx
+Translating snippets/v1/llm-extract/base/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d8f@dx1959acf76c1b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 424, completion_tokens: 385, total_tokens: 809 }
+}
+Translated file saved to: snippets/v1/llm-extract/base/rust.mdx
+Translating snippets/v1/llm-extract/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b3a@dx1959acf9f5cb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 208, completion_tokens: 168, total_tokens: 376 }
+}
+Translated file saved to: snippets/v1/llm-extract/base/python.mdx
+Translating snippets/v1/llm-extract/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7993@dx1959acfb5f2b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 360, completion_tokens: 306, total_tokens: 666 }
+}
+Translated file saved to: snippets/v1/llm-extract/base/output.mdx
+Translating snippets/v1/llm-extract/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b80@dx1959acfd7c1b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 263, completion_tokens: 219, total_tokens: 482 }
+}
+Translated file saved to: snippets/v1/llm-extract/base/js.mdx
+Translating snippets/v1/llm-extract/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e3d@dx1959acff1fab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 303, completion_tokens: 263, total_tokens: 566 }
+}
+Translated file saved to: snippets/v1/llm-extract/base/curl.mdx
+Translating snippets/v1/installation/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7768@dx1959ad010519a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 90, completion_tokens: 51, total_tokens: 141 }
+}
+Translated file saved to: snippets/v1/installation/rust.mdx
+Translating snippets/v1/installation/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7bca@dx1959ad0184bb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 53, completion_tokens: 13, total_tokens: 66 }
+}
+Translated file saved to: snippets/v1/installation/python.mdx
+Translating snippets/v1/installation/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e76@dx1959ad01c3bb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 58, completion_tokens: 18, total_tokens: 76 }
+}
+Translated file saved to: snippets/v1/installation/js.mdx
+Translating snippets/v1/installation/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a18@dx1959ad020cbb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 63, completion_tokens: 23, total_tokens: 86 }
+}
+Translated file saved to: snippets/v1/installation/go.mdx
+Translating snippets/v1/generatellmstxt/status/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a1c@dx1959ad024e4b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 278, completion_tokens: 241, total_tokens: 519 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/status/python.mdx
+Translating snippets/v1/generatellmstxt/status/pending.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b77a0@dx1959ad043fb9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 176, completion_tokens: 132, total_tokens: 308 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/status/pending.mdx
+Translating snippets/v1/generatellmstxt/status/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a52@dx1959ad05619b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 289, completion_tokens: 252, total_tokens: 541 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/status/js.mdx
+Translating snippets/v1/generatellmstxt/status/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c35@dx1959ad07370b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 86, completion_tokens: 45, total_tokens: 131 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/status/curl.mdx
+Translating snippets/v1/generatellmstxt/status/completed.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ed7@dx1959ad07a19b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 335, completion_tokens: 271, total_tokens: 606 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/status/completed.mdx
+Translating snippets/v1/generatellmstxt/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ef7@dx1959ad09a79b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 241, completion_tokens: 201, total_tokens: 442 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/base/python.mdx
+Translating snippets/v1/generatellmstxt/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ac7@dx1959ad0b05eb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 335, completion_tokens: 273, total_tokens: 608 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/base/output.mdx
+Translating snippets/v1/generatellmstxt/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7f28@dx1959ad0ce36b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 239, completion_tokens: 199, total_tokens: 438 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/base/js.mdx
+Translating snippets/v1/generatellmstxt/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cb2@dx1959ad0e60fb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 203, completion_tokens: 164, total_tokens: 367 }
+}
+Translated file saved to: snippets/v1/generatellmstxt/base/curl.mdx
+Translating snippets/v1/extract/websearch/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cc6@dx1959ad0f96db8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 173, completion_tokens: 127, total_tokens: 300 }
+}
+Translated file saved to: snippets/v1/extract/websearch/python.mdx
+Translating snippets/v1/extract/websearch/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b2c@dx1959ad109feb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 248, completion_tokens: 195, total_tokens: 443 }
+}
+Translated file saved to: snippets/v1/extract/websearch/output.mdx
+Translating snippets/v1/extract/websearch/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b4a@dx1959ad1204db894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 220, completion_tokens: 179, total_tokens: 399 }
+}
+Translated file saved to: snippets/v1/extract/websearch/js.mdx
+Translating snippets/v1/extract/websearch/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b78ad@dx1959ad1337a9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 176, completion_tokens: 130, total_tokens: 306 }
+}
+Translated file saved to: snippets/v1/extract/websearch/curl.mdx
+Translating snippets/v1/extract/status/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7fa5@dx1959ad14347b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 251, completion_tokens: 210, total_tokens: 461 }
+}
+Translated file saved to: snippets/v1/extract/status/python.mdx
+Translating snippets/v1/extract/status/pending.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7fc9@dx1959ad15deab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 104, completion_tokens: 64, total_tokens: 168 }
+}
+Translated file saved to: snippets/v1/extract/status/pending.mdx
+Translating snippets/v1/extract/status/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d46@dx1959ad167edb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 263, completion_tokens: 223, total_tokens: 486 }
+}
+Translated file saved to: snippets/v1/extract/status/js.mdx
+Translating snippets/v1/extract/status/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7bc3@dx1959ad17f92b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 103, completion_tokens: 63, total_tokens: 166 }
+}
+Translated file saved to: snippets/v1/extract/status/curl.mdx
+Translating snippets/v1/extract/status/completed.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ffb@dx1959ad18904b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 192, completion_tokens: 143, total_tokens: 335 }
+}
+Translated file saved to: snippets/v1/extract/status/completed.mdx
+Translating snippets/v1/extract/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7923@dx1959ad19bac9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 228, completion_tokens: 181, total_tokens: 409 }
+}
+Translated file saved to: snippets/v1/extract/short/python.mdx
+Translating snippets/v1/extract/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d9f@dx1959ad1b310b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 182, completion_tokens: 137, total_tokens: 319 }
+}
+Translated file saved to: snippets/v1/extract/short/js.mdx
+Translating snippets/v1/extract/short/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7dad@dx1959ad1c47ab8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 194, completion_tokens: 153, total_tokens: 347 }
+}
+Translated file saved to: snippets/v1/extract/short/curl.mdx
+Translating snippets/v1/extract/no-schema/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7dc2@dx1959ad1d767b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 149, completion_tokens: 105, total_tokens: 254 }
+}
+Translated file saved to: snippets/v1/extract/no-schema/python.mdx
+Translating snippets/v1/extract/no-schema/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c32@dx1959ad1e49db894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 95, completion_tokens: 60, total_tokens: 155 }
+}
+Translated file saved to: snippets/v1/extract/no-schema/output.mdx
+Translating snippets/v1/extract/no-schema/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b798b@dx1959ad1ed969a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 194, completion_tokens: 158, total_tokens: 352 }
+}
+Translated file saved to: snippets/v1/extract/no-schema/js.mdx
+Translating snippets/v1/extract/no-schema/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c51@dx1959ad1feebb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 163, completion_tokens: 120, total_tokens: 283 }
+}
+Translated file saved to: snippets/v1/extract/no-schema/curl.mdx
+Translating snippets/v1/extract/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b79b2@dx1959ad20e899a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 258, completion_tokens: 209, total_tokens: 467 }
+}
+Translated file saved to: snippets/v1/extract/base/python.mdx
+Translating snippets/v1/extract/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e21@dx1959ad227ccb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 150, completion_tokens: 103, total_tokens: 253 }
+}
+Translated file saved to: snippets/v1/extract/base/output.mdx
+Translating snippets/v1/extract/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e2a@dx1959ad235c6b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 321, completion_tokens: 269, total_tokens: 590 }
+}
+Translated file saved to: snippets/v1/extract/base/js.mdx
+Translating snippets/v1/extract/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cb0@dx1959ad2529eb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 354, completion_tokens: 305, total_tokens: 659 }
+}
+Translated file saved to: snippets/v1/extract/base/curl.mdx
+Translating snippets/v1/extract/async-response/async.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cd2@dx1959ad27364b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 100, completion_tokens: 60, total_tokens: 160 }
+}
+Translated file saved to: snippets/v1/extract/async-response/async.mdx
+Translating snippets/v1/deep-research/status/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7a59@dx1959ad27dfe9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 207, completion_tokens: 164, total_tokens: 371 }
+}
+Translated file saved to: snippets/v1/deep-research/status/python.mdx
+Translating snippets/v1/deep-research/status/pending.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8128@dx1959ad292dbb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 349, completion_tokens: 294, total_tokens: 643 }
+}
+Translated file saved to: snippets/v1/deep-research/status/pending.mdx
+Translating snippets/v1/deep-research/status/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7aaf@dx1959ad2b5299a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 213, completion_tokens: 173, total_tokens: 386 }
+}
+Translated file saved to: snippets/v1/deep-research/status/js.mdx
+Translating snippets/v1/deep-research/status/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d26@dx1959ad2c7eab894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 87, completion_tokens: 46, total_tokens: 133 }
+}
+Translated file saved to: snippets/v1/deep-research/status/curl.mdx
+Translating snippets/v1/deep-research/status/completed.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b816d@dx1959ad2ced7b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 592, completion_tokens: 507, total_tokens: 1099 }
+}
+Translated file saved to: snippets/v1/deep-research/status/completed.mdx
+Translating snippets/v1/deep-research/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d70@dx1959ad304ceb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 280, completion_tokens: 232, total_tokens: 512 }
+}
+Translated file saved to: snippets/v1/deep-research/base/python.mdx
+Translating snippets/v1/deep-research/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d8a@dx1959ad3216eb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 393, completion_tokens: 311, total_tokens: 704 }
+}
+Translated file saved to: snippets/v1/deep-research/base/output.mdx
+Translating snippets/v1/deep-research/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7b73@dx1959ad346739a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 281, completion_tokens: 233, total_tokens: 514 }
+}
+Translated file saved to: snippets/v1/deep-research/base/js.mdx
+Translating snippets/v1/deep-research/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b820b@dx1959ad3617fb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 160, completion_tokens: 116, total_tokens: 276 }
+}
+Translated file saved to: snippets/v1/deep-research/base/curl.mdx
+Translating snippets/v1/crawl-websocket/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b821d@dx1959ad37088b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 297, completion_tokens: 258, total_tokens: 555 }
+}
+Translated file saved to: snippets/v1/crawl-websocket/base/python.mdx
+Translating snippets/v1/crawl-websocket/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8244@dx1959ad38cfeb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 166, completion_tokens: 126, total_tokens: 292 }
+}
+Translated file saved to: snippets/v1/crawl-websocket/base/js.mdx
+Translating snippets/v1/crawl-webhook/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7bf0@dx1959ad39e6d9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 151, completion_tokens: 111, total_tokens: 262 }
+}
+Translated file saved to: snippets/v1/crawl-webhook/base/curl.mdx
+Translating snippets/v1/crawl-status/short/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c03@dx1959ad3aecc9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 123, completion_tokens: 81, total_tokens: 204 }
+}
+Translated file saved to: snippets/v1/crawl-status/short/rust.mdx
+Translating snippets/v1/crawl-status/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c0e@dx1959ad3b8829a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 75, completion_tokens: 34, total_tokens: 109 }
+}
+Translated file saved to: snippets/v1/crawl-status/short/python.mdx
+Translating snippets/v1/crawl-status/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8272@dx1959ad3be1ab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 110, completion_tokens: 71, total_tokens: 181 }
+}
+Translated file saved to: snippets/v1/crawl-status/short/js.mdx
+Translating snippets/v1/crawl-status/short/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c2b@dx1959ad3c7939a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 110, completion_tokens: 72, total_tokens: 182 }
+}
+Translated file saved to: snippets/v1/crawl-status/short/go.mdx
+Translating snippets/v1/crawl-status/short/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8287@dx1959ad3d203b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 105, completion_tokens: 65, total_tokens: 170 }
+}
+Translated file saved to: snippets/v1/crawl-status/short/curl.mdx
+Translating snippets/v1/crawl-status/base/output-scraping.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c48@dx1959ad3db6a9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 414, completion_tokens: 371, total_tokens: 785 }
+}
+Translated file saved to: snippets/v1/crawl-status/base/output-scraping.mdx
+Translating snippets/v1/crawl-status/base/output-completed.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c73@dx1959ad405719a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 412, completion_tokens: 368, total_tokens: 780 }
+}
+Translated file saved to: snippets/v1/crawl-status/base/output-completed.mdx
+Translating snippets/v1/crawl-delete/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c8e@dx1959ad42dcc9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 68, completion_tokens: 25, total_tokens: 93 }
+}
+Translated file saved to: snippets/v1/crawl-delete/short/python.mdx
+Translating snippets/v1/crawl-delete/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c94@dx1959ad432319a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 72, completion_tokens: 33, total_tokens: 105 }
+}
+Translated file saved to: snippets/v1/crawl-delete/short/js.mdx
+Translating snippets/v1/crawl-delete/short/WIP.rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7c99@dx1959ad4373b9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 47, completion_tokens: 7, total_tokens: 54 }
+}
+Translated file saved to: snippets/v1/crawl-delete/short/WIP.rust.mdx
+Translating snippets/v1/crawl-delete/short/WIP.go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ea8@dx1959ad43acfb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 46, completion_tokens: 6, total_tokens: 52 }
+}
+Translated file saved to: snippets/v1/crawl-delete/short/WIP.go.mdx
+Translating snippets/v1/crawl-delete/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ca2@dx1959ad43efa9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 58, completion_tokens: 17, total_tokens: 75 }
+}
+Translated file saved to: snippets/v1/crawl-delete/base/output.mdx
+Translating snippets/v1/crawl-async/short/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ca6@dx1959ad443129a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 154, completion_tokens: 118, total_tokens: 272 }
+}
+Translated file saved to: snippets/v1/crawl-async/short/rust.mdx
+Translating snippets/v1/crawl-async/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8308@dx1959ad4539fb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 119, completion_tokens: 78, total_tokens: 197 }
+}
+Translated file saved to: snippets/v1/crawl-async/short/python.mdx
+Translating snippets/v1/crawl-async/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8318@dx1959ad45d0cb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 142, completion_tokens: 102, total_tokens: 244 }
+}
+Translated file saved to: snippets/v1/crawl-async/short/js.mdx
+Translating snippets/v1/crawl-async/short/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ede@dx1959ad46a99b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 109, completion_tokens: 69, total_tokens: 178 }
+}
+Translated file saved to: snippets/v1/crawl-async/short/go.mdx
+Translating snippets/v1/crawl-async/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cd7@dx1959ad4753f9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 108, completion_tokens: 67, total_tokens: 175 }
+}
+Translated file saved to: snippets/v1/crawl-async/base/output.mdx
+Translating snippets/v1/crawl/short/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b833f@dx1959ad47f28b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 243, completion_tokens: 206, total_tokens: 449 }
+}
+Translated file saved to: snippets/v1/crawl/short/rust.mdx
+Translating snippets/v1/crawl/short/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7cf7@dx1959ad497629a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 126, completion_tokens: 85, total_tokens: 211 }
+}
+Translated file saved to: snippets/v1/crawl/short/python.mdx
+Translating snippets/v1/crawl/short/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7d04@dx1959ad4a19b9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 140, completion_tokens: 100, total_tokens: 240 }
+}
+Translated file saved to: snippets/v1/crawl/short/js.mdx
+Translating snippets/v1/crawl/short/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7f29@dx1959ad4af5db894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 154, completion_tokens: 114, total_tokens: 268 }
+}
+Translated file saved to: snippets/v1/crawl/short/go.mdx
+Translating snippets/v1/crawl/short/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8380@dx1959ad4be10b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 159, completion_tokens: 119, total_tokens: 278 }
+}
+Translated file saved to: snippets/v1/crawl/short/curl.mdx
+Translating snippets/v1/crawl/base/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b80d8@dx1959ad4cceab8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 356, completion_tokens: 313, total_tokens: 669 }
+}
+Translated file saved to: snippets/v1/crawl/base/rust.mdx
+Translating snippets/v1/crawl/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8108@dx1959ad4eeb6b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 165, completion_tokens: 125, total_tokens: 290 }
+}
+Translated file saved to: snippets/v1/crawl/base/python.mdx
+Translating snippets/v1/crawl/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7f70@dx1959ad4fe5cb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 185, completion_tokens: 145, total_tokens: 330 }
+}
+Translated file saved to: snippets/v1/crawl/base/js.mdx
+Translating snippets/v1/crawl/base/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7f83@dx1959ad5110fb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 324, completion_tokens: 284, total_tokens: 608 }
+}
+Translated file saved to: snippets/v1/crawl/base/go.mdx
+Translating snippets/v1/crawl/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8407@dx1959ad5306fb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 159, completion_tokens: 119, total_tokens: 278 }
+}
+Translated file saved to: snippets/v1/crawl/base/curl.mdx
+Translating snippets/v1/batch-scrape/extract/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7fba@dx1959ad53fb4b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 495, completion_tokens: 443, total_tokens: 938 }
+}
+Translated file saved to: snippets/v1/batch-scrape/extract/python.mdx
+Translating snippets/v1/batch-scrape/extract/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7ffa@dx1959ad56cc2b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 254, completion_tokens: 213, total_tokens: 467 }
+}
+Translated file saved to: snippets/v1/batch-scrape/extract/output.mdx
+Translating snippets/v1/batch-scrape/extract/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8020@dx1959ad5852eb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 487, completion_tokens: 426, total_tokens: 913 }
+}
+Translated file saved to: snippets/v1/batch-scrape/extract/js.mdx
+Translating snippets/v1/batch-scrape/extract/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b805f@dx1959ad5b09fb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 250, completion_tokens: 209, total_tokens: 459 }
+}
+Translated file saved to: snippets/v1/batch-scrape/extract/curl.mdx
+Translating snippets/v1/batch-scrape/extract/async-output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8074@dx1959ad5cb62b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 111, completion_tokens: 70, total_tokens: 181 }
+}
+Translated file saved to: snippets/v1/batch-scrape/extract/async-output.mdx
+Translating snippets/v1/batch-scrape/base/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e5c@dx1959ad5d5c39a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 277, completion_tokens: 225, total_tokens: 502 }
+}
+Translated file saved to: snippets/v1/batch-scrape/base/python.mdx
+Translating snippets/v1/batch-scrape/base/output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b7e77@dx1959ad5f0929a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 415, completion_tokens: 374, total_tokens: 789 }
+}
+Translated file saved to: snippets/v1/batch-scrape/base/output.mdx
+Translating snippets/v1/batch-scrape/base/js.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8245@dx1959ad61a94b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 341, completion_tokens: 285, total_tokens: 626 }
+}
+Translated file saved to: snippets/v1/batch-scrape/base/js.mdx
+Translating snippets/v1/batch-scrape/base/curl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b80ea@dx1959ad63ab9b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 160, completion_tokens: 120, total_tokens: 280 }
+}
+Translated file saved to: snippets/v1/batch-scrape/base/curl.mdx
+Translating snippets/v1/batch-scrape/base/async-output.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b80fc@dx1959ad649eeb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 111, completion_tokens: 70, total_tokens: 181 }
+}
+Translated file saved to: snippets/v1/batch-scrape/base/async-output.mdx
+Translating sdks/rust.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b854e@dx1959ad65472b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 874, completion_tokens: 804, total_tokens: 1678 }
+}
+Translated file saved to: sdks/rust.mdx
+Translating sdks/python.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b82e3@dx1959ad6a7fdb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1159, completion_tokens: 1059, total_tokens: 2218 }
+}
+Translated file saved to: sdks/python.mdx
+Translating sdks/overview.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8606@dx1959ad7136cb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 315, completion_tokens: 258, total_tokens: 573 }
+}
+Translated file saved to: sdks/overview.mdx
+Translating sdks/node.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b862a@dx1959ad7320eb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1154, completion_tokens: 1057, total_tokens: 2211 }
+}
+Translated file saved to: sdks/node.mdx
+Translating sdks/go.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8281@dx1959ad79f1bb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 782, completion_tokens: 710, total_tokens: 1492 }
+}
+Translated file saved to: sdks/go.mdx
+Translating learn/scrape-analyze-airbnb-data.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8454@dx1959ad7edb4b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 751, completion_tokens: 663, total_tokens: 1414 }
+}
+Translated file saved to: learn/scrape-analyze-airbnb-data.mdx
+Translating learn/rag-llama3.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b80ca@dx1959ad8340b9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1210, completion_tokens: 1106, total_tokens: 2316 }
+}
+Translated file saved to: learn/rag-llama3.mdx
+Translating learn/lead-gen-business-insights-make-firecrawl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b850e@dx1959ad8a4adb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 2842, completion_tokens: 2052, total_tokens: 4894 }
+}
+Translated file saved to: learn/lead-gen-business-insights-make-firecrawl.mdx
+Translating learn/data-extraction-using-llms.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b88cc@dx1959ad97c2ab8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1201, completion_tokens: 1079, total_tokens: 2280 }
+}
+Translated file saved to: learn/data-extraction-using-llms.mdx
+Translating learn/contradiction-agent.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8522@dx1959ad9ed0ab894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1206, completion_tokens: 1032, total_tokens: 2238 }
+}
+Translated file saved to: learn/contradiction-agent.mdx
+Translating learn/guide/firecrawl-ui-template.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8599@dx1959ada585cb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 7056, completion_tokens: 2064, total_tokens: 9120 }
+}
+Translated file saved to: learn/guide/firecrawl-ui-template.mdx
+Translating learn/guide/bypassing-auth.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b86c6@dx1959adb5e63b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1198, completion_tokens: 1117, total_tokens: 2315 }
+}
+Translated file saved to: learn/guide/bypassing-auth.mdx
+Translating integrations/sourcesyncai.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b88ab@dx1959adbcfd5b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 2820, completion_tokens: 2050, total_tokens: 4870 }
+}
+Translated file saved to: integrations/sourcesyncai.mdx
+Translating integrations/llamaindex.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b859b@dx1959adcaaa39a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 808, completion_tokens: 769, total_tokens: 1577 }
+}
+Translated file saved to: integrations/llamaindex.mdx
+Translating integrations/langflow.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8682@dx1959adcfb779a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 342, completion_tokens: 267, total_tokens: 609 }
+}
+Translated file saved to: integrations/langflow.mdx
+Translating integrations/langchain.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8b2f@dx1959add1983b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 694, completion_tokens: 645, total_tokens: 1339 }
+}
+Translated file saved to: integrations/langchain.mdx
+Translating integrations/flowise.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8726@dx1959add5dac9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 372, completion_tokens: 305, total_tokens: 677 }
+}
+Translated file saved to: integrations/flowise.mdx
+Translating integrations/dify.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8ad1@dx1959add7ef9b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 571, completion_tokens: 490, total_tokens: 1061 }
+}
+Translated file saved to: integrations/dify.mdx
+Translating integrations/crewai.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8860@dx1959addb1229a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1366, completion_tokens: 1205, total_tokens: 2571 }
+}
+Translated file saved to: integrations/crewai.mdx
+Translating integrations/camelai.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9009@dx1959ade2931b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 399, completion_tokens: 352, total_tokens: 751 }
+}
+Translated file saved to: integrations/camelai.mdx
+Translating features/search.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8c64@dx1959ade4f52b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1381, completion_tokens: 1298, total_tokens: 2679 }
+}
+Translated file saved to: features/search.mdx
+Translating features/scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8d45@dx1959adece09b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 2329, completion_tokens: 2054, total_tokens: 4383 }
+}
+Translated file saved to: features/scrape.mdx
+Translating features/map.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8fe4@dx1959adfa25eb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 849, completion_tokens: 767, total_tokens: 1616 }
+}
+Translated file saved to: features/map.mdx
+Translating features/llm-extract.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8bed@dx1959adff1e59a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 748, completion_tokens: 646, total_tokens: 1394 }
+}
+Translated file saved to: features/llm-extract.mdx
+Translating features/extract.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b90d2@dx1959ae0339bb8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1924, completion_tokens: 1775, total_tokens: 3699 }
+}
+Translated file saved to: features/extract.mdx
+Translating features/extract-beta.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b90f7@dx1959ae0ed8fb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1095, completion_tokens: 1012, total_tokens: 2107 }
+}
+Translated file saved to: features/extract-beta.mdx
+Translating features/crawl.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9503@dx1959ae15ab8b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1906, completion_tokens: 1774, total_tokens: 3680 }
+}
+Translated file saved to: features/crawl.mdx
+Translating features/batch-scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b8f0b@dx1959ae2104e9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 887, completion_tokens: 754, total_tokens: 1641 }
+}
+Translated file saved to: features/batch-scrape.mdx
+Translating features/alpha/llmstxt.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b92f8@dx1959ae25f04b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1022, completion_tokens: 939, total_tokens: 1961 }
+}
+Translated file saved to: features/alpha/llmstxt.mdx
+Translating features/alpha/llmstxt-npx.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b900c@dx1959ae2bd769a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 783, completion_tokens: 713, total_tokens: 1496 }
+}
+Translated file saved to: features/alpha/llmstxt-npx.mdx
+Translating features/alpha/deep-research.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9761@dx1959ae307e3b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1354, completion_tokens: 1198, total_tokens: 2552 }
+}
+Translated file saved to: features/alpha/deep-research.mdx
+Translating contributing/self-host.mdx...
+Translation error: 500 非常抱歉，根据相关法律法规，我们无法提供关于以下内容的答案，包括但不限于：
+	(1) 涉及国家安全的信息；
+	(2) 涉及政治与宗教类的信息；
+	(3) 涉及暴力与恐怖主义的信息；
+	(4) 涉及黄赌毒类的信息；
+	(5) 涉及不文明的信息。
+我们会继续遵循相关法规法律的要求，共创一个健康和谐网络环境，谢谢您的理解。
+ (sid: cha000b9128@dx1959ae39b9c9a4b532)
+InternalServerError: 500 非常抱歉，根据相关法律法规，我们无法提供关于以下内容的答案，包括但不限于：
+	(1) 涉及国家安全的信息；
+	(2) 涉及政治与宗教类的信息；
+	(3) 涉及暴力与恐怖主义的信息；
+	(4) 涉及黄赌毒类的信息；
+	(5) 涉及不文明的信息。
+我们会继续遵循相关法规法律的要求，共创一个健康和谐网络环境，谢谢您的理解。
+ (sid: cha000b9128@dx1959ae39b9c9a4b532)
+    at APIError.generate (file:///home/neo/github/web3doc/translator/node_modules/openai/error.mjs:62:20)
+    at OpenAI.makeStatusError (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:293:25)
+    at OpenAI.makeRequest (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:337:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async translateContent (file:///home/neo/github/web3doc/translator/src/index.js:54:22)
+    at async processFile (file:///home/neo/github/web3doc/translator/src/index.js:88:31)
+    at async main (file:///home/neo/github/web3doc/translator/src/index.js:140:7) {
+  status: 500,
+  headers: {
+    'access-control-allow-origin': '*',
+    'cache-control': 'no-cache',
+    connection: 'keep-alive',
+    'content-length': '539',
+    'content-type': 'application/json',
+    date: 'Sat, 15 Mar 2025 17:39:25 GMT',
+    via: 'kong/1.3.0',
+    'x-kong-proxy-latency': '1',
+    'x-kong-upstream-latency': '2952'
+  },
+  request_id: undefined,
+  error: {
+    message: '非常抱歉，根据相关法律法规，我们无法提供关于以下内容的答案，包括但不限于：\n' +
+      '\t(1) 涉及国家安全的信息；\n' +
+      '\t(2) 涉及政治与宗教类的信息；\n' +
+      '\t(3) 涉及暴力与恐怖主义的信息；\n' +
+      '\t(4) 涉及黄赌毒类的信息；\n' +
+      '\t(5) 涉及不文明的信息。\n' +
+      '我们会继续遵循相关法规法律的要求，共创一个健康和谐网络环境，谢谢您的理解。\n' +
+      ' (sid: cha000b9128@dx1959ae39b9c9a4b532)',
+    type: 'api_error',
+    param: null,
+    code: '10013'
+  },
+  code: '10013',
+  param: null,
+  type: 'api_error'
+}
+Translating contributing/open-source-or-cloud.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9145@dx1959ae3a74d9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 267, completion_tokens: 198, total_tokens: 465 }
+}
+Translated file saved to: contributing/open-source-or-cloud.mdx
+Translating contributing/guide.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b95ca@dx1959ae3bff3b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 1954, completion_tokens: 1721, total_tokens: 3675 }
+}
+Translated file saved to: contributing/guide.mdx
+Translating api-reference/introduction.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b96e0@dx1959ae47120b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 782, completion_tokens: 697, total_tokens: 1479 }
+}
+Translated file saved to: api-reference/introduction.mdx
+Translating api-reference/endpoint/search.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b92c7@dx1959ae4ba9d9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 141, completion_tokens: 102, total_tokens: 243 }
+}
+Translated file saved to: api-reference/endpoint/search.mdx
+Translating api-reference/endpoint/scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b92da@dx1959ae4c82e9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 69, completion_tokens: 26, total_tokens: 95 }
+}
+Translated file saved to: api-reference/endpoint/scrape.mdx
+Translating api-reference/endpoint/map.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b975f@dx1959ae4cda2b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 65, completion_tokens: 24, total_tokens: 89 }
+}
+Translated file saved to: api-reference/endpoint/map.mdx
+Translating api-reference/endpoint/llmstxt.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9655@dx1959ae4d2cab894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 489, completion_tokens: 439, total_tokens: 928 }
+}
+Translated file saved to: api-reference/endpoint/llmstxt.mdx
+Translating api-reference/endpoint/llmstxt-get.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b96a3@dx1959ae502bfb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 778, completion_tokens: 727, total_tokens: 1505 }
+}
+Translated file saved to: api-reference/endpoint/llmstxt-get.mdx
+Translating api-reference/endpoint/llm-extract.mdx...
+Translation error: 500 ClientMsgError:(01:41:16.416) user content is empty (sid: cha000b972e@dx1959ae557dfb894532)
+InternalServerError: 500 ClientMsgError:(01:41:16.416) user content is empty (sid: cha000b972e@dx1959ae557dfb894532)
+    at APIError.generate (file:///home/neo/github/web3doc/translator/node_modules/openai/error.mjs:62:20)
+    at OpenAI.makeStatusError (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:293:25)
+    at OpenAI.makeRequest (file:///home/neo/github/web3doc/translator/node_modules/openai/core.mjs:337:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async translateContent (file:///home/neo/github/web3doc/translator/src/index.js:54:22)
+    at async processFile (file:///home/neo/github/web3doc/translator/src/index.js:88:31)
+    at async main (file:///home/neo/github/web3doc/translator/src/index.js:140:7) {
+  status: 500,
+  headers: {
+    'access-control-allow-origin': '*',
+    'cache-control': 'no-cache',
+    connection: 'keep-alive',
+    'content-length': '162',
+    'content-type': 'application/json',
+    date: 'Sat, 15 Mar 2025 17:41:16 GMT',
+    via: 'kong/1.3.0',
+    'x-kong-proxy-latency': '0',
+    'x-kong-upstream-latency': '34'
+  },
+  request_id: undefined,
+  error: {
+    message: 'ClientMsgError:(01:41:16.416) user content is empty (sid: cha000b972e@dx1959ae557dfb894532)',
+    type: 'api_error',
+    param: null,
+    code: '10003'
+  },
+  code: '10003',
+  param: null,
+  type: 'api_error'
+}
+Translating api-reference/endpoint/extract.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b972f@dx1959ae55828b894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 65, completion_tokens: 24, total_tokens: 89 }
+}
+Translated file saved to: api-reference/endpoint/extract.mdx
+Translating api-reference/endpoint/extract-get.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9834@dx1959ae55e33b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 73, completion_tokens: 30, total_tokens: 103 }
+}
+Translated file saved to: api-reference/endpoint/extract-get.mdx
+Translating api-reference/endpoint/deep-research.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9841@dx1959ae56421b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 500, completion_tokens: 437, total_tokens: 937 }
+}
+Translated file saved to: api-reference/endpoint/deep-research.mdx
+Translating api-reference/endpoint/deep-research-get.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9778@dx1959ae594cdb894532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 73, completion_tokens: 31, total_tokens: 104 }
+}
+Translated file saved to: api-reference/endpoint/deep-research-get.mdx
+Translating api-reference/endpoint/credit-usage.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9af8@dx1959ae59b68b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 71, completion_tokens: 31, total_tokens: 102 }
+}
+Translated file saved to: api-reference/endpoint/credit-usage.mdx
+Translating api-reference/endpoint/crawl-post.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b93f9@dx1959ae5a1b49a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 68, completion_tokens: 25, total_tokens: 93 }
+}
+Translated file saved to: api-reference/endpoint/crawl-post.mdx
+Translating api-reference/endpoint/crawl-get.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b98a2@dx1959ae5a776b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 74, completion_tokens: 32, total_tokens: 106 }
+}
+Translated file saved to: api-reference/endpoint/crawl-get.mdx
+Translating api-reference/endpoint/crawl-get-errors.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9b18@dx1959ae5ae08b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 75, completion_tokens: 32, total_tokens: 107 }
+}
+Translated file saved to: api-reference/endpoint/crawl-get-errors.mdx
+Translating api-reference/endpoint/crawl-delete.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b98b6@dx1959ae5b4b1b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 72, completion_tokens: 30, total_tokens: 102 }
+}
+Translated file saved to: api-reference/endpoint/crawl-delete.mdx
+Translating api-reference/endpoint/batch-scrape.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9b2e@dx1959ae5bac1b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 72, completion_tokens: 29, total_tokens: 101 }
+}
+Translated file saved to: api-reference/endpoint/batch-scrape.mdx
+Translating api-reference/endpoint/batch-scrape-get.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9429@dx1959ae5c11f9a4b532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 80, completion_tokens: 35, total_tokens: 115 }
+}
+Translated file saved to: api-reference/endpoint/batch-scrape-get.mdx
+Translating api-reference/endpoint/batch-scrape-get-errors.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b98cf@dx1959ae5c7d4b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 81, completion_tokens: 36, total_tokens: 117 }
+}
+Translated file saved to: api-reference/endpoint/batch-scrape-get-errors.mdx
+Translating _essentials/settings.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9b4e@dx1959ae5cec4b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 3249, completion_tokens: 2048, total_tokens: 5297 }
+}
+Translated file saved to: _essentials/settings.mdx
+Translating _essentials/reusable-snippets.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9c91@dx1959ae6b55fb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 859, completion_tokens: 754, total_tokens: 1613 }
+}
+Translated file saved to: _essentials/reusable-snippets.mdx
+Translating _essentials/navigation.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9a7b@dx1959ae706f7b8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 541, completion_tokens: 475, total_tokens: 1016 }
+}
+Translated file saved to: _essentials/navigation.mdx
+Translating _essentials/markdown.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9d2c@dx1959ae73bdbb8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 860, completion_tokens: 809, total_tokens: 1669 }
+}
+Translated file saved to: _essentials/markdown.mdx
+Translating _essentials/images.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9b03@dx1959ae78c6ab8f3532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 571, completion_tokens: 518, total_tokens: 1089 }
+}
+Translated file saved to: _essentials/images.mdx
+Translating _essentials/code.mdx...
+{
+  code: 0,
+  message: 'Success',
+  sid: 'cha000b9dd0@dx1959ae7c1b1b8f2532',
+  choices: [ { message: [Object], index: 0 } ],
+  usage: { prompt_tokens: 323, completion_tokens: 276, total_tokens: 599 }
+}
+Translated file saved to: _essentials/code.mdx
+Translation completed!

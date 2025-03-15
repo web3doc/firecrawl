@@ -1,15 +1,15 @@
-```python Python
+```python
 from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
 
-# Scrape multiple websites:
+# 批量抓取多个网站:
 batch_scrape_result = app.batch_scrape_urls(
     ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], 
     {
         'formats': ['extract'],
         'extract': {
-            'prompt': 'Extract the title and description from the page.',
+            'prompt': '从页面提取标题和描述。',
             'schema': {
                 'type': 'object',
                 'properties': {
@@ -23,13 +23,13 @@ batch_scrape_result = app.batch_scrape_urls(
 )
 print(batch_scrape_result)
 
-# Or, you can use the asynchronous method:
+# 或者，你可以使用异步方法:
 batch_scrape_job = app.async_batch_scrape_urls(
     ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], 
     {
         'formats': ['extract'],
         'extract': {
-            'prompt': 'Extract the title and description from the page.',
+            'prompt': '从页面提取标题和描述。',
             'schema': {
                 'type': 'object',
                 'properties': {
@@ -43,6 +43,7 @@ batch_scrape_job = app.async_batch_scrape_urls(
 )
 print(batch_scrape_job)
 
-# (async) You can then use the job ID to check the status of the batch scrape:
+# (异步) 然后你可以使用任务ID来检查批量抓取的状态:
 batch_scrape_status = app.check_batch_scrape_status(batch_scrape_job['id'])
 print(batch_scrape_status)
+```

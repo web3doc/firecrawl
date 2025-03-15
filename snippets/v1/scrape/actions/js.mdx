@@ -1,9 +1,9 @@
-```js Node
+```js
 import FirecrawlApp, { ScrapeResponse } from '@mendable/firecrawl-js';
 
 const app = new FirecrawlApp({apiKey: "fc-YOUR_API_KEY"});
 
-// Scrape a website:
+// 抓取一个网站：
 const scrapeResult = await app.scrapeUrl('firecrawl.dev', { formats: ['markdown', 'html'], actions: [
     { type: "wait", milliseconds: 2000 },
     { type: "click", selector: "textarea[title=\"Search\"]" },
@@ -18,7 +18,7 @@ const scrapeResult = await app.scrapeUrl('firecrawl.dev', { formats: ['markdown'
 ] }) as ScrapeResponse;
 
 if (!scrapeResult.success) {
-  throw new Error(`Failed to scrape: ${scrapeResult.error}`)
+  throw new Error(`抓取失败: ${scrapeResult.error}`)
 }
 
 console.log(scrapeResult)

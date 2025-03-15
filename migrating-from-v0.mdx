@@ -1,13 +1,13 @@
 ---
-title: Migrating from V0
-description: "Firecrawl allows you to turn entire websites into LLM-ready markdown"
-og:title: "Migrating from V0 | Firecrawl"
-og:description: "Firecrawl allows you to turn entire websites into LLM-ready markdown"
+title: 从V0迁移
+description: "Firecrawl允许您将整个网站转换为LLM就绪的Markdown"
+og:title: "从V0迁移 | Firecrawl"
+og:description: "Firecrawl允许您将整个网站转换为LLM就绪的Markdown"
 ---
 
-## /scrape endpoint
+## /scrape端点
 
-The updated `/scrape` endpoint has been redesigned for enhanced reliability and ease of use. The structure of the new `/scrape` request body is as follows:
+更新后的`/scrape`端点已重新设计，以提高可靠性和易用性。新的`/scrape`请求体结构如下：
 
 ```json
 {
@@ -21,45 +21,45 @@ The updated `/scrape` endpoint has been redesigned for enhanced reliability and 
 }
 ```
 
-### Formats
+### 格式
 
-You can now choose what formats you want your output in. You can specify multiple output formats. Supported formats are:
+现在您可以选择所需的输出格式。您可以指定多个输出格式。支持的格式有：
 
-- Markdown (markdown)
-- HTML (html)
-- Raw HTML (rawHtml) (with no modifications)
-- Screenshot (screenshot or screenshot@fullPage)
-- Links (links)
-- JSON (json)
-By default, the output will be include only the markdown format.
+- Markdown（markdown）
+- HTML（html）
+- 原始HTML（rawHtml）（无修改）
+- 截图（screenshot或screenshot@fullPage）
+- 链接（links）
+- JSON（json）
+默认情况下，输出仅包含Markdown格式。
 
-### Details on the new request body
+### 新请求体的详细信息
 
-The table below outlines the changes to the request body parameters for the `/scrape` endpoint in V1.
+下表概述了V1中`/scrape`端点的请求体参数变化。
 
-| Parameter | Change | Description |
-| --------- | ------ | ----------- |
-| `onlyIncludeTags` | Moved and Renamed | Moved to root level. And renamed to `includeTags`. |
-| `removeTags` | Moved and Renamed | Moved to root level. And renamed to `excludeTags`. |
-| `onlyMainContent`| Moved | Moved to root level. `true` by default. |
-| `waitFor`| Moved | Moved to root level. |
-| `headers`| Moved | Moved to root level. |
-| `parsePDF`| Moved | Moved to root level. |
-| `extractorOptions`| No Change ||
-| `timeout`| No Change ||
-| `pageOptions` | Removed | No need for `pageOptions` parameter. The scrape options were moved to root level. |
-| `replaceAllPathsWithAbsolutePaths` | Removed | `replaceAllPathsWithAbsolutePaths` is not needed anymore. Every path is now default to absolute path. |
-| `includeHtml`| Removed | add `"html"` to `formats` instead. |
-| `includeRawHtml`| Removed | add `"rawHtml"` to `formats` instead. |
-| `screenshot`| Removed | add `"screenshot"` to `formats` instead. |
-| `fullPageScreenshot`| Removed | add `"screenshot@fullPage"` to `formats` instead. |
-| `extractorOptions` | Removed | Use `"extract"` format instead with `extract` object. |
+| 参数 | 变更 | 描述 |
+| ---- | ---- | ---- |
+| `onlyIncludeTags` | 移动并重命名 | 移至根级别。并重命名为`includeTags`。 |
+| `removeTags` | 移动并重命名 | 移至根级别。并重命名为`excludeTags`。 |
+| `onlyMainContent` | 移动 | 移至根级别。默认为`true`。 |
+| `waitFor` | 移动 | 移至根级别。 |
+| `headers` | 移动 | 移至根级别。 |
+| `parsePDF` | 移动 | 移至根级别。 |
+| `extractorOptions` | 无变化 | |
+| `timeout` | 无变化 | |
+| `pageOptions` | 移除 | 不再需要`pageOptions`参数。抓取选项已移至根级别。 |
+| `replaceAllPathsWithAbsolutePaths` | 移除 | `replaceAllPathsWithAbsolutePaths`不再需要。所有路径现在默认为绝对路径。 |
+| `includeHtml` | 移除 | 在`formats`中添加`"html"`。 |
+| `includeRawHtml` | 移除 | 在`formats`中添加`"rawHtml"`。 |
+| `screenshot` | 移除 | 在`formats`中添加`"screenshot"`。 |
+| `fullPageScreenshot` | 移除 | 在`formats`中添加`"screenshot@fullPage"`。 |
+| `extractorOptions` | 移除 | 使用带有`extract`对象的`"extract"`格式替代。 |
 
-The new `extract` format is described in the [llm-extract](/features/extract) section.
+新的`extract`格式在[llm-extract](/features/extract)部分描述。
 
-## /crawl endpoint
+## /crawl端点
 
-We've also updated the `/crawl` endpoint on `v1`. Check out the improved body request below:
+我们还更新了V1上的`/crawl`端点。请查看下面改进的请求体：
 
 ```json
 {
@@ -72,7 +72,7 @@ We've also updated the `/crawl` endpoint on `v1`. Check out the improved body re
   "allowBackwardLinks": true,
   "allowExternalLinks": true,
   "scrapeOptions": {
-    // same options as in /scrape
+    // 与/scrape中的选项相同
     "formats": ["markdown", "html", "rawHtml", "screenshot", "links"],
     "headers": { "<key>": "<value>" },
     "includeTags": ["<string>"],
@@ -83,20 +83,19 @@ We've also updated the `/crawl` endpoint on `v1`. Check out the improved body re
 }
 ```
 
+### 新请求体的详细信息
 
-### Details on the new request body
+下表概述了V1中`/crawl`端点的请求体参数变化。
 
-The table below outlines the changes to the request body parameters for the `/crawl` endpoint in V1.
-
-| Parameter | Change | Description |
-| --------- | ------ | ----------- |
-| `pageOptions` | Renamed | Renamed to `scrapeOptions`. |
-| `includes` | Moved and Renamed | Moved to root level. Renamed to `includePaths`. |
-| `excludes` | Moved and Renamed | Moved to root level. Renamed to `excludePaths`. |
-| `allowBackwardCrawling` | Moved and Renamed | Moved to root level. Renamed to `allowBackwardLinks`. |
-| `allowExternalLinks` | Moved | Moved to root level. |
-| `maxDepth` | Moved | Moved to root level. |
-| `ignoreSitemap` | Moved | Moved to root level. |
-| `limit` | Moved | Moved to root level. |
-| `crawlerOptions` | Removed | No need for `crawlerOptions` parameter. The crawl options were moved to root level. |
-| `timeout` | Removed | Use `timeout` in `scrapeOptions` instead. |
+| 参数 | 变更 | 描述 |
+| ---- | ---- | ---- |
+| `pageOptions` | 重命名 | 重命名为`scrapeOptions`。 |
+| `includes` | 移动并重命名 | 移至根级别。重命名为`includePaths`。 |
+| `excludes` | 移动并重命名 | 移至根级别。重命名为`excludePaths`。 |
+| `allowBackwardCrawling` | 移动并重命名 | 移至根级别。重命名为`allowBackwardLinks`。 |
+| `allowExternalLinks` | 移动 | 移至根级别。 |
+| `maxDepth` | 移动 | 移至根级别。 |
+| `ignoreSitemap` | 移动 | 移至根级别。 |
+| `limit` | 移动 | 移至根级别。 |
+| `crawlerOptions` | 移除 | 不再需要`crawlerOptions`参数。抓取选项已移至根级别。 |
+| `timeout` | 移除 | 使用`scrapeOptions`中的`timeout`替代。 |

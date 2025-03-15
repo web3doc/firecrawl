@@ -1,88 +1,78 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: '快速入门'
+description: '在5分钟内开始构建出色的文档'
 og:title: "Quickstart | Firecrawl"
 og:description: "Start building awesome documentation in under 5 minutes"
 ---
 
-## Setup your development
+## 设置您的开发环境
 
-Learn how to update your docs locally and and deploy them to the public.
+了解如何本地更新文档并将其部署到公共服务器。
 
-### Edit and preview
+### 编辑和预览
 
 <AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
+  <Accordion icon="github" title="在本地克隆您的文档">
+    在入门过程中，我们在您的Github上创建了一个包含您文档内容的仓库。您可以在我们的
+    [仪表板](https://dashboard.mintlify.com)上找到这个仓库。要本地克隆该仓库，请按照以下
+    [说明](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+    在终端中操作。
   </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
+  <Accordion icon="rectangle-terminal" title="预览更改">
+    预览帮助您确保更改按预期显示。我们构建了一个命令行界面来本地渲染这些更改。1. 安装
+    [Mintlify CLI](https://www.npmjs.com/package/mintlify)，以使用以下命令本地预览文档更改：``` npm i -g mintlify ```
+    2. 在您的文档根目录（即`mint.json`所在位置）运行以下命令：``` mintlify dev ```
   </Accordion>
 </AccordionGroup>
 
-### Deploy your changes
+### 部署您的更改
 
 <AccordionGroup>
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
+<Accordion icon="message-bot" title="安装我们的GitHub应用">
+  我们的GitHub应用会自动将您的更改部署到您的文档网站，因此您无需自行管理部署。您可以在您的
+  [仪表板](https://dashboard.mintlify.com)上找到安装链接。一旦机器人成功安装，应该在仓库的提交哈希旁边有一个勾选标记。
 </Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
+<Accordion icon="rocket" title="推送您的更改">
+  [提交并推送您的更改至Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
+  以便您的更改在文档网站上更新。如果您推送后没有看到GitHub应用成功部署您的更改，您也可以通过我们的
+  [仪表板](https://dashboard.mintlify.com)手动更新您的文档。
 </Accordion>
 
 </AccordionGroup>
 
-## Update your docs
+## 更新您的文档
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+直接在文件中使用MDX语法和React组件添加内容。您可以使用我们的任何组件，甚至构建自己的组件。
 
 <CardGroup>
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
+<Card title="个性化您的文档样式" icon="paintbrush" href="/settings/global">
+  通过个性化品牌为您的文档增添风采。
 </Card>
 
 <Card
-  title="Add API Endpoints"
+  title="添加API端点"
   icon="square-code"
   href="/api-playground/configuration"
 >
-  Implement your OpenAPI spec and enable API user interaction.
+  实现您的OpenAPI规范并启用API用户交互。
 </Card>
 
 <Card
-  title="Integrate Analytics"
+  title="集成分析"
   icon="chart-mixed"
   href="/analytics/supported-integrations"
 >
-  Draw insights from user interactions with your documentation.
+  从用户与您的文档的互动中获取洞察。
 </Card>
 
 <Card
-  title="Host on a Custom Domain"
+  title="在自定义域名上托管"
   icon="browser"
   href="/settings/custom-domain/subdomain"
 >
-  Keep your docs on your own website's subdomain.
+  将您的文档保留在您自己网站的子域名上。
 </Card>
 
 </CardGroup>

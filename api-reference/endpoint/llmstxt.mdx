@@ -1,57 +1,57 @@
 ---
-title: "Generate LLMs.txt"
+title: "生成 LLMs.txt"
 openapi: "v1-openapi POST /llmstxt"
 ---
 
-The LLMs.txt generation endpoint creates LLMs.txt and LLMs-full.txt files for any website. These files provide a structured, LLM-friendly format of the website's content, making it easier for language models to understand and process the information.
+LLMs.txt 生成端点为任何网站创建 LLMs.txt 和 LLMs-full.txt 文件。这些文件提供了网站内容的结构化、适合语言模型的格式，使语言模型更容易理解和处理信息。
 
-Looking for the status endpoint? Check out the [LLMs.txt Status](/api-reference/endpoint/llmstxt-get) endpoint.
+寻找状态端点？请查看 [LLMs.txt 状态](/api-reference/endpoint/llmstxt-get) 端点。
 
-### Response Structure
+### 响应结构
 
-The response includes:
+响应包含：
 
-- **success**: Boolean indicating if the request was successful
-- **id**: Unique identifier for the generation job
+- **success**: 布尔值，指示请求是否成功
+- **id**: 生成作业的唯一标识符
 
-### Output Format
+### 输出格式
 
 1. **LLMs.txt**
 
-   - Concise, structured summary of the website
-   - Contains key links and descriptions
-   - Formatted in markdown for easy parsing
-   - Example:
+   - 网站的简洁、结构化摘要
+   - 包含关键链接和描述
+   - 以 Markdown 格式编写，便于解析
+   - 示例：
 
      ```markdown
      # http://example.com llms.txt
 
-     - [Page Title](https://example.com/page): Brief description
-     - [Another Page](https://example.com/another): Another description
+     - [页面标题](https://example.com/page): 简要描述
+     - [另一个页面](https://example.com/another): 另一个描述
      ```
 
-2. **LLMs-full.txt** (when showFullText is true)
+2. **LLMs-full.txt**（当 showFullText 为 true 时）
 
-   - Contains full content of processed pages
-   - Maintains hierarchical structure
-   - Includes more detailed information
-   - Example:
+   - 包含已处理页面的完整内容
+   - 保持层次结构
+   - 包括更详细的信息
+   - 示例：
 
      ```markdown
      # http://example.com llms-full.txt
 
-     ## Page Title
+     ## 页面标题
 
-     Full content of the page...
+     页面的完整内容...
 
-     ## Another Page
+     ## 另一个页面
 
-     More detailed content...
+     更详细的内容...
      ```
 
-### Billing
-Billing is based on API calls and URLs processed:
+### 计费
+计费基于 API 调用和处理的 URL：
 
-- Base cost: 1 credit per API call
-- Additional: 1 credit per URL processed
-- Control URL costs with `maxUrls` parameter
+- 基础费用：每次 API 调用 1 积分
+- 额外费用：每个处理的 URL 1 积分
+- 使用 `maxUrls` 参数控制 URL 成本

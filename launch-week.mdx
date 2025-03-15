@@ -1,8 +1,8 @@
 ---
-title: Launch Week II (New)
-description: "Check out what's new coming to Firecrawl in Launch Week II (Oct 28th - Nov 3rd)"
-og:title: "Launch Week II | Firecrawl"
-og:description: "Check out what's new coming to Firecrawl in Launch Week II (Oct 28th - Nov 3rd)"
+title: 发布周II（新功能）
+description: "查看发布周II（10月28日 - 11月3日）期间Firecrawl的新功能"
+og:title: "发布周II | Firecrawl"
+og:description: "查看发布周II（10月28日 - 11月3日）期间Firecrawl的新功能"
 ---
 
 import BatchScrapePython from "/snippets/v1/batch-scrape/base/python.mdx";
@@ -24,31 +24,31 @@ import ScrapeActionsNode from "/snippets/v1/scrape/actions/js.mdx";
 import ScrapeActionsCURL from "/snippets/v1/scrape/actions/curl.mdx";
 import ScrapeActionsOutput from "/snippets/v1/scrape/actions/output.mdx";
 
+## 第七天 - 更快的Markdown解析
 
-## Day 7 - Faster Markdown Parsing
+我们从头开始重建了我们的Markdown解析器，专注于速度和性能。这一增强确保您的网络抓取任务更加高效，并提供更高质量的结果。
 
-We've rebuilt our Markdown parser from the ground up with a focus on speed and performance. This enhancement ensures that your web scraping tasks are more efficient and deliver higher-quality results.
+### 新功能？
 
-### What's New?
+- **速度提升**：体验解析速度比之前快4倍，允许快速数据处理并减少等待时间。
+- **增强的可靠性**：我们的新解析器能够更优雅地处理更广泛的HTML内容，减少错误并提高一致性。
+- **更干净的Markdown输出**：获取更干净、更易读的Markdown，使您的数据更容易使用并集成到工作流程中。
 
-- **Speed Improvements**: Experience parsing speeds up to 4 times faster than before, allowing for quicker data processing and reduced waiting times.
-- **Enhanced Reliability**: Our new parser handles a wider range of HTML content more gracefully, reducing errors and improving consistency.
-- **Cleaner Markdown Output**: Get cleaner and more readable Markdown, making your data easier to work with and integrate into your workflows.
+## 第六天 - 移动设备抓取（+ 移动截图）
 
-## Day 6 - Mobile Scraping (+ Mobile Screenshots)
+Firecrawl现在引入了**移动设备模拟**，用于抓取和截图，使您能够像从移动设备那样与网站互动。此功能对于测试特定于移动的内容、理解响应式设计和从特定于移动的元素中获得洞察至关重要。
 
-Firecrawl now introduces **mobile device emulation** for both scraping and screenshots, empowering you to interact with sites as if from a mobile device. This feature is essential for testing mobile-specific content, understanding responsive design, and gaining insights from mobile-specific elements.
 
-### Why Mobile Scraping?
+### 为什么需要移动设备抓取？
 
-Mobile-first experiences are increasingly common, and this feature enables you to:
-- Take high-fidelity mobile screenshots for a more accurate representation of how a site appears on mobile.
-- Test and verify mobile layouts and UI elements, ensuring the accuracy of your scraping results for responsive websites.
-- Scrape mobile-only content, gaining access to information or layouts that vary from desktop versions.
+移动优先的体验越来越普遍，这个功能使您能够：
+- 拍摄高保真的移动截图，以更准确地展示网站在移动设备上的外观。
+- 测试和验证移动布局和UI元素，确保对响应式网站的抓取结果的准确性。
+- 抓取仅在移动设备上的内容，访问与桌面版本不同的信息或布局。
 
-### Usage
+### 使用方法
 
-To activate mobile scraping, simply add `"mobile": true` in your request, which will enable Firecrawl’s mobile emulation mode.
+要激活移动抓取，只需在请求中添加`"mobile": true`，这将启用Firecrawl的移动模拟模式。
 
 <CodeGroup>
 <ScrapeMobilePython />
@@ -56,17 +56,16 @@ To activate mobile scraping, simply add `"mobile": true` in your request, which 
 <ScrapeMobileCURL />
 </CodeGroup>
 
-For further details, including additional configuration options, visit the [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+有关更多详细信息，包括其他配置选项，请访问[API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
+## 第五天 - 操作（新增2个操作）
 
-## Day 5 - Actions (2 new actions)
+Firecrawl允许您在抓取网页内容之前执行各种操作。这对于与动态内容交互、导航页面或访问需要用户交互的内容特别有用。
 
-Firecrawl allows you to perform various actions on a web page before scraping its content. This is particularly useful for interacting with dynamic content, navigating through pages, or accessing content that requires user interaction.
+我们很高兴介绍两个强大的新操作：
 
-We're excited to introduce two powerful new actions:
-
-1. **Scrape**: Capture the current page content at any point during your interaction sequence, returning both URL and HTML.
-2. **Wait for Selector**: Wait for a specific element to appear on the page before proceeding, ensuring more reliable automation.
+1. **抓取**：在交互序列的任何点捕获当前页面内容，返回URL和HTML。
+2. **等待选择器**：在继续之前等待页面上出现特定元素，确保更可靠的自动化。
 
 ```json
 actions = [
@@ -75,11 +74,12 @@ actions = [
 ]
 ```
 
-Here is an example of how to use actions to navigate to google.com, search for Firecrawl, click on the first result, scrape the current page content, and take a screenshot.
+这里有一个示例，说明如何使用操作导航到google.com，搜索Firecrawl，点击第一个结果，抓取当前页面内容并截图。
 
-For more precise control, you can now use `{type: "wait", selector: "#my-element"}` to wait for a specific element to appear on the page.
+为了更精确的控制，您可以现在使用`{type: "wait", selector: "#my-element"}`来等待页面上出现特定元素。
 
-### Example
+
+### 示例
 <CodeGroup>
 
 <ScrapeActionsPython />
@@ -87,79 +87,73 @@ For more precise control, you can now use `{type: "wait", selector: "#my-element
 <ScrapeActionsCURL />
 
 </CodeGroup>
-### Output
+### 输出
 
 <CodeGroup>
 
 <ScrapeActionsOutput />
 
-
 </CodeGroup>
-For more details about the actions parameters, refer to the [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+有关操作参数的更多详细信息，请参阅[API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
+
+## 第四天 - 高级iframe抓取
+
+我们很高兴宣布Firecrawl全面支持iframe抓取。我们的抓取器现在可以无缝处理嵌套的iframe、动态加载的内容和跨域框架——解决了网络抓取最具挑战性的技术难题之一。
 
 
-## Day 4 - Advanced iframe scraping
+### 技术革新
 
-We're excited to announce comprehensive iframe scraping support in Firecrawl. Our scraper can now seamlessly handle nested iframes, dynamically loaded content, and cross-origin frames - solving one of web scraping's most challenging technical hurdles.
+Firecrawl现在实现了：
+- 递归iframe遍历和内容提取
+- 跨域iframe处理，带有适当的安全上下文管理
+- 智能自动等待iframe内容加载
+- 支持动态注入的iframe
+- 正确处理沙箱iframe
 
-### Technical Innovation
+### 为什么重要
 
-Firecrawl now implements:
-- Recursive iframe traversal and content extraction
-- Cross-origin iframe handling with proper security context management
-- Smart automatic wait for iframe content to load
-- Support for dynamically injected iframes
-- Proper handling of sandboxed iframes
+许多现代网站使用iframe用于：
+- 嵌入内容和小部件
+- 支付表单和安全输入
+- 第三方集成
+- 广告框架
+- 社交媒体嵌入
 
-### Why it matters
+以前，这些元素在抓取结果中常常是黑盒子。现在，您可以完全访问iframe内容，就像访问页面的其他部分一样。
 
-Many modern websites use iframes for:
-- Embedded content and widgets
-- Payment forms and secure inputs
-- Third-party integrations
-- Advertisement frames
-- Social media embeds
+### 使用方法
 
-Previously, these elements were often black boxes in scraping results. Now, you get complete access to iframe content just like any other part of the page.
+无需额外配置！当您使用我们的任何抓取或爬取端点时，iframe抓取会自动发生。无论您是使用`/scrape`进行单页抓取还是使用`/crawl`进行整个网站的爬取，iframe内容都将无缝集成到您的结果中。
 
-### Usage
+## 第三天 - 信用包
 
-No additional configuration needed! The iframe scraping happens automatically when you use any of our scraping or crawling endpoints. Whether you're using `/scrape` for single pages or `/crawl` for entire websites, iframe content will be seamlessly integrated into your results.
-
-## Day 3 - Credit Packs
-
-Credit Packs allow you to you can easily top up your plan if your running low.
-Additionally, we now offer Auto Recharge, which automatically recharges your account when you're approaching your limit.
-To enable visit the pricing page at [https://www.firecrawl.dev/pricing](https://www.firecrawl.dev/pricing)
-
-### Credit Packs 
-Flexible monthly credit boosts for your projects.
-- **$9/mo for 1000 credits**
-- Add to any existing plan
-- Choose the amount you need
-
-### Auto Recharge Credits
-Automatically top up your account when credits run low.
-- **$11 per 1000 credits**
-- Enable auto recharge with any subscription plan
+信用包允许您轻松地为您的计划充值，如果您的余额不足。此外，我们现在提供自动充值功能，当您的余额接近限额时自动为您的账户充值。要启用，请访问定价页面[https://www.firecrawl.dev/pricing](https://www.firecrawl.dev/pricing)。
 
 
+### 信用包
+灵活的每月信用增长为您的项目。
+- **9美元/月，1000信用**
+- 添加到任何现有计划
+- 选择您需要的金额
 
+### 自动充值信用
+在信用不足时自动为您的账户充值。
+- **每1000信用11美元**
+- 使用任何订阅计划启用自动充值
 
-## Day 2 - Geolocation
+## 第二天 - 地理位置
 
-Introducing location and language settings for scraping requests. Specify country and preferred languages to get relevant content based on your target location and language preferences.
+为抓取请求引入位置和语言设置。指定国家和首选语言，根据目标位置和语言偏好获取相关内容。
 
-### How it works
+### 工作原理
 
-When you specify the location settings, Firecrawl will use an appropriate proxy if available and emulate the corresponding language and timezone settings. By default, the location is set to 'US' if not specified.
+当您指定位置设置时，Firecrawl将使用适当的代理（如果有），并模拟相应的语言和时区设置。默认情况下，如果未指定，位置设置为'US'。
 
-### Usage
+### 使用方法
 
-To use the location and language settings, include the `location` object in your request body with the following properties:
-
-- `country`: ISO 3166-1 alpha-2 country code (e.g., 'US', 'AU', 'DE', 'JP'). Defaults to 'US'.
-- `languages`: An array of preferred languages and locales for the request in order of priority. Defaults to the language of the specified location.
+要使用位置和语言设置，请在请求体中包含`location`对象，并具有以下属性：
+- `country`：ISO 3166-1 alpha-2国家代码（例如，'US'，'AU'，'DE'，'JP'）。默认为'US'。
+- `languages`：按优先级顺序排列的首选语言和地区数组。默认值为指定位置的语言。
 
 <CodeGroup>
 <ScrapeLocationPython />
@@ -167,36 +161,22 @@ To use the location and language settings, include the `location` object in your
 <ScrapeLocationCURL />
 </CodeGroup>
 
-## Day 1 - Batch Scrape
+## 第一天 - 批量抓取
 
-You can now scrape multiple URLs at the same time with our new batch endpoint. Ideal for when you don't need the scraping results immediately.
+现在您可以使用我们的新批量端点同时抓取多个URL。适用于不需要立即获得抓取结果的情况。
 
-### How it works
+### 工作原理
 
-It is very similar to how the `/crawl` endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape. 
+它与`/crawl`端点的工作原理非常相似。它提交一个批量抓取作业并返回一个作业ID，用于检查批量抓取的状态。
+sdk提供了同步和异步两种方法。同步方法将返回批量抓取作业的结果，而异步方法将返回一个作业ID，您可以使用该ID来检查批量抓取的状态。
 
-The sdk provides 2 methods, synchronous and asynchronous. The synchronous method will return the results of the batch scrape job, while the asynchronous method will return a job ID that you can use to check the status of the batch scrape.
-
-### Usage
+### 使用方法
 
 <CodeGroup>
-
 <BatchScrapePython />
 <BatchScrapeNode />
 <BatchScrapeCURL />
-
 </CodeGroup>
+### 响应
 
-### Response
-
-If you’re using the sync methods from the SDKs, it will return the results of the batch scrape job. Otherwise, it will return a job ID that you can use to check the status of the batch scrape.
-
-#### Synchronous
-
-<BatchScrapeOutput />
-
-#### Asynchronous
-
-You can then use the job ID to check the status of the batch scrape by calling the `/batch/scrape/{id}` endpoint. This endpoint is meant to be used while the job is still running or right after it has completed **as batch scrape jobs expire after 24 hours**.
-
-<BatchScrapeAsyncOutput />
+如果您使用的是SDK中的同步方法，它将返回批量抓取作业的结果。否则，它将返回一个作业ID，您可以

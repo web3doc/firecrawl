@@ -1,10 +1,10 @@
 ---
-title: "Extract"
-description: "Extract structured data from pages using LLMs"
+title: "提取"
+description: "使用LLM从页面中提取结构化数据"
 og:title: "Extract | Firecrawl"
-og:description: "Extract structured data from pages using LLMs"
+og:description: "使用LLM从页面中提取结构化数据"
 icon: "barcode-read"
-sidebarTitle: "Extract (New)"
+sidebarTitle: "提取 (新)"
 ---
 
 import ExtractCURL from "/snippets/v1/extract/base/curl.mdx";
@@ -26,22 +26,23 @@ import ExtractStatusPending from "/snippets/v1/extract/status/pending.mdx";
 import ExtractStatusAsync from "/snippets/v1/extract/async-response/async.mdx";
 import ExtractStatusDone from "/snippets/v1/extract/status/completed.mdx";
 
-## Introducing `/extract` (Open Beta)
+## 介绍 `/extract`（开放测试版）
 
-The `/extract` endpoint simplifies collecting structured data from any number of URLs or entire domains. Provide a list of URLs, optionally with wildcards (e.g., `example.com/*`), and a prompt or schema describing the information you want. Firecrawl handles the details of crawling, parsing, and collating large or small datasets.
+`/extract` 端点简化了从任意数量的URL或整个域名收集结构化数据的过程。提供URL列表，可选地包含通配符（例如，`example.com/*`），以及描述所需信息的提示或模式。Firecrawl处理爬取、解析和整理大数据或小数据集的细节。
 
-## Using `/extract`
+## 使用 `/extract`
 
-You can extract structured data from one or multiple URLs, including wildcards:
+您可以从单个或多个URL（包括通配符）提取结构化数据：
 
-- **Single Page**  
-  Example: `https://firecrawl.dev/some-page`
-- **Multiple Pages / Full Domain**  
-  Example: `https://firecrawl.dev/*`
+- **单页**  
+  示例：`https://firecrawl.dev/some-page`
+- **多页 / 完整域名**  
+  示例：`https://firecrawl.dev/*`
 
-When you use `/*`, Firecrawl will automatically crawl and parse all URLs it can discover in that domain, then extract the requested data. This feature is experimental; email [help@firecrawl.dev](mailto:help@firecrawl.dev) if you have issues.
+当您使用 `/*` 时，Firecrawl 将自动爬取并解析该域中所有可发现的URL，然后提取请求的数据。此功能为实验性质；如果遇到问题，请通过电子邮件 [help@firecrawl.dev](mailto:help@firecrawl.dev) 联系我们。
 
-### Example Usage
+
+### 示例用法
 
 <CodeGroup>
 
@@ -51,33 +52,34 @@ When you use `/*`, Firecrawl will automatically crawl and parse all URLs it can 
 
 </CodeGroup>
 
-**Key Parameters:**
+**关键参数：**
 
-- **urls**: An array of one or more URLs. Supports wildcards (`/*`) for broader crawling.
-- **prompt** (Optional unless no schema): A natural language prompt describing the data you want or specifying how you want that data structured.
-- **schema** (Optional unless no prompt): A more rigid structure if you already know the JSON layout.
-- **enableWebSearch** (Optional): When `true`, extraction can follow links outside the specified domain.
+- **urls**：一个或多个URL的数组。支持用于更广泛爬取的通配符（`/*`）。
+- **prompt**（除非没有模式，否则可选）：描述您想要的数据或指定您希望的数据结构的自然语言提示。
+- **schema**（除非没有提示，否则可选）：如果您已经知道JSON布局，则可以提供一个更严格的结构。
+- **enableWebSearch**（可选）：当设置为 `true` 时，提取可以跟随指定域之外的链接。
 
-See [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/extract) for more details.
+更多详情请参见[API参考](https://docs.firecrawl.dev/api-reference/endpoint/extract)。
 
-### Response (sdks)
+
+### 响应（sdks）
 
 <ExtractOutput />
 
-## Asynchronous Extraction & Status Checking
+## 异步提取与状态检查
 
-When you submit an extraction job—either directly via the API or through the SDK's asynchronous methods—you'll receive a Job ID. You can use this ID to:
+当您提交一个提取任务——无论是直接通过API还是通过SDK的异步方法——您将收到一个作业ID。您可以使用此ID进行以下操作：
 
-- Check Job Status: Send a request to the /extract/{ID} endpoint to see if the job is still running or has finished.
-- Automatically Poll (Default SDK Behavior): If you use the default extract method (Python/Node), the SDK automatically polls this endpoint for you and returns the final results once the job completes.
-- Manually Poll (Async SDK Methods): If you use the asynchronous methods—async_extract (Python) or asyncExtract (Node)—the SDK immediately returns a Job ID that you can track. Use get_extract_status (Python) or getExtractStatus (Node) to check the job's progress on your own schedule.
+- 检查作业状态：向 /extract/{ID} 端点发送请求，以查看作业是否仍在运行或已经完成。
+- 自动轮询（默认SDK行为）：如果您使用默认的提取方法（Python/Node），SDK会自动为您轮询此端点，并在作业完成后返回最终结果。
+- 手动轮询（异步SDK方法）：如果您使用异步方法——async_extract（Python）或 asyncExtract（Node）——SDK会立即返回一个作业ID，您可以跟踪。使用 get_extract_status（Python）或 getExtractStatus（Node）按自己的计划检查作业进度。
+
 
 <Note>
-  This endpoint only works for jobs in progress or recently completed (within 24
-  hours).
+  此端点仅适用于正在进行中的作业或最近完成（24小时内）的作业。
 </Note>
 
-Below are code examples for checking an extraction job's status using Python, Node.js, and cURL:
+以下是使用Python、Node.js和cURL检查提取作业状态的代码示例：
 
 <CodeGroup>
 
@@ -87,24 +89,24 @@ Below are code examples for checking an extraction job's status using Python, No
 
 </CodeGroup>
 
-### Possible States
+### 可能的状态
 
-- **completed**: The extraction finished successfully.
-- **pending**: Firecrawl is still processing your request.
-- **failed**: An error occurred; data was not fully extracted.
-- **cancelled**: The job was cancelled by the user.
+- **completed**：提取成功完成。
+- **pending**：Firecrawl仍在处理您的请求。
+- **failed**：发生错误；数据未完全提取。
+- **cancelled**：用户取消了作业。
 
-#### Pending Example
+#### 待定示例
 
 <ExtractStatusPending />
 
-#### Completed Example
+#### 完成示例
 
 <ExtractStatusDone />
 
-## Extracting without a Schema
+## 无模式提取
 
-If you prefer not to define a strict structure, you can simply provide a `prompt`. The underlying model will choose a structure for you, which can be useful for more exploratory or flexible requests.
+如果您不想定义严格的结构，只需提供 `prompt`。底层模型将为您选择一种结构，这对于更具探索性或灵活性的请求非常有用。
 
 <CodeGroup>
 
@@ -116,11 +118,12 @@ If you prefer not to define a strict structure, you can simply provide a `prompt
 
 <ExtractNoSchemaOutput />
 
-## Improving Results with Web Search
+## 使用网络搜索改善结果
 
-Setting `enableWebSearch = true` in your request will expand the crawl beyond the provided URL set. This can capture supporting or related information from linked pages.
+在您的请求中设置 `enableWebSearch = true` 将扩展爬取范围，超越提供的URL集。这可以从链接的页面捕获支持或相关信息。
 
-Here's an example that extracts information about dash cams, enriching the results with data from related pages:
+
+以下是提取关于行车记录仪信息并使用相关页面数据丰富结果的示例：
 
 <CodeGroup>
 
@@ -130,28 +133,29 @@ Here's an example that extracts information about dash cams, enriching the resul
 
 </CodeGroup>
 
-### Example Response with Web Search
+### 带网络搜索的示例响应
 
 <ExtractWebSearchOutput />
 
-The response includes additional context gathered from related pages, providing more comprehensive and accurate information.
+响应包括从相关页面收集的额外上下文，提供了更全面和准确的信息。
 
-## Known Limitations (Beta)
+## 已知限制（Beta）
 
-1. **Large-Scale Site Coverage**  
-   Full coverage of massive sites (e.g., "all products on Amazon") in a single request is not yet supported.
+1. **大规模站点覆盖**  
+   一次请求中还不支持完全覆盖大型站点（例如，“亚马逊上的所有产品”）。
 
-2. **Complex Logical Queries**  
-   Requests like "find every post from 2025" may not reliably return all expected data. More advanced query capabilities are in progress.
+2. **复杂逻辑查询**  
+   像“查找2025年的所有帖子”这样的请求可能无法可靠地返回所有预期数据。更高级的查询功能正在开发中。
 
-3. **Occasional Inconsistencies**  
-   Results might differ across runs, particularly for very large or dynamic sites. Usually it captures core details, but some variation is possible.
 
-4. **Beta State**  
-   Since `/extract` is still in Beta, features and performance will continue to evolve. We welcome bug reports and feedback to help us improve.
+3. **偶尔的不一致性**  
+   结果可能会在不同运行间有所不同，特别是对于非常大的或动态的网站。通常它会捕获核心细节，但可能会出现一些变化。
 
-## Billing and Usage Tracking
+4. **Beta状态**  
+   由于 `/extract` 仍处于Beta阶段，功能和性能将继续发展。我们欢迎错误报告和反馈以帮助我们改进。
 
-You can check our the pricing for /extract on the [Extract landing page pricing page](https://www.firecrawl.dev/extract#pricing) and monitor usage via the [Extract page on the dashboard](https://www.firecrawl.dev/app/extract).
+## 计费和使用跟踪
 
-Have feedback or need help? Email [help@firecrawl.dev](mailto:help@firecrawl.dev).
+您可以在[提取登录页面定价页面](https://www.firecrawl.dev/extract#pricing)上查看我们的定价，并通过[仪表板上的提取页面](https://www.firecrawl.dev/app/extract)监控使用情况。
+
+有反馈或需要帮助吗？请通过电子邮件 [help@firecrawl.dev](mailto:help@firecrawl.dev) 联系我们。

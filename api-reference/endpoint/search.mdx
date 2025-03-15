@@ -1,8 +1,8 @@
 ---
-title: 'Search'
+title: '搜索'
 openapi: 'v1-openapi POST /search'
 ---
 
-The search endpoint combines web search (SERP) with Firecrawl's scraping capabilities to return full page content for any query.
+搜索端点将网页搜索（SERP）与Firecrawl的抓取能力相结合，以返回任何查询的完整页面内容。
 
-Include `scrapeOptions` with `formats: ["markdown"]` to get complete markdown content for each search result otherwise you will default to getting the SERP results (url, title, description).
+请在 `scrapeOptions` 中包含 `formats: ["markdown"]` 来获取每个搜索结果的完整Markdown内容，否则你将默认获得SERP结果（url、标题、描述）。

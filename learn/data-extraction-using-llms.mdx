@@ -1,66 +1,66 @@
 ---
-title: "Extract website data using LLMs"
-description: "Learn how to use Firecrawl and Groq to extract structured data from a web page in a few lines of code."
-"og:image": "/images/og.png"
-"twitter:image": "/images/og.png"
-og:title: "Extract website data using LLMs | Firecrawl"
-og:description: "Learn how to use Firecrawl and Groq to extract structured data from a web page in a few lines of code."
+标题: "使用LLMs提取网站数据"
+描述: "学习如何使用Firecrawl和Groq在几行代码中从网页中提取结构化数据。"
+og:image: "/images/og.png"
+twitter:image: "/images/og.png"
+og:title: "使用LLMs提取网站数据 | Firecrawl"
+og:description: "学习如何使用Firecrawl和Groq在几行代码中从网页中提取结构化数据。"
 ---
 
-> Note: this example is using [v0 version of the Firecrawl API](/v0/introduction). You can install the 0.0.20 version for the Python SDK or the 0.0.36 for the Node SDK.
+> 注意：此示例使用的是[Firecrawl API的v0版本](/v0/introduction)。您可以安装Python SDK的0.0.20版本或Node SDK的0.0.36版本。
 
-## Setup
+## 设置
 
-Install our python dependencies, including groq and firecrawl-py.
+安装我们的python依赖，包括groq和firecrawl-py。
 
 ```bash
 pip install groq firecrawl-py
 ```
 
-## Getting your Groq and Firecrawl API Keys
+## 获取您的Groq和Firecrawl API密钥
 
-To use Groq and Firecrawl, you will need to get your API keys. You can get your Groq API key from [here](https://groq.com) and your Firecrawl API key from [here](https://firecrawl.dev).
+要使用Groq和Firecrawl，您需要获取您的API密钥。您可以从[这里](https://groq.com)获取您的Groq API密钥，从[这里](https://firecrawl.dev)获取您的Firecrawl API密钥。
 
-## Load website with Firecrawl
+## 使用Firecrawl加载网站
 
-To be able to get all the data from a website page and make sure it is in the cleanest format, we will use [Firecrawl](https://firecrawl.dev). It handles by-passing JS-blocked websites, extracting the main content, and outputting in a LLM-readable format for increased accuracy.
+为了能够从网站页面获取所有数据并确保其处于最干净的格式，我们将使用[Firecrawl](https://firecrawl.dev)。它处理绕过JS阻止的网站，提取主要内容，并以LLM可读格式输出以提高准确性。
 
-Here is how we will scrape a website url using Firecrawl. We will also set a `pageOptions` for only extracting the main content (`onlyMainContent: True`) of the website page - excluding the navs, footers, etc.
+以下是我们如何使用Firecrawl抓取网站URL的方法。我们还将设置`pageOptions`以仅提取网站页面的主要内容（`onlyMainContent: True`）- 排除导航、页脚等。
 
 ```python
-from firecrawl import FirecrawlApp  # Importing the FireCrawlLoader
+from firecrawl import FirecrawlApp  # 导入FireCrawlLoader
 
 url = "https://about.fb.com/news/2024/04/introducing-our-open-mixed-reality-ecosystem/"
 
 firecrawl = FirecrawlApp(
     api_key="fc-YOUR_FIRECRAWL_API_KEY",
 )
-page_content = firecrawl.scrape_url(url=url,  # Target URL to crawl
+page_content = firecrawl.scrape_url(url=url,  # 目标URL进行爬取
     params={
         "pageOptions":{
-            "onlyMainContent": True # Ignore navs, footers, etc.
+            "onlyMainContent": True # 忽略导航、页脚等
         }
     })
 print(page_content)
 ```
 
-Perfect, now we have clean data from the website - ready to be fed to the LLM for data extraction.
+完美，现在我们有了来自网站的干净数据 - 准备被提供给LLM进行数据提取。
 
-## Extraction and Generation
+## 提取与生成
 
-Now that we have the website data, let's use Groq to pull out the information we need. We'll use Groq Llama 3 model in JSON mode and pick out certain fields from the page content.
+现在我们已经拥有了网站数据，让我们使用Groq来提取我们需要的信息。我们将使用Groq Llama 3模型在JSON模式下，并从页面内容中挑选出某些字段。
 
-We are using LLama 3 8b model for this example. Feel free to use bigger models for improved results.
+我们在这个示例中使用LLama 3 8b模型。请随意使用更大的模型以获得更好的结果。
 
 ```python
 import json
 from groq import Groq
 
 client = Groq(
-    api_key="gsk_YOUR_GROQ_API_KEY",  # Note: Replace 'API_KEY' with your actual Groq API key
+    api_key="gsk_YOUR_GROQ_API_KEY",  # 注意：用您实际的Groq API密钥替换'API_KEY'
 )
 
-# Here we define the fields we want to extract from the page content
+# 在这里我们定义想要从页面内容中提取的字段
 extract = ["summary","date","companies_building_with_quest","title_of_the_article","people_testimonials"]
 
 completion = client.chat.completions.create(
@@ -68,12 +68,16 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "system",
-            "content": "You are a legal advisor who extracts information from documents in JSON."
+            "content": "你是一名法律顾问，负责从文档中提取信息并以JSON格式呈现。"
         },
         {
             "role": "user",
-            # Here we pass the page content and the fields we want to extract
-            "content": f"Extract the following information from the provided documentation:\Page content:\n\n{page_content}\n\nInformation to extract: {extract}"
+            # 在这里我们传递页面内容和想要提取的字段
+            "content": f"从提供的文档中提取以下信息:\Page content:
+
+{page_content}
+
+要提取的信息: {extract}"
         }
     ],
     temperature=0,
@@ -81,19 +85,19 @@ completion = client.chat.completions.create(
     top_p=1,
     stream=False,
     stop=None,
-    # We set the response format to JSON object
+    # 我们设置响应格式为JSON对象
     response_format={"type": "json_object"}
 )
 
 
-# Pretty print the JSON response
+# 漂亮打印JSON响应
 dataExtracted = json.dumps(str(completion.choices[0].message.content), indent=4)
 
 print(dataExtracted)
 ```
 
-## And Voila!
+## 完成！
 
-You have now built a data extraction bot using Groq and Firecrawl. You can now use this bot to extract structured data from any website.
+您现在已经使用Groq和Firecrawl构建了一个数据提取机器人。您可以使用这个机器人从任何网站中提取结构化数据。
 
-If you have any questions or need help, feel free to reach out to us at [Firecrawl](https://firecrawl.dev).
+如果您有任何问题或需要帮助，请随时通过[Firecrawl](https://firecrawl.dev)联系我们。

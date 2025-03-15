@@ -1,4 +1,4 @@
-```go Go
+```go
 import (
 	"fmt"
 	"log"
@@ -11,28 +11,28 @@ func ptr[T any](v T) *T {
 }
 
 func main() {
-	// Initialize the FirecrawlApp with your API key
+	// 使用API密钥初始化FirecrawlApp
 	apiKey := "fc-YOUR_API_KEY"
 	apiUrl := "https://api.firecrawl.dev"
 	version := "v1"
 
 	app, err := firecrawl.NewFirecrawlApp(apiKey, apiUrl, version)
 	if err != nil {
-		log.Fatalf("Failed to initialize FirecrawlApp: %v", err)
+		log.Fatalf("无法初始化FirecrawlApp: %v", err)
 	}
 
-  // Scrape a website
+  // 抓取网站内容
   scrapeStatus, err := app.ScrapeUrl("https://firecrawl.dev", firecrawl.ScrapeParams{
     Formats: []string{"markdown", "html"},
   })
   if err != nil {
-    log.Fatalf("Failed to send scrape request: %v", err)
+    log.Fatalf("发送抓取请求失败: %v", err)
   }
 
   fmt.Println(scrapeStatus)
 
-	// Crawl a website
-  idempotencyKey := uuid.New().String() // optional idempotency key
+	// 爬取网站内容
+  idempotencyKey := uuid.New().String() // 可选的幂等性键
   crawlParams := &firecrawl.CrawlParams{
 		ExcludePaths: []string{"blog/*"},
 		MaxDepth:     ptr(2),
@@ -40,9 +40,9 @@ func main() {
 
 	crawlStatus, err := app.CrawlUrl("https://firecrawl.dev", crawlParams, &idempotencyKey)
 	if err != nil {
-		log.Fatalf("Failed to send crawl request: %v", err)
+		log.Fatalf("发送爬取请求失败: %v", err)
 	}
 
-	fmt.Println(crawlStatus) 
+	fmt.Println(crawlStatus)
 }
 ```

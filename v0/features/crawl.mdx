@@ -22,15 +22,13 @@ Firecrawl thoroughly crawls websites, ensuring comprehensive data extraction whi
 
 This method guarantees an exhaustive crawl and data collection from any starting URL.
 
-
 ## Crawling
 
 ### /crawl endpoint
 
-Used to crawl a URL and all accessible subpages. This submits a crawl job and returns a job ID to check the status of the crawl.
+用于爬取一个URL及其所有可访问的子页面。这会提交一个爬虫任务并返回一个作业ID，以检查爬虫的状态。
 
-
-### Installation 
+### 安装
 
 <CodeGroup>
 
@@ -62,7 +60,7 @@ tokio = { version = "1", features = ["full"] }
 
 </CodeGroup>
 
-### Usage
+### 使用
 
 <CodeGroup>
 
@@ -137,7 +135,8 @@ async fn main() {
 
   // Print the crawl result
   match crawl_result {
-      Ok(data) => println!("Crawl Result:\n{}", data),
+      Ok(data) => println!("Crawl Result:
+{}", data),
       Err(e) => eprintln!("Crawl failed: {}", e),
   }
 }
@@ -156,18 +155,16 @@ curl -X POST https://api.firecrawl.dev/v0/crawl \
 
 ### Job ID Response
 
-If you are not using the sdk or prefer to use webhook or a different polling method, you can set the `wait_until_done` to `false`. 
-This will return a jobId.
-
-For cURL, /crawl will always return a jobId where you can use to check the status of the crawl.
+如果您不使用SDK或更喜欢使用webhook或其他轮询方法，可以将`wait_until_done`设置为`false`。这将返回一个jobId。
+对于cURL，/crawl将始终返回一个jobId，您可以用它来检查爬虫的状态。
 
 ```json
 { "jobId": "1234-5678-9101" }
 ```
 
-### Check Crawl Job
+### 检查爬虫作业状态
 
-Used to check the status of a crawl job and get its result.
+用于检查爬虫作业的状态并获取其结果。
 <CodeGroup>
 
 ```python Python
@@ -202,7 +199,7 @@ curl -X GET https://api.firecrawl.dev/v0/crawl/status/1234-5678-9101 \
 
 </CodeGroup>
 
-#### Response
+#### 响应
 
 ```json
 {

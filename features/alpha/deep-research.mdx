@@ -1,10 +1,10 @@
 ---
-title: "Deep Research"
-description: Research API that allows you to build deep research into your own applications"
-og:title: "Deep Research | Firecrawl"
-og:description: "AI-powered deep research and analysis"
+title: "深度研究"
+description: 允许您在自己的应用程序中构建深度研究的API"
+og:title: "深度研究 | Firecrawl"
+og:description: "由AI驱动的深度研究与分析"
 icon: "brain-circuit"
-sidebarTitle: "Deep Research (Alpha)"
+sidebarTitle: "深度研究（Alpha版）"
 ---
 
 import DeepResearchCURL from "/snippets/v1/deep-research/base/curl.mdx";
@@ -17,26 +17,26 @@ import CheckStatusNode from "/snippets/v1/deep-research/status/js.mdx";
 import StatusPending from "/snippets/v1/deep-research/status/pending.mdx";
 import StatusCompleted from "/snippets/v1/deep-research/status/completed.mdx";
 
-## Introducing Deep Research (Alpha)
+## 介绍深度研究（Alpha版）
 
-The `/deep-research` endpoint enables AI-powered deep research and analysis on any topic. Simply provide a research query, and Firecrawl will autonomously explore the web, gather relevant information, and synthesize findings into comprehensive insights.
+`/deep-research` 端点启用了任何主题的AI驱动深度研究和分析。只需提供研究查询，Firecrawl将自动探索网络，收集相关信息，并将发现综合为全面的洞察。
 
-## Building with Deep Research
+## 使用深度研究构建
 
-Deep Research works by:
-1. Analyzing your query to identify key research areas
-2. Iteratively searching and exploring relevant web content
-3. Synthesizing information from multiple sources
-4. Providing structured findings with source attribution
+深度研究通过以下方式工作：
+1. 分析您的查询以识别关键研究领域
+2. 迭代搜索和探索相关网络内容
+3. 从多个来源综合信息
+4. 提供带有来源归属的结构化发现
 
-Firecrawl provides structured results that enable you to build powerful applications:
+Firecrawl提供结构化结果，使您能够构建强大的应用程序：
 
-- **Activities**: Detailed timeline of research steps and findings
-- **Sources**: Curated list of relevant URLs with titles and descriptions 
-- **Final Analysis**: Comprehensive synthesis of key insights and conclusions
-- **Progress Tracking**: Real-time status updates on research depth and completion
+- **活动**：研究步骤和发现的详细时间线
+- **来源**：带有标题和描述的相关URL的精选列表
+- **最终分析**：关键见解和结论的综合合成
+- **进度跟踪**：研究深度和完成情况的实时状态更新
 
-### Example Usage
+### 示例用法
 
 <CodeGroup>
 
@@ -46,22 +46,22 @@ Firecrawl provides structured results that enable you to build powerful applicat
 
 </CodeGroup>
 
-**Key Parameters:**
+**关键参数：**
 
-- **query**: The research topic or question you want to investigate
-- **maxDepth** (Optional): Maximum number of research iterations (1-10, default: 7)
-- **timeLimit** (Optional): Time limit in seconds (30-300, default: 270)
-- **maxUrls** (Optional): Maximum number of URLs to analyze (1-1000, default: 20)
+- **query**：您想要调查的研究主题或问题
+- **maxDepth**（可选）：最大研究迭代次数（1-10，默认值：7）
+- **timeLimit**（可选）：时间限制（秒）（30-300，默认值：270）
+- **maxUrls**（可选）：要分析的最大URL数量（1-1000，默认值：20）
 
-See [API Reference](/api-reference/endpoint/deep-research) for more details.
+有关更多详细信息，请参见[API参考](/api-reference/endpoint/deep-research)。
 
-### Response
+### 响应
 
 <DeepResearchOutput />
 
-## Monitoring Research Progress
+## 监控研究进度
 
-Deep Research jobs run asynchronously. You can monitor progress and receive real-time updates:
+深度研究作业是异步运行的。您可以监控进度并接收实时更新：
 
 <CodeGroup>
 
@@ -71,55 +71,54 @@ Deep Research jobs run asynchronously. You can monitor progress and receive real
 
 </CodeGroup>
 
+### 研究活动
 
-### Research Activities
+数据响应包括：
 
-The data response includes:
+- **activities**：具有以下属性的研究活动列表：
+  - `type`：活动类型（'search', 'extract', 'analyze', 'reasoning', 'synthesis', 'thought'）
+  - `status`：活动状态（'processing', 'complete', 'error'）
+  - `message`：活动或发现的描述
+  - `timestamp`：活动发生的ISO时间戳
+  - `depth`：当前研究深度级别
+- **sources**：带有标题和描述的引用URL
+  - `title`：来源的标题
+  - `description`：来源的描述
+  - `url`：来源的URL
+  - `icon`：来源的图标
+- **finalAnalysis**：综合分析（完成后）
 
-- **activities**: List of research activities with the following properties:
-- `type`: Type of activity ('search', 'extract', 'analyze', 'reasoning', 'synthesis', 'thought')
-- `status`: Activity status ('processing', 'complete', 'error')
-- `message`: Description of the activity or finding
-- `timestamp`: ISO timestamp of when the activity occurred
-- `depth`: Current research depth level
-- **sources**: Referenced URLs with titles and descriptions
-- `title`: Title of the source
-- `description`: Description of the source
-- `url`: URL of the source
-- `icon`: Icon of the source
-- **finalAnalysis**: Comprehensive analysis (when completed)
+### 状态示例
 
-### Status Examples
-
-
-#### In Progress
+#### 进行中
 
 <StatusPending />
 
-#### Completed
+#### 已完成
 
 <StatusCompleted />
 
-## Models
+## 模型
 
-While in Alpha we use a combination of small models to explore the web and synthesize information. That way we can keep the cost low and the research fast. But this can result in the synthesis not being very long and detailed. If you'd like us to offer more powerful models, let us know at [help@firecrawl.dev](mailto:help@firecrawl.dev).
+在Alpha阶段，我们使用多种小型模型来探索网络和综合信息。这样可以保持成本低且研究速度快。但这可能导致合成不够长且详细。如果您希望我们提供更强大的模型，请通过 [help@firecrawl.dev](mailto:help@firecrawl.dev) 告知我们。
 
-## Known Limitations (Alpha)
 
-1. **Research Scope**  
-Best suited for topics with publicly available information. May not access paywalled or private content.
+## 已知局限性（Alpha版）
 
-2. **Time Constraints**  
-Research jobs are limited to 10 minutes maximum to ensure reasonable response times.
+1. **研究范围**  
+最适合公开可用信息的主题。可能无法访问付费墙或私人内容。
 
-3. **Source Verification**  
-While sources are provided, manual verification of critical information is recommended.
+2. **时间限制**  
+研究作业最多限制为10分钟以确保合理的响应时间。
 
-4. **Alpha State**  
-As an Alpha feature, the research methodology and output format may evolve based on feedback.
+3. **来源验证**  
+虽然提供了来源，但建议手动验证关键信息。
 
-## Billing and Usage
+4. **Alpha状态**  
+作为Alpha功能，研究方法和输出格式可能会根据反馈而演变。
 
-Billing is done based on the number of `urls` analyzed. Each `url` is 1 credit. You can specify the max number of urls to analyze with the `maxUrls` parameter.
+## 计费和使用
 
-Have feedback or need help? Email [help@firecrawl.dev](mailto:help@firecrawl.dev).
+计费基于分析的`url`数量。每个`url`计为1个积分。您可以使用`maxUrls`参数指定要分析的最大URL数量。
+
+有反馈或需要帮助吗？请发送电子邮件至 [help@firecrawl.dev](mailto:help@firecrawl.dev)。

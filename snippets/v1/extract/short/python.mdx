@@ -4,23 +4,24 @@ from pydantic import BaseModel
 class ExtractSchema(BaseModel):
     company_mission: str
 
-# Define the URLs to extract data from
+# 定义要提取数据的URL
 urls = [
     'https://firecrawl.dev/*'
 ]
 
-# Define the prompt for extraction
-prompt = 'Extract the company mission from the page.'
+# 定义提取提示
+prompt = '从页面中提取公司使命。'
 
-# Perform the extraction
+# 执行提取操作
 scrape_result = app.extract(urls, {
     'prompt': prompt,
     'schema': ExtractSchema.model_json_schema(),
 })
 
-# Check if the extraction was successful
+# 检查提取是否成功
 if not scrape_result['success']:
-    raise Exception(f"Failed to scrape: {scrape_result['error']}")
+    raise Exception(f"提取失败：{scrape_result['error']}")
 
-# Print the extracted data
+# 打印提取的数据
 print(scrape_result['data'])
+```

@@ -1,28 +1,28 @@
 ---
 title: 'Go'
-description: 'Firecrawl Go SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown.'
+description: 'Firecrawl Go SDK 是一个包装在 Firecrawl API 上的库，帮助您轻松将网站转换为 markdown。'
 icon: 'golang'
 og:title: "Go SDK | Firecrawl"
-og:description: "Firecrawl Go SDK is a wrapper around the Firecrawl API to help you easily turn websites into markdown."
+og:description: "Firecrawl Go SDK 是一个包装在 Firecrawl API 上的库，帮助您轻松将网站转换为 markdown。"
 ---
 
-> Note: this is using [v0 version of the Firecrawl API](/v0/introduction) which is being deprecated. We recommend switching to [v1](/sdks/go).
+> 注意：此文档使用的是 [Firecrawl API 的 v0 版本](/v0/introduction)，该版本已被弃用。我们建议切换到 [v1](/sdks/go)。
 
-## Installation
+## 安装
 
-To install the Firecrawl Go SDK, you can use go get:
+要安装 Firecrawl Go SDK，您可以使用 go get：
 
 ```bash
 go get github.com/mendableai/firecrawl-go
 ```
 
-## Usage
+## 使用
 
-1. Get an API key from [firecrawl.dev](https://firecrawl.dev)
-2. Set the API key as an environment variable named `FIRECRAWL_API_KEY` or pass it as a parameter to the `FirecrawlApp` struct.
+1. 从 [firecrawl.dev](https://firecrawl.dev) 获取一个 API key
+2. 将 API key 设置为环境变量 `FIRECRAWL_API_KEY` 或将其作为参数传递给 `FirecrawlApp` 结构体。
 
 
-Here's an example of how to use the SDK with error handling:
+以下是如何使用 SDK 并处理错误的示例：
 
 ```go
 import (
@@ -33,20 +33,20 @@ import (
 )
 
 func main() {
-  // Initialize the FirecrawlApp with your API key
+  // 使用您的 API key 初始化 FirecrawlApp
   app, err := firecrawl.NewFirecrawlApp("YOUR_API_KEY")
   if err != nil {
-    log.Fatalf("Failed to initialize FirecrawlApp: %v", err)
+    log.Fatalf("无法初始化 FirecrawlApp: %v", err)
   }
 
-  // Scrape a single URL
+  // 抓取单个 URL
   scrapedData, err := app.ScrapeURL("docs.firecrawl.dev", nil)
   if err != nil {
-    log.Fatalf("Error occurred while scraping: %v", err)
+    log.Fatalf("抓取时发生错误: %v", err)
   }
   fmt.Println(scrapedData)
 
-  // Crawl a website
+  // 爬取一个网站
   params := map[string]any{
     "pageOptions": map[string]any{
       "onlyMainContent": true,
@@ -55,35 +55,35 @@ func main() {
 
   crawlResult, err := app.CrawlURL("docs.firecrawl.dev", params)
   if err != nil {
-    log.Fatalf("Error occurred while crawling: %v", err)
+    log.Fatalf("爬取时发生错误: %v", err)
   }
   fmt.Println(crawlResult)
 }
 ```
 
 
-### Scraping a URL
+### 抓取一个 URL
 
-To scrape a single URL with error handling, use the `ScrapeURL` method. It takes the URL as a parameter and returns the scraped data as a dictionary.
+使用 `ScrapeURL` 方法抓取单个 URL 并处理错误。它接受 URL 作为参数并返回抓取的数据作为字典。
 
 ```go
 scrapedData, err := app.ScrapeURL("docs.firecrawl.dev", nil)
 if err != nil {
-  log.Fatalf("Failed to scrape URL: %v", err)
+  log.Fatalf("无法抓取 URL: %v", err)
 }
 fmt.Println(scrapedData)
 ```
 
 
-### Crawling a Website
+### 爬取一个网站
 
-To crawl a website, use the `CrawlUrl` method. It takes the starting URL and optional parameters as arguments. The `params` argument allows you to specify additional options for the crawl job, such as the maximum number of pages to crawl, allowed domains, and the output format.
+使用 `CrawlUrl` 方法爬取一个网站。它接受起始 URL 和可选参数。`params` 参数允许您指定额外的选项，如最大页面数量、允许的域和输出格式。
 
 ```go
 crawlParams := map[string]any{
   "crawlerOptions": map[string]any{
     "excludes": []string{"blog/*"},
-    "includes": []string{}, // leave empty for all pages
+    "includes": []string{}, // 留空表示所有页面
     "limit": 1000,
   },
   "pageOptions": map[string]any{
@@ -92,41 +92,41 @@ crawlParams := map[string]any{
 }
 crawlResult, err := app.CrawlURL("docs.firecrawl.dev", crawlParams, true, 2, idempotencyKey)
 if err != nil {
-  log.Fatalf("Failed to crawl URL: %v", err)
+  log.Fatalf("无法爬取 URL: %v", err)
 }
 fmt.Println(crawlResult)
 ```
 
 
-### Checking Crawl Status
+### 检查爬取状态
 
-To check the status of a crawl job, use the `CheckCrawlStatus` method. It takes the job ID as a parameter and returns the current status of the crawl job.
+使用 `CheckCrawlStatus` 方法检查爬取作业的状态。它接受作业 ID 作为参数并返回当前爬取作业的状态。
 
 ```go
 status, err := app.CheckCrawlStatus(jobId)
 if err != nil {
-  log.Fatalf("Failed to check crawl status: %v", err)
+  log.Fatalf("无法检查爬取状态: %v", err)
 }
 fmt.Println(status)
 ```
 
 
-### Canceling a Crawl Job
+### 取消爬取作业
 
-To cancel a crawl job, use the `CancelCrawlJob` method. It takes the job ID as a parameter and returns the cancellation status of the crawl job.
+使用 `CancelCrawlJob` 方法取消爬取作业。它接受作业 ID 作为参数并返回取消状态。
 
 ```go
 canceled, err := app.CancelCrawlJob(jobId)
 if err != nil {
-  log.Fatalf("Failed to cancel crawl job: %v", err)
+  log.Fatalf("无法取消爬取作业: %v", err)
 }
 fmt.Println(canceled)
 ```
 
 
-### Extracting structured data from a URL
+### 从 URL 提取结构化数据
 
-With LLM extraction, you can easily extract structured data from any URL. Here is how you to use it:
+使用 LLM 提取，可以轻松地从任何 URL 提取结构化数据。以下是如何使用它的示例：
 
 ```go
 jsonSchema := map[string]any{
@@ -146,7 +146,7 @@ jsonSchema := map[string]any{
       },
       "minItems":    5,
       "maxItems":    5,
-      "description": "Top 5 stories on Hacker News",
+      "description": "Hacker News 上的前 5 个故事",
     },
   },
   "required": []string{"top"},
@@ -160,26 +160,27 @@ llmExtractionParams := map[string]any{
 
 scrapeResult, err := app.ScrapeURL("https://news.ycombinator.com", llmExtractionParams)
 if err != nil {
-  log.Fatalf("Failed to perform LLM extraction: %v", err)
+  log.Fatalf("无法执行 LLM 提取: %v", err)
 }
 fmt.Println(scrapeResult)
 ```
 
 
-### Search for a query
+### 搜索查询
 
-To search the web, get the most relevant results, scrap each page and return the markdown, use the `Search` method. The method takes the query as a parameter and returns the search results.
+要搜索网络，获取最相关的结果，抓取每个页面并返回 markdown，请使用 `Search` 方法。该方法接受查询作为参数并返回搜索结果。
+
 
 ```go
 query := "What is firecrawl?"
 searchResult, err := app.Search(query)
 if err != nil {
-  log.Fatalf("Failed to search: %v", err)
+  log.Fatalf("搜索失败: %v", err)
 }
 fmt.Println(searchResult)
 ```
 
 
-## Error Handling
+## 错误处理
 
-The SDK handles errors returned by the Firecrawl API and raises appropriate exceptions. If an error occurs during a request, an exception will be raised with a descriptive error message.
+SDK 处理由 Firecrawl API 返回的错误并引发适当的异常。如果请求过程中发生错误，将会引发带有描述性错误消息的异常。

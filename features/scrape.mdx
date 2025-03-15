@@ -1,8 +1,8 @@
 ---
-title: "Scrape"
-description: "Turn any url into clean data"
-og:title: "Scrape | Firecrawl"
-og:description: "Turn any url into clean data"
+title: "抓取"
+description: "将任何URL转换为干净数据"
+og:title: "抓取 | Firecrawl"
+og:description: "将任何URL转换为干净数据"
 ---
 
 import InstallationPython from "/snippets/v1/installation/python.mdx";
@@ -34,22 +34,22 @@ import ScrapeLocationPython from "/snippets/v1/scrape/location/python.mdx";
 import ScrapeLocationNode from "/snippets/v1/scrape/location/js.mdx";
 import ScrapeLocationCURL from "/snippets/v1/scrape/location/curl.mdx";
 
-Firecrawl converts web pages into markdown, ideal for LLM applications.
+Firecrawl 将网页转换为Markdown格式，非常适合LLM应用。
 
-- It manages complexities: proxies, caching, rate limits, js-blocked content
-- Handles dynamic content: dynamic websites, js-rendered sites, PDFs, images
-- Outputs clean markdown, structured data, screenshots or html.
+- 它处理复杂性：代理、缓存、速率限制、被JS阻止的内容
+- 处理动态内容：动态网站、JS渲染的网站、PDF、图片
+- 输出干净的Markdown、结构化数据、截图或HTML。
 
-For details, see the [Scrape Endpoint API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+有关详细信息，请参阅[Scrape Endpoint API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
 
-## Scraping a URL with Firecrawl
+## 使用Firecrawl抓取URL
 
-### /scrape endpoint
+### /scrape 端点
 
-Used to scrape a URL and get its content.
+用于抓取URL并获取其内容。
 
-### Installation 
+### 安装
 
 <CodeGroup>
 
@@ -63,7 +63,7 @@ Used to scrape a URL and get its content.
 
 </CodeGroup>
 
-### Usage
+### 使用
 
 <CodeGroup>
 
@@ -79,32 +79,32 @@ Used to scrape a URL and get its content.
 
 </CodeGroup>
 
-For more details about the parameters, refer to the [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+有关参数的更多详细信息，请参阅[API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
-### Response
+### 响应
 
-SDKs will return the data object directly. cURL will return the payload exactly as shown below.
+SDK将直接返回数据对象。cURL将返回如下所示的有效负载。
 
 <ScrapeResponse />
 
-## Scrape Formats
+## 抓取格式
 
-You can now choose what formats you want your output in. You can specify multiple output formats. Supported formats are:
+现在您可以选择希望输出的格式。您可以指定多个输出格式。支持的格式有：
 
-- Markdown (markdown)
-- HTML (html)
-- Raw HTML (rawHtml) (with no modifications)
-- Screenshot (screenshot or screenshot@fullPage)
-- Links (links)
-- Extract (extract) - structured output
+- Markdown（markdown）
+- HTML（html）
+- 原始HTML（rawHtml）（不做修改）
+- 截图（screenshot或screenshot@fullPage）
+- 链接（links）
+- 提取（extract） - 结构化输出
 
-Output keys will match the format you choose.
+输出键将匹配您选择的格式。
 
-## Extract structured data
+## 提取结构化数据
 
-### /scrape (with extract) endpoint
+### /scrape (with extract) 端点
 
-Used to extract structured data from scraped pages.
+用于从抓取的页面中提取结构化数据。
 
 <CodeGroup>
 
@@ -114,13 +114,13 @@ Used to extract structured data from scraped pages.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractOutput />
 
-### Extracting without schema (New)
+### 无模式提取（新功能）
 
-You can now extract without a schema by just passing a `prompt` to the endpoint. The llm chooses the structure of the data.
+现在可以通过仅传递`prompt`给端点来无模式提取。LLM会选择数据的结构。
 
 <CodeGroup>
 
@@ -128,29 +128,27 @@ You can now extract without a schema by just passing a `prompt` to the endpoint.
 
 </CodeGroup>
 
-Output:
+输出：
 
 <ExtractNoSchemaOutput />
 
-### Extract object
+### 提取对象
 
-The `extract` object accepts the following parameters:
+`extract`对象接受以下参数：
 
-- `schema`: The schema to use for the extraction.
-- `systemPrompt`: The system prompt to use for the extraction.
-- `prompt`: The prompt to use for the extraction without a schema.
+- `schema`: 用于提取的模式。
+- `systemPrompt`: 用于提取的系统提示。
+- `prompt`: 用于无模式提取的提示。
 
+## 与页面进行交互操作
 
+Firecrawl允许您在抓取内容之前对网页执行各种操作。这对于与动态内容互动、导航页面或访问需要用户互动的内容特别有用。
 
-## Interacting with the page with Actions
+以下是如何使用操作导航到google.com，搜索Firecrawl，点击第一个结果，并截屏的示例。
 
-Firecrawl allows you to perform various actions on a web page before scraping its content. This is particularly useful for interacting with dynamic content, navigating through pages, or accessing content that requires user interaction.
+重要的是几乎总是在其他操作前后使用`wait`操作，以留出足够的时间让页面加载。
 
-Here is an example of how to use actions to navigate to google.com, search for Firecrawl, click on the first result, and take a screenshot.
-
-It is important to almost always use the `wait` action before/after executing other actions to give enough time for the page to load.
-
-### Example
+### 示例
 <CodeGroup>
 
 <ScrapeActionsPython />
@@ -158,30 +156,30 @@ It is important to almost always use the `wait` action before/after executing ot
 <ScrapeActionsCURL />
 
 </CodeGroup>
-### Output
+### 输出
 
 <CodeGroup>
 
 <ScrapeActionsOutput />
 
-
 </CodeGroup>
-For more details about the actions parameters, refer to the [API Reference](https://docs.firecrawl.dev/api-reference/endpoint/scrape).
+有关操作参数的更多详细信息，请参阅[API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
-## Location and Language
+## 位置和语言
 
-Specify country and preferred languages to get relevant content based on your target location and language preferences.
+指定国家和首选语言以根据目标位置和语言偏好获取相关内容。
 
-### How it works
+### 工作原理
 
-When you specify the location settings, Firecrawl will use an appropriate proxy if available and emulate the corresponding language and timezone settings. By default, the location is set to 'US' if not specified.
+当您指定位置设置时，Firecrawl将使用适当的代理（如果有的话），并模拟相应的语言和时区设置。默认情况下，如果未指定位置，则设置为'US'。
 
-### Usage
+### 使用
 
-To use the location and language settings, include the `location` object in your request body with the following properties:
+要使用位置和语言设置，请在请求体中包含`location`对象及其属性：
 
-- `country`: ISO 3166-1 alpha-2 country code (e.g., 'US', 'AU', 'DE', 'JP'). Defaults to 'US'.
-- `languages`: An array of preferred languages and locales for the request in order of priority. Defaults to the language of the specified location.
+- `country`: ISO 3166-1 alpha-2国家代码（例如，'US', 'AU', 'DE', 'JP'）。默认为'US'。
+- `languages`: 请求的首选语言和地区优先级数组。默认为指定位置的语言。
+
 
 <CodeGroup>
 <ScrapeLocationPython />
@@ -189,17 +187,17 @@ To use the location and language settings, include the `location` object in your
 <ScrapeLocationCURL />
 </CodeGroup>
 
-## Batch scraping multiple URLs
+## 批量抓取多个URL
 
-You can now batch scrape multiple URLs at the same time. It takes the starting URLs and optional parameters as arguments. The params argument allows you to specify additional options for the batch scrape job, such as the output formats.
+现在可以同时批量抓取多个URL。它接收起始URL和可选参数作为参数。params参数允许您指定批量抓取作业的其他选项，例如输出格式。
 
-### How it works
+### 工作原理
 
-It is very similar to how the `/crawl` endpoint works. It submits a batch scrape job and returns a job ID to check the status of the batch scrape. 
+这与`/crawl`端点的工作原理非常相似。它提交一个批量抓取作业并返回一个作业ID，用于检查批量抓取的状态。
 
-The sdk provides 2 methods, synchronous and asynchronous. The synchronous method will return the results of the batch scrape job, while the asynchronous method will return a job ID that you can use to check the status of the batch scrape.
+SDK提供同步和异步两种方法。同步方法将返回批量抓取作业的结果，而异步方法将返回一个作业ID，您可以使用该ID来检查批量抓取的状态。
 
-### Usage
+### 使用
 
 <CodeGroup>
 
@@ -209,17 +207,14 @@ The sdk provides 2 methods, synchronous and asynchronous. The synchronous method
 
 </CodeGroup>
 
-### Response
+### 响应
 
-If you’re using the sync methods from the SDKs, it will return the results of the batch scrape job. Otherwise, it will return a job ID that you can use to check the status of the batch scrape.
+如果您使用的是SDK中的同步方法，它将返回批量抓取作业的结果。否则，它将返回一个作业ID，您可以使用该ID来检查批量抓取的状态。
 
-#### Synchronous
+#### 同步方式
 
 <BatchScrapeOutput />
 
-#### Asynchronous
+#### 异步方式
 
-You can then use the job ID to check the status of the batch scrape by calling the `/batch/scrape/{id}` endpoint. This endpoint is meant to be used while the job is still running or right after it has completed **as batch scrape jobs expire after 24 hours**.
-
-<BatchScrapeAsyncOutput />
-
+然后您可以使用作业ID通过调用`/batch/scrape/{id}`端点来检查批量抓取的状态。此端点应在作业仍在
