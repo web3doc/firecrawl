@@ -45,11 +45,9 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 
 [Firecrawl](https://firecrawl.dev?ref=github) 是一个 API 服务，它接受一个 URL，抓取并转换为干净的 markdown。我们会抓取所有可访问的子页面，为您提供每个页面的干净 markdown。无需站点地图。
 
-
 ## 如何使用？
 
 我们提供了易于使用的 API 和托管版本。您可以在 [这里](https://firecrawl.dev/playground) 找到游乐场和文档。如果您愿意，也可以自行托管后端。
-
 
 以下是开始使用的资源：
 
@@ -57,7 +55,9 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 - [x] **SDKs**: [Python](https://docs.firecrawl.dev/sdks/python), [Node](https://docs.firecrawl.dev/sdks/node), [Go](https://docs.firecrawl.dev/sdks/go), [Rust](https://docs.firecrawl.dev/sdks/rust)
 - [x] **LLM 框架**: [Langchain (python)](https://python.langchain.com/docs/integrations/document_loaders/firecrawl/), [Langchain (js)](https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl), [Llama Index](https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader), [Crew.ai](https://docs.crewai.com/), [Composio](https://composio.dev/tools/firecrawl/all), [PraisonAI](https://docs.praison.ai/firecrawl/), [Superinterface](https://superinterface.ai/docs/assistants/functions/firecrawl), [Vectorize](https://docs.vectorize.io/integrations/source-connectors/firecrawl)
 - [x] **低代码框架**: [Dify](https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl), [Langflow](https://docs.langflow.org/), [Flowise AI](https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl), [Cargo](https://docs.getcargo.io/integration/firecrawl), [Pipedream](https://pipedream.com/apps/firecrawl/)
-- [x] **其他**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)- [ ] 需要SDK或集成？通过打开一个问题让我们知道。
+- [x] **其他**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)
+
+需要SDK或集成？通过打开一个问题让我们知道。
 
 **自托管：** 要进行自托管，请参考[此处](/contributing/self-host)的指南。
 
@@ -90,29 +90,20 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 ### 安装
 
 <CodeGroup>
-
-{' '}
 <InstallationPython />
-
-{' '}
 <InstallationNode />
-
-{' '}
 <InstallationGo />
 <InstallationRust />
-
 </CodeGroup>
 
 ### 使用
 
 <CodeGroup>
-
 <CrawlPython />
 <CrawlNode />
 <CrawlGo />
 <CrawlRust />
 <CrawlCURL />
-
 </CodeGroup>
 
 如果您使用的是cURL或SDK上的`async crawl`函数，这将返回一个`ID`，您可以使用该ID来检查爬虫的状态。
@@ -124,13 +115,11 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 用于检查爬虫任务的状态并获取其结果。
 
 <CodeGroup>
-
 <CheckCrawlJobPython />
 <CheckCrawlJobNode />
 <CheckCrawlJobGo />
 <CheckCrawlJobRust />
 <CheckCrawlJobCURL />
-
 </CodeGroup>
 
 #### 响应
@@ -138,8 +127,8 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 根据爬虫的状态，响应将有所不同。对于未完成或超过10MB的大响应，会提供`next` URL参数。您必须请求此URL以检索下一批10MB的数据。如果缺少`next`参数，则表示爬虫数据的结束。
 
 <CodeGroup>
-  <CheckCrawlJobOutputScraping />
-  <CheckCrawlJobOutputCompleted />
+<CheckCrawlJobOutputScraping />
+<CheckCrawlJobOutputCompleted />
 </CodeGroup>
 
 ## 抓取
@@ -147,22 +136,11 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 要抓取单个URL，请使用`scrape_url`方法。它接受URL作为参数并返回抓取的数据作为字典。
 
 <CodeGroup>
-
-{' '}
 <ScrapePython />
-
-{' '}
 <ScrapeNode />
-
-{' '}
 <ScrapeGo />
-
-{' '}
 <ScrapeRust />
-
-{' '}
 <ScrapeCURL />
-
 </CodeGroup>
 
 ### 响应
@@ -178,11 +156,9 @@ SDK将直接返回数据对象。cURL将返回如下所示的有效载荷。
 v1目前仅在node、python和cURL上受支持。
 
 <CodeGroup>
-
 <ExtractPython />
 <ExtractNode />
 <ExtractCURL />
-
 </CodeGroup>
 
 输出：
@@ -194,9 +170,7 @@ v1目前仅在node、python和cURL上受支持。
 您现在可以通过仅传递一个`prompt`到端点来进行无模式提取。llm选择数据的结构。
 
 <CodeGroup>
-
 <ExtractNoSchemaCURL />
-
 </CodeGroup>
 
 输出：
@@ -207,30 +181,28 @@ v1目前仅在node、python和cURL上受支持。
 
 <CodeGroup>
 ```python Python
-
 app = FirecrawlApp(version="v0")
 
 class ArticleSchema(BaseModel):
-title: str
-points: int
-by: str
-commentsURL: str
+    title: str
+    points: int
+    by: str
+    commentsURL: str
 
 class TopArticlesSchema(BaseModel):
-top: List[ArticleSchema] = Field(..., max_items=5, description="Top 5 stories")
+    top: List[ArticleSchema] = Field(..., max_items=5, description="Top 5 stories")
 
 data = app.scrape_url('https://news.ycombinator.com', {
-'extractorOptions': {
-'extractionSchema': TopArticlesSchema.model_json_schema(),
-'mode': 'llm-extraction'
-},
-'pageOptions':{
-'onlyMainContent': True
-}
+    'extractorOptions': {
+        'extractionSchema': TopArticlesSchema.model_json_schema(),
+        'mode': 'llm-extraction'
+    },
+    'pageOptions':{
+        'onlyMainContent': True
+    }
 })
 print(data["llm_extraction"])
-
-````
+```
 
 ```js JavaScript
 import FirecrawlApp from "@mendable/firecrawl-js";
@@ -241,7 +213,6 @@ const app = new FirecrawlApp<"v0">({
   version: "v0",
 });
 
-// 定义要提取内容的架构
 const schema = z.object({
   top: z
     .array(
@@ -261,7 +232,7 @@ const scrapeResult = await app.scrapeUrl("https://news.ycombinator.com", {
 });
 
 console.log(scrapeResult.data["llm_extraction"]);
-````
+```
 
 ```go Go
 import (
@@ -304,12 +275,10 @@ use firecrawl::FirecrawlApp;
 
 #[tokio::main]
 async fn main() {
-    // 用API密钥初始化FirecrawlApp
     let api_key = "YOUR_API_KEY";
     let api_url = "https://api.firecrawl.dev";
     let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
 
-    // 定义要提取内容的架构
     let json_schema = json!({
         "type": "object",
         "properties": {
@@ -320,42 +289,17 @@ async fn main() {
                     "properties": {
                         "title": {"type": "string"},
                         "points": {"type": "number"},
-                        "by": {"type":## 使用操作与页面交互
-
-Firecrawl 允许您在抓取网页内容之前对网页执行各种操作。这对于与动态内容交互、浏览页面或访问需要用户互动的内容特别有用。
-
-以下是一个示例，展示了如何使用操作导航到 google.com，搜索 Firecrawl，点击第一个结果并截图。
-
-在执行其他操作前后几乎总是要使用 `wait` 操作，以留出足够的时间让页面加载完成。
-
-### 示例
-
-<CodeGroup>
-
-<ScrapeActionsPython />
-<ScrapeActionsNode />
-<ScrapeActionsCURL />
-
+                        "by": {"type": "string"},
+                        "commentsURL": {"type": "string"}
+                    }
+                }
+            }
+        }
+    });
+}
+```
 </CodeGroup>
 
-### 输出
+## 使用操作与页面交互
 
-<CodeGroup>
-
-<ScrapeActionsOutput />
-
-</CodeGroup>
-
-## 开源与云端
-
-Firecrawl 是开源软件，遵循 [AGPL-3.0 许可证](https://github.com/mendableai/firecrawl/blob/main/LICENSE)。
-
-为了提供尽可能好的产品，我们提供托管版本的 Firecrawl，并与我们的开源版本一起提供。云端解决方案使我们能够不断创新，并为所有用户提供高质量、可持续的服务。
-
-Firecrawl Cloud 可在 [firecrawl.dev](https://firecrawl.dev) 获取，并提供了一系列开源版本中不可用的功能：
-
-![Firecrawl Cloud vs Open Source](./images/open-source-cloud.png)
-
-## 贡献
-
-我们欢迎贡献！请在提交拉取请求前阅读我们的 [贡献指南](https://github.com/mendableai/firecrawl/blob/main/CONTRIBUTING.md)。
+Firecrawl 允许您在抓取网页内容之前对网页执行各种操作。这对于与动态内容交互、浏览页面或访问需要用户互动的内容特别
