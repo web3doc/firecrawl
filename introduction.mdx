@@ -1,8 +1,8 @@
 ---
-title: "快速入门"
-description: "Firecrawl 允许您将整个网站转换为 LLM 就绪的 markdown"
-og:title: "快速入门 | Firecrawl"
-og:description: "Firecrawl 允许您将整个网站转换为 LLM 就绪的 markdown"
+title: 快速入门
+description: 'Firecrawl 允许您将整个网站转换为 LLM 就绪的 markdown'
+og:title: '快速入门 | Firecrawl'
+og:description: 'Firecrawl 允许您将整个网站转换为 LLM 就绪的 markdown'
 ---
 
 import InstallationPython from '/snippets/v1/installation/python.mdx';
@@ -39,11 +39,7 @@ import ScrapeActionsNode from '/snippets/v1/scrape/actions/js.mdx';
 import ScrapeActionsCURL from '/snippets/v1/scrape/actions/curl.mdx';
 import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 
-<img
-  className="block"
-  src="/images/hero.png"
-  alt="Hero Light"
-/>
+<img className='block' src='/images/hero.png' alt='Hero Light' />
 
 ## 欢迎使用 Firecrawl
 
@@ -55,89 +51,62 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 
 以下是开始使用的资源：
 
-- **API**: [文档](https://docs.firecrawl.dev/api-reference/introduction)
-- **SDKs**: [Python](https://docs.firecrawl.dev/sdks/python), [Node](https://docs.firecrawl.dev/sdks/node), [Go](https://docs.firecrawl.dev/sdks/go), [Rust](https://docs.firecrawl.dev/sdks/rust)
-- **LLM 框架**: [Langchain (python)](https://python.langchain.com/docs/integrations/document_loaders/firecrawl/), [Langchain (js)](https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl), [Llama Index](https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader), [Crew.ai](https://docs.crewai.com/), [Composio](https://composio.dev/tools/firecrawl/all), [PraisonAI](https://docs.praison.ai/firecrawl/), [Superinterface](https://superinterface.ai/docs/assistants/functions/firecrawl), [Vectorize](https://docs.vectorize.io/integrations/source-connectors/firecrawl)
-- **低代码框架**: [Dify](https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl), [Langflow](https://docs.langflow.org/), [Flowise AI](https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl), [Cargo](https://docs.getcargo.io/integration/firecrawl), [Pipedream](https://pipedream.com/apps/firecrawl/)
-- **其他**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)
+- [x] **API**: [文档](https://docs.firecrawl.dev/api-reference/introduction)
+- [x] **SDKs**: [Python](https://docs.firecrawl.dev/sdks/python), [Node](https://docs.firecrawl.dev/sdks/node), [Go](https://docs.firecrawl.dev/sdks/go), [Rust](https://docs.firecrawl.dev/sdks/rust)
+- [x] **LLM 框架**: [Langchain (python)](https://python.langchain.com/docs/integrations/document_loaders/firecrawl/), [Langchain (js)](https://js.langchain.com/docs/integrations/document_loaders/web_loaders/firecrawl), [Llama Index](https://docs.llamaindex.ai/en/latest/examples/data_connectors/WebPageDemo/#using-firecrawl-reader), [Crew.ai](https://docs.crewai.com/), [Composio](https://composio.dev/tools/firecrawl/all), [PraisonAI](https://docs.praison.ai/firecrawl/), [Superinterface](https://superinterface.ai/docs/assistants/functions/firecrawl), [Vectorize](https://docs.vectorize.io/integrations/source-connectors/firecrawl)
+- [x] **低代码框架**: [Dify](https://dify.ai/blog/dify-ai-blog-integrated-with-firecrawl), [Langflow](https://docs.langflow.org/), [Flowise AI](https://docs.flowiseai.com/integrations/langchain/document-loaders/firecrawl), [Cargo](https://docs.getcargo.io/integration/firecrawl), [Pipedream](https://pipedream.com/apps/firecrawl/)
+- [x] **其他**: [Zapier](https://zapier.com/apps/firecrawl/integrations), [Pabbly Connect](https://www.pabbly.com/connect/integrations/firecrawl/)
 
-需要SDK或集成？通过打开一个问题让我们知道。
+需要 SDK 或集成？通过打开一个问题让我们知道。
 
 **自托管：** 要进行自托管，请参考[此处](/contributing/self-host)的指南。
 
-### API密钥
+### API 密钥
 
-要使用API，您需要在[Firecrawl](https://firecrawl.dev)上注册并获取一个API密钥。
+要使用 API，您需要在[Firecrawl](https://firecrawl.dev)上注册并获取一个 API 密钥。
 
 ### 功能
 
-- : 抓取URL并以LLM准备就绪的格式（markdown、结构化数据通过[LLM提取](#extraction)、截图、html）获取其内容
-- : 抓取网页的所有URL并返回LLM准备就绪的格式的内容
-- : 输入一个网站并获取所有网站URL - 非常快速
-- : 使用AI从单个页面、多个页面或整个网站获取结构化数据。
+- [**抓取**](#scraping): 抓取 URL 并以 LLM 准备就绪的格式（markdown、结构化数据通过[LLM 提取](#extraction)、截图、html）获取其内容
+- [**爬虫**](#crawling): 抓取网页的所有 URL 并返回 LLM 准备就绪的格式的内容
+- [**地图**](/features/map): 输入一个网站并获取所有网站 URL - 非常快速
+- [**提取**](/features/extract): 使用 AI 从单个页面、多个页面或整个网站获取结构化数据。
 
 ### 强大的功能
 
-- **LLM准备就绪的格式**: markdown、结构化数据、截图、HTML、链接、元数据
-- **硬核功能**: 代理、反机器人机制、动态内容（js渲染）、输出解析、编排
+- **LLM 准备就绪的格式**: markdown、结构化数据、截图、HTML、链接、元数据
+- **硬核功能**: 代理、反机器人机制、动态内容（js 渲染）、输出解析、编排
 - **可定制性**: 排除标签、使用自定义头部在认证墙后面爬取、最大爬取深度等...
 - **媒体解析**: pdfs、docx、图像。
 - **可靠性第一**: 设计用于获取您需要的数据——无论有多难。
 - **操作**: 点击、滚动、输入、等待等操作，然后再提取数据
 
-您可以在我们的[文档](https://docs.firecrawl.dev)中找到Firecrawl的所有功能以及如何使用它们。
+您可以在我们的[文档](https://docs.firecrawl.dev)中找到 Firecrawl 的所有功能以及如何使用它们。
 
 ## 爬虫
 
-用于抓取一个URL及其所有可访问的子页面。这将提交一个爬虫任务并返回一个作业ID，以便检查爬虫的状态。
+用于抓取一个 URL 及其所有可访问的子页面。这将提交一个爬虫任务并返回一个作业 ID，以便检查爬虫的状态。
 
 ### 安装
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
+  <InstallationPython />
+  <InstallationNode />
+  <InstallationGo />
+  <InstallationRust />
 </CodeGroup>
 
 ### 使用
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
+  <CrawlPython />
+  <CrawlNode />
+  <CrawlGo />
+  <CrawlRust />
+  <CrawlCURL />
 </CodeGroup>
 
-如果您使用的是cURL或SDK上的`async crawl`函数，这将返回一个`ID`，您可以使用该ID来检查爬虫的状态。
+如果您使用的是 cURL 或 SDK 上的`async crawl`函数，这将返回一个`ID`，您可以使用该 ID 来检查爬虫的状态。
 
 <CrawlAsyncOutput />
 
@@ -146,95 +115,50 @@ import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
 用于检查爬虫任务的状态并获取其结果。
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
+  <CheckCrawlJobPython />
+  <CheckCrawlJobNode />
+  <CheckCrawlJobGo />
+  <CheckCrawlJobRust />
+  <CheckCrawlJobCURL />
 </CodeGroup>
 
 #### 响应
 
-根据爬虫的状态，响应将有所不同。对于未完成或超过10MB的大响应，会提供`next` URL参数。您必须请求此URL以检索下一批10MB的数据。如果缺少`next`参数，则表示爬虫数据的结束。
+根据爬虫的状态，响应将有所不同。对于未完成或超过 10MB 的大响应，会提供`next` URL 参数。您必须请求此 URL 以检索下一批 10MB 的数据。如果缺少`next`参数，则表示爬虫数据的结束。
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
+  <CheckCrawlJobOutputScraping />
+  <CheckCrawlJobOutputCompleted />
 </CodeGroup>
 
 ## 抓取
 
-要抓取单个URL，请使用`scrape_url`方法。它接受URL作为参数并返回抓取的数据作为字典。
+要抓取单个 URL，请使用`scrape_url`方法。它接受 URL 作为参数并返回抓取的数据作为字典。
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
+  <ScrapePython />
+  <ScrapeNode />
+  <ScrapeGo />
+  <ScrapeRust />
+  <ScrapeCURL />
 </CodeGroup>
 
 ### 响应
 
-SDK将直接返回数据对象。cURL将返回如下所示的有效载荷。
+SDK 将直接返回数据对象。cURL 将返回如下所示的有效载荷。
 
 <ScrapeResponse />
 
 ## 提取
 
-使用LLM提取，您可以轻松地从任何URL中提取结构化数据。我们支持pydantic模式，以便让您更容易使用。以下是如何使用它的方法：
+使用 LLM 提取，您可以轻松地从任何 URL 中提取结构化数据。我们支持 pydantic 模式，以便让您更容易使用。以下是如何使用它的方法：
 
-v1目前仅在node、python和cURL上受支持。
+v1 目前仅在 node、python 和 cURL 上受支持。
 
 <CodeGroup>
-
-```
-```
-
-
-```
-```
-
-
-```
-```
-
+  <ExtractPython />
+  <ExtractNode />
+  <ExtractCURL />
 </CodeGroup>
 
 输出：
@@ -243,13 +167,10 @@ v1目前仅在node、python和cURL上受支持。
 
 ### 无模式提取（新功能）
 
-您现在可以通过仅传递一个`prompt`到端点来进行无模式提取。llm选择数据的结构。
+您现在可以通过仅传递一个`prompt`到端点来进行无模式提取。llm 选择数据的结构。
 
 <CodeGroup>
-
-```
-```
-
+  <ExtractNoSchemaCURL />
 </CodeGroup>
 
 输出：
@@ -259,31 +180,30 @@ v1目前仅在node、python和cURL上受支持。
 ### 提取（v0）
 
 <CodeGroup>
-
 ```python Python
 app = FirecrawlApp(version="v0")
 
 class ArticleSchema(BaseModel):
-    title: str
-    points: int
-    by: str
-    commentsURL: str
+title: str
+points: int
+by: str
+commentsURL: str
 
 class TopArticlesSchema(BaseModel):
-    top: List[ArticleSchema] = Field(..., max_items=5, description="Top 5 stories")
+top: List[ArticleSchema] = Field(..., max_items=5, description="Top 5 stories")
 
 data = app.scrape_url('https://news.ycombinator.com', {
-    'extractorOptions': {
-        'extractionSchema': TopArticlesSchema.model_json_schema(),
-        'mode': 'llm-extraction'
-    },
-    'pageOptions':{
-        'onlyMainContent': True
-    }
+'extractorOptions': {
+'extractionSchema': TopArticlesSchema.model_json_schema(),
+'mode': 'llm-extraction'
+},
+'pageOptions':{
+'onlyMainContent': True
+}
 })
 print(data["llm_extraction"])
-```
 
+````
 
 ```js JavaScript
 import FirecrawlApp from "@mendable/firecrawl-js";
@@ -313,8 +233,7 @@ const scrapeResult = await app.scrapeUrl("https://news.ycombinator.com", {
 });
 
 console.log(scrapeResult.data["llm_extraction"]);
-```
-
+````
 
 ```go Go
 import (
@@ -351,7 +270,6 @@ if err != nil {
 }
 fmt.Println(scrapeResult.LLMExtraction)
 ```
-
 
 ```rust Rust
 use firecrawl::FirecrawlApp;
