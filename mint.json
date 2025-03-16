@@ -288,5 +288,11 @@
     "x": "https://x.com/firecrawl_dev",
     "github": "https://github.com/mendableai/firecrawl",
     "linkedin": "https://www.linkedin.com/company/firecrawl"
+  },
+  "seo": {
+    "metatags": {
+      "google-site-verification": "u1gULVpqy2IxxtpEqIic4MDIZ7hJk_jKMrh5yAHaF6c",
+      "baidu-site-verification": "codeva-8R89pEarrl"
+    }
   }
 }
