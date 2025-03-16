@@ -1,17 +1,17 @@
 ---
 title: 'SourceSync.ai'
-description: 'Firecrawl集成了SourceSync.ai，提供网页抓取功能。'
-og:title: "SourceSync.ai | Firecrawl"
-og:description: "Firecrawl集成了SourceSync.ai，提供网页抓取功能。"
+description: 'Firecrawl integrates with SourceSync.ai for web scraping capabilities.'
+og:title: 'SourceSync.ai | Firecrawl'
+og:description: 'Firecrawl integrates with SourceSync.ai for web scraping capabilities.'
 ---
 
-[SourceSync.ai](https://sourcesync.ai) 是一个检索增强生成服务（Retrieval Augmented Generation as a Service）平台，帮助您使用自己的数据构建AI应用程序。本指南解释了如何使用Firecrawl与SourceSync.ai进行网页抓取。
+[SourceSync.ai](https://sourcesync.ai) 是一个检索增强生成（Retrieval Augmented Generation）即服务平台，可以帮助您使用自己的数据构建 AI 应用程序。本指南将解释如何使用 Firecrawl 与 SourceSync.ai 进行网页抓取。
 
 ## 设置
 
-1. 首先，从您的 [Firecrawl仪表盘](https://www.firecrawl.dev/app) 获取您的Firecrawl API密钥。
+1. 首先，从您的 [Firecrawl 仪表盘](https://www.firecrawl.dev/app) 获取您的 Firecrawl API 密钥。
 
-2. 配置您的SourceSync.ai命名空间以使用Firecrawl作为网页抓取提供者：
+2. 配置您的 SourceSync.ai 命名空间以使用 Firecrawl 作为网页抓取提供者：
 
 <CodeGroup>
 
@@ -28,22 +28,19 @@ curl -X PATCH https://api.sourcesync.ai/v1/namespaces/YOUR_NAMESPACE_ID \
 ```
 
 ```javascript JavaScript
-const response = await fetch(
-  'https://api.sourcesync.ai/v1/namespaces/YOUR_NAMESPACE_ID',
-  {
-    method: 'PATCH',
-    headers: {
-      Authorization: `Bearer ${SOURCE_SYNC_API_KEY}`,
-      'Content-Type': 'application/json',
+const response = await fetch('https://api.sourcesync.ai/v1/namespaces/YOUR_NAMESPACE_ID', {
+  method: 'PATCH',
+  headers: {
+    Authorization: `Bearer ${SOURCE_SYNC_API_KEY}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    webScraperConfig: {
+      provider: 'FIRECRAWL',
+      apiKey: 'YOUR_FIRECRAWL_API_KEY',
     },
-    body: JSON.stringify({
-      webScraperConfig: {
-        provider: 'FIRECRAWL',
-        apiKey: 'YOUR_FIRECRAWL_API_KEY',
-      },
-    }),
-  }
-)
+  }),
+});
 ```
 
 ```python Python
@@ -66,13 +63,13 @@ response = requests.patch(
 
 </CodeGroup>
 
-## 使用方法
+## 使用
 
-配置完成后，您可以使用SourceSync.ai的网页抓取端点，并利用Firecrawl的功能。以下是主要的摄取方法：
+配置完成后，您可以使用 SourceSync.ai 的网页抓取端点，并利用 Firecrawl 的功能。以下是主要的摄取方法：
 
-### URL列表摄取
+### URL 列表摄取
 
-抓取特定URL：
+抓取特定的 URL：
 
 <CodeGroup>
 
@@ -118,7 +115,7 @@ const response = await fetch('https://api.sourcesync.ai/v1/ingest/urls', {
       },
     },
   }),
-})
+});
 ```
 
 ```python Python
@@ -199,7 +196,7 @@ const response = await fetch('https://api.sourcesync.ai/v1/ingest/website', {
       },
     },
   }),
-})
+});
 ```
 
 ```python Python
@@ -229,14 +226,96 @@ response = requests.post(
 )
 ```
 
-</CodeGroup>
-
-### Sitemap处理
+</CodeGroup>### 站点地图处理
 
 处理站点地图中的所有URL：
 
-<CodeGroup>
+<代码组>
 
 ```bash cURL
 curl -X POST https://api.sourcesync.ai/v1/ingest/sitemap \
-  -H "Authorization: Bearer YOUR
+  -H "Authorization: Bearer YOUR_SOURCE_SYNC_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "namespaceId": "YOUR_NAMESPACE_ID",
+    "ingestConfig": {
+      "source": "SITEMAP",
+      "config": {
+        "url": "https://example.com/sitemap.xml",
+        "scrapeOptions": {
+          "includeSelectors": ["article", "main"],
+          "excludeSelectors": [".navigation", ".footer"]
+        }
+      }
+    }
+  }'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.sourcesync.ai/v1/ingest/sitemap', {
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${SOURCE_SYNC_API_KEY}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    namespaceId: 'YOUR_NAMESPACE_ID',
+    ingestConfig: {
+      source: 'SITEMAP',
+      config: {
+        url: 'https://example.com/sitemap.xml',
+        scrapeOptions: {
+          includeSelectors: ['article', 'main'],
+          excludeSelectors: ['.navigation', '.footer'],
+        },
+      },
+    },
+  }),
+});
+```
+
+```python Python
+response = requests.post(
+    'https://api.sourcesync.ai/v1/ingest/sitemap',
+    headers={
+        'Authorization': f'Bearer {SOURCE_SYNC_API_KEY}',
+        'Content-Type': 'application/json',
+    },
+    json={
+        'namespaceId': 'YOUR_NAMESPACE_ID',
+        'ingestConfig': {
+            'source': 'SITEMAP',
+            'config': {
+                'url': 'https://example.com/sitemap.xml',
+                'scrapeOptions': {
+                    'includeSelectors': ['article', 'main'],
+                    'excludeSelectors': ['.navigation', '.footer'],
+                },
+            },
+        },
+    },
+)
+```
+
+</代码组>
+
+## 功能
+
+使用Firecrawl与SourceSync.ai时，您可以访问以下功能：
+
+- JavaScript渲染支持
+- 自动速率限制
+- CSS选择器内容提取
+- 深度控制的递归爬取
+- 站点地图处理
+
+## 资源
+
+- [SourceSync.ai文档](https://sourcesync.ai)
+- [网络爬虫指南](https://sourcesync.ai/web-scraping)
+- [API参考](https://sourcesync.ai/api-reference/data-ingestion#ingest-urls)
+
+如需额外支持：
+
+- 邮件：[support@sourcesync.ai](mailto:support@sourcesync.ai)
+- Discord：[加入我们的社区](https://discord.gg/Fx3GnFKnRT)

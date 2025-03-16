@@ -1,15 +1,15 @@
 ---
-title: "高级抓取指南"
-description: "了解如何使用高级选项改进您的Firecrawl抓取。"
-og:title: "高级抓取指南 | Firecrawl"
-og:description: "了解如何使用高级选项改进您的Firecrawl抓取。"
+title: '高级抓取指南'
+description: '学习如何使用高级选项改进您的Firecrawl抓取。'
+og:title: '高级抓取指南 | Firecrawl'
+og:description: '学习如何使用高级选项改进您的Firecrawl抓取。'
 ---
 
-本指南将引导您了解Firecrawl的不同端点，以及如何充分利用其所有参数使用它们。
+本指南将引导您了解Firecrawl的不同端点，以及如何充分利用其所有参数来使用它们。
 
-## 使用Firecrawl进行基本抓取 (/scrape)
+## 使用Firecrawl进行基础抓取（/scrape）
 
-要抓取单个页面并获得干净的Markdown内容，您可以使用`/scrape`端点。
+要抓取单个页面并获取干净的Markdown内容，您可以使用`/scrape`端点。
 
 <CodeGroup>
 
@@ -51,18 +51,18 @@ func main() {
 
   content, err := app.ScrapeURL("docs.firecrawl.dev", nil)
   if err != nil {
-    log.Fatalf("Failed")
+    log.Fatalf("Failed)
   }
 }
 ```
 
 ```rust Rust
-// 使用Cargo安装firecrawl_rs包
+// Install the firecrawl_rs crate with Cargo
 
 use firecrawl_rs::FirecrawlApp;
 #[tokio::main]
 async fn main() {
-  // 使用API密钥初始化FirecrawlApp
+  // Initialize the FirecrawlApp with the API key
   let api_key = "YOUR_API_KEY";
   let api_url = "https://api.firecrawl.dev";
   let app = FirecrawlApp::new(api_key, api_url).expect("Failed to initialize FirecrawlApp");
@@ -89,42 +89,41 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
 
 ## 抓取PDF文件
 
-**Firecrawl默认支持抓取PDF文件。** 您可以使用`/scrape`端点来抓取PDF链接并获取PDF的文本内容。您可以通过设置`pageOptions.parsePDF`为`false`来禁用此功能。
-
+**Firecrawl默认支持抓取PDF文件。** 您可以使用`/scrape`端点抓取一个PDF链接并获得该PDF的文本内容。您可以通过设置`pageOptions.parsePDF`为`false`来禁用此功能。
 
 ## 页面选项
 
-在使用`/scrape`端点时，您可以使用`pageOptions`参数自定义抓取行为。以下是可用的选项：
+使用`/scrape`端点时，您可以使用`pageOptions`参数自定义抓取行为。以下是可用选项：
 
-### 仅返回主内容 (`onlyMainContent`)
+### 仅获取主要内容（`onlyMainContent`）
 
-- **类型**: `boolean`
-- **描述**: 仅返回页面的主内容，排除头部、导航栏、页脚等。
-- **默认值**: `false`
+- **类型**：`boolean`
+- **描述**：仅返回页面的主要内容，排除标题、导航栏、页脚等。
+- **默认值**：`false`
 
-### 包含HTML内容 (`includeHtml`)
+### 包含HTML内容（`includeHtml`）
 
-- **类型**: `boolean`
-- **描述**: 包括页面的HTML版本内容。这将在响应中添加一个`html`键。
-- **默认值**: `false`
+- **类型**：`boolean`
+- **描述**：包含页面的HTML版本内容。这将在响应中添加一个`html`键。
+- **默认值**：`false`
 
-### 包含原始HTML内容 (`includeRawHtml`)
+### 包含原始HTML内容（`includeRawHtml`）
 
-- **类型**: `boolean`
-- **描述**: 包括页面的原始HTML内容。这将在响应中添加一个`rawHtml`键。
-- **默认值**: `false`
+- **类型**：`boolean`
+- **描述**：包含页面的原始HTML内容。这将在响应中添加一个`rawHtml`键。
+- **默认值**：`false`
 
-### 获取页面截图 (`screenshot`)
+### 获取页面截图（`screenshot`）
 
-- **类型**: `boolean`
-- **描述**: 包括您正在抓取页面顶部的截图。
-- **默认值**: `false`
+- **类型**：`boolean`
+- **描述**：包括您正在抓取的页面顶部的截图。
+- **默认值**：`false`
 
-### 等待页面加载 (`waitFor`)
+### 等待页面加载（`waitFor`）
 
-- **类型**: `integer`
-- **描述**: 仅作为最后手段使用。等待指定的毫秒数以加载页面内容。
-- **默认值**: `0`
+- **类型**：`integer`
+- **描述**：仅作为最后的手段使用。等待指定的毫秒数让页面加载后再获取内容。
+- **默认值**：`0`
 
 ### 示例用法
 
@@ -144,33 +143,33 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
     }'
 ```
 
-在此示例中，抓取器将执行以下操作：
+在这个示例中，抓取器将会：- 仅返回页面的主要内容。
+- 在响应的 `html` 键中包含原始 HTML 内容。
+- 在抓取内容前等待 5000 毫秒（5 秒）让页面加载完成。
 
-- 仅返回页面的主内容。
-- 包括响应中的原始HTML内容。
-- 在抓取内容前等待5000毫秒（5秒）。
-
-这里是API参考：[抓取端点文档](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
+以下是相关 API 文档：[Scrape Endpoint Documentation](https://docs.firecrawl.dev/api-reference/endpoint/scrape)
 
 ## 提取器选项
 
-在使用`/scrape`端点时，您可以使用`extractorOptions`参数指定从页面内容中**提取结构化信息**的选项。以下是可用的选项：
+在使用 `/scrape` 端点时，可以通过 `extractorOptions` 参数指定从页面内容中提取结构化信息的选项。以下是可用的选项：
 
 ### mode
 
-- **类型**: `string`
-- **枚举**: `["llm-extraction", "llm-extraction-from-raw-html"]`
-- **描述**: 使用的提取模式。
+- **类型**：`string`
+- **枚举**：`["llm-extraction", "llm-extraction-from-raw-html"]`
+- **描述**：使用的提取模式。
 
-  - `llm-extraction`: 从清理和解析的内容中提取信息。
-  - `llm-extraction-from-raw-html`: 直接从原始HTML中提取信息。
-- **类型**: `string`
-- **描述**: 描述从页面中提取哪些信息的提示。
+  - `llm-extraction`：从清理和解析后的内容中提取信息。
+  - `llm-extraction-from-raw-html`：直接从原始 HTML 中提取信息。
+
+- **类型**：`string`
+- **描述**：一个提示，描述从页面中提取哪些信息。
 
 ### extractionSchema
 
-- **类型**: `object`
-- **描述**: 要提取的数据的模式。这定义了提取数据的结构。
+- **类型**：`object`
+- **描述**：要提取的数据的模式。这定义了提取数据的结构。
+
 ### 示例用法
 
 ```bash
@@ -221,4 +220,169 @@ curl -X POST https://api.firecrawl.dev/v0/scrape \
       "ogTitle": "Mendable",
       "ogDescription": "Mendable allows you to easily build AI chat applications. Ingest, customize, then deploy with one line of code anywhere you want. Brought to you by SideGuide",
       "ogUrl": "https://docs.firecrawl.dev/",
-      "og
+      "ogImage": "https://docs.firecrawl.dev/mendable_new_og1.png",
+      "ogLocaleAlternate": [],
+      "ogSiteName": "Mendable",
+      "sourceURL": "https://docs.firecrawl.dev/"
+    },
+    "llm_extraction": {
+      "company_mission": "Train a secure AI on your technical resources that answers customer and employee questions so your team doesn't have to",
+      "supports_sso": true,
+      "is_open_source": false,
+      "is_in_yc": true
+    }
+  }
+}
+```
+
+## 调整超时时间
+
+可以使用 `timeout` 参数（以毫秒为单位）来调整抓取过程的超时时间。
+
+### 示例用法
+
+```bash
+curl -X POST https://api.firecrawl.dev/v0/scrape \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "timeout": 50000
+    }'
+```
+
+## 爬取多个页面
+
+要爬取多个页面，可以使用 `/crawl` 端点。此端点允许你指定要爬取的基础 URL，并将爬取所有可访问的子页面。
+
+```bash
+curl -X POST https://api.firecrawl.dev/v0/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev"
+    }'
+```
+
+返回 jobId
+
+```json
+{ "jobId": "1234-5678-9101" }
+```### 检查抓取任务
+
+用于检查抓取任务的状态并获取其结果。
+
+```bash
+curl -X GET https://api.firecrawl.dev/v0/crawl/status/1234-5678-9101 \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
+
+### 抓取器选项
+
+使用 `/crawl` 端点时，可以通过 `crawlerOptions` 参数自定义抓取行为。以下是可用的选项：
+
+#### `includes`
+
+- **类型**: `array`
+- **描述**: 包含在抓取中的URL模式。只有匹配这些模式的URL才会被抓取。
+- **示例**: `["/blog/*", "/products/*"]`
+
+#### `excludes`
+
+- **类型**: `array`
+- **描述**: 从抓取中排除的URL模式。匹配这些模式的URL将被跳过。
+- **示例**: `["/admin/*", "/login/*"]`
+
+#### `returnOnlyUrls`
+
+- **类型**: `boolean`
+- **描述**: 如果设置为 `true`，响应将只包含URL列表，而不是完整的文档数据。
+- **默认值**: `false`
+
+#### `maxDepth`
+
+- **类型**: `integer`
+- **描述**: 相对于输入URL的最大抓取深度。`maxDepth` 为 0 时仅抓取输入的URL。`maxDepth` 为 1 时抓取输入的URL及其所有一级页面。`maxDepth` 为 2 时抓取输入的URL及其所有最多两级的页面。更高的值遵循相同的模式。
+- **示例**: `2`
+
+#### `mode`
+
+- **类型**: `string`
+- **枚举**: `["default", "fast"]`
+- **描述**: 使用的抓取模式。`fast` 模式在没有站点地图的情况下抓取网站速度快4倍，但可能准确性较低，不建议用于重度JavaScript渲染的网站。
+- **默认值**: `default`
+
+#### `limit`
+
+- **类型**: `integer`
+- **描述**: 最大抓取页面数。
+- **默认值**: `10000`
+
+### 示例用法
+
+```bash
+curl -X POST https://api.firecrawl.dev/v0/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization : Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "crawlerOptions": {
+        "includes": ["/blog/*", "/products/*"],
+        "excludes": ["/admin/*", "/login/*"],
+        "returnOnlyUrls": false,
+        "maxDepth": 2,
+        "mode": "fast",
+        "limit": 1000
+      }
+    }'
+```
+
+在这个示例中，抓取器将：
+
+- 仅抓取匹配 `/blog/*` 和 `/products/*` 模式的URL。
+- 跳过匹配 `/admin/*` 和 `/login/*` 模式的URL。
+- 返回每个页面的完整文档数据。
+- 抓取最多深度为2。
+- 使用快速抓取模式。
+- 最多抓取1000页。
+
+## 页面选项 + 抓取器选项
+
+您可以结合 `pageOptions` 和 `crawlerOptions` 参数来自定义整个抓取行为。
+
+### 示例用法
+
+```bash
+curl -X POST https://api.firecrawl.dev/v0/crawl \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer YOUR_API_KEY' \
+    -d '{
+      "url": "https://docs.firecrawl.dev",
+      "pageOptions": {
+        "onlyMainContent": true,
+        "includeHtml": true,
+        "includeRawHtml": true,
+        "screenshot": true,
+        "waitFor": 5000
+      },
+      "crawlerOptions": {
+        "includes": ["/blog/*", "/products/*"],
+        "maxDepth": 2,
+        "mode": "fast",
+      }
+    }'
+```
+
+在这个示例中，抓取器将：
+
+- 仅返回每个页面的主内容。
+- 包括每个页面的原始HTML内容。
+- 在获取内容前等待5000毫秒让每个页面加载。
+- 仅抓取匹配 `/blog/*` 和 `/products/*` 模式的URL。
+- 抓取最多深度为2。
+- 使用快速抓取模式。
+
+## 提取器选项 + 抓取器选项
+
+即将推出...

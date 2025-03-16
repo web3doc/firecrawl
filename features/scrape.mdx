@@ -1,65 +1,69 @@
 ---
-title: "抓取"
-description: "将任何URL转换为干净数据"
-og:title: "抓取 | Firecrawl"
-og:description: "将任何URL转换为干净数据"
+title: '抓取'
+description: '将任何URL转换为干净数据'
+og:title: '抓取 | Firecrawl'
+og:description: '将任何URL转换为干净数据'
 ---
 
-import InstallationPython from "/snippets/v1/installation/python.mdx";
-import InstallationNode from "/snippets/v1/installation/js.mdx";
-import InstallationGo from "/snippets/v1/installation/go.mdx";
-import InstallationRust from "/snippets/v1/installation/rust.mdx";
-import ScrapePython from "/snippets/v1/scrape/base/python.mdx";
-import ScrapeNode from "/snippets/v1/scrape/base/js.mdx";
-import ScrapeGo from "/snippets/v1/scrape/base/go.mdx";
-import ScrapeRust from "/snippets/v1/scrape/base/rust.mdx";
-import ScrapeCURL from "/snippets/v1/scrape/base/curl.mdx";
-import ScrapeResponse from "/snippets/v1/scrape/base/output.mdx";
-import ExtractCURL from "/snippets/v1/llm-extract/base/curl.mdx";
-import ExtractPython from "/snippets/v1/llm-extract/base/python.mdx";
-import ExtractNode from "/snippets/v1/llm-extract/base/js.mdx";
-import ExtractOutput from "/snippets/v1/llm-extract/base/output.mdx";
-import ExtractNoSchemaCURL from "/snippets/v1/llm-extract/no-schema/curl.mdx";
-import ExtractNoSchemaOutput from "/snippets/v1/llm-extract/no-schema/output.mdx";
-import ScrapeActionsPython from "/snippets/v1/scrape/actions/python.mdx";
-import ScrapeActionsNode from "/snippets/v1/scrape/actions/js.mdx";
-import ScrapeActionsCURL from "/snippets/v1/scrape/actions/curl.mdx";
-import ScrapeActionsOutput from "/snippets/v1/scrape/actions/output.mdx";
-import BatchScrapePython from "/snippets/v1/batch-scrape/base/python.mdx";
-import BatchScrapeNode from "/snippets/v1/batch-scrape/base/js.mdx";
-import BatchScrapeCURL from "/snippets/v1/batch-scrape/base/curl.mdx";
-import BatchScrapeOutput from "/snippets/v1/batch-scrape/base/output.mdx";
-import BatchScrapeAsyncOutput from "/snippets/v1/batch-scrape/base/async-output.mdx";
-import ScrapeLocationPython from "/snippets/v1/scrape/location/python.mdx";
-import ScrapeLocationNode from "/snippets/v1/scrape/location/js.mdx";
-import ScrapeLocationCURL from "/snippets/v1/scrape/location/curl.mdx";
+import InstallationPython from '/snippets/v1/installation/python.mdx';
+import InstallationNode from '/snippets/v1/installation/js.mdx';
+import InstallationGo from '/snippets/v1/installation/go.mdx';
+import InstallationRust from '/snippets/v1/installation/rust.mdx';
+import ScrapePython from '/snippets/v1/scrape/base/python.mdx';
+import ScrapeNode from '/snippets/v1/scrape/base/js.mdx';
+import ScrapeGo from '/snippets/v1/scrape/base/go.mdx';
+import ScrapeRust from '/snippets/v1/scrape/base/rust.mdx';
+import ScrapeCURL from '/snippets/v1/scrape/base/curl.mdx';
+import ScrapeResponse from '/snippets/v1/scrape/base/output.mdx';
+import ExtractCURL from '/snippets/v1/llm-extract/base/curl.mdx';
+import ExtractPython from '/snippets/v1/llm-extract/base/python.mdx';
+import ExtractNode from '/snippets/v1/llm-extract/base/js.mdx';
+import ExtractOutput from '/snippets/v1/llm-extract/base/output.mdx';
+import ExtractNoSchemaCURL from '/snippets/v1/llm-extract/no-schema/curl.mdx';
+import ExtractNoSchemaOutput from '/snippets/v1/llm-extract/no-schema/output.mdx';
+import ScrapeActionsPython from '/snippets/v1/scrape/actions/python.mdx';
+import ScrapeActionsNode from '/snippets/v1/scrape/actions/js.mdx';
+import ScrapeActionsCURL from '/snippets/v1/scrape/actions/curl.mdx';
+import ScrapeActionsOutput from '/snippets/v1/scrape/actions/output.mdx';
+import BatchScrapePython from '/snippets/v1/batch-scrape/base/python.mdx';
+import BatchScrapeNode from '/snippets/v1/batch-scrape/base/js.mdx';
+import BatchScrapeCURL from '/snippets/v1/batch-scrape/base/curl.mdx';
+import BatchScrapeOutput from '/snippets/v1/batch-scrape/base/output.mdx';
+import BatchScrapeAsyncOutput from '/snippets/v1/batch-scrape/base/async-output.mdx';
+import ScrapeLocationPython from '/snippets/v1/scrape/location/python.mdx';
+import ScrapeLocationNode from '/snippets/v1/scrape/location/js.mdx';
+import ScrapeLocationCURL from '/snippets/v1/scrape/location/curl.mdx';
 
-Firecrawl 将网页转换为Markdown格式，非常适合LLM应用。
+Firecrawl 将网页转换为 Markdown 格式，非常适合 LLM 应用。
 
-- 它处理复杂性：代理、缓存、速率限制、被JS阻止的内容
-- 处理动态内容：动态网站、JS渲染的网站、PDF、图片
-- 输出干净的Markdown、结构化数据、截图或HTML。
+- 它处理复杂性：代理、缓存、速率限制、被 JS 阻止的内容
+- 处理动态内容：动态网站、JS 渲染的网站、PDF、图片
+- 输出干净的 Markdown、结构化数据、截图或 HTML。
 
-有关详细信息，请参阅[Scrape Endpoint API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
+有关详细信息，请参阅[Scrape Endpoint API 参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
-
-## 使用Firecrawl抓取URL
+## 使用 Firecrawl 抓取 URL
 
 ### /scrape 端点
 
-用于抓取URL并获取其内容。
+用于抓取 URL 并获取其内容。
 
 ### 安装
 
 <CodeGroup>
 
-  <InstallationPython />
+{' '}
 
-  <InstallationNode />
+<InstallationPython />
 
-  <InstallationGo />
-  
-  <InstallationRust />
+{' '}
+
+<InstallationNode />
+
+{' '}
+
+<InstallationGo />
+<InstallationRust />
 
 </CodeGroup>
 
@@ -67,23 +71,33 @@ Firecrawl 将网页转换为Markdown格式，非常适合LLM应用。
 
 <CodeGroup>
 
-  <ScrapePython />
+{' '}
 
-  <ScrapeNode />
+<ScrapePython />
 
-  <ScrapeGo />
+{' '}
 
-  <ScrapeRust />
+<ScrapeNode />
 
-  <ScrapeCURL />
+{' '}
+
+<ScrapeGo />
+
+{' '}
+
+<ScrapeRust />
+
+{' '}
+
+<ScrapeCURL />
 
 </CodeGroup>
 
-有关参数的更多详细信息，请参阅[API参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
+有关参数的更多详细信息，请参阅[API 参考](https://docs.firecrawl.dev/api-reference/endpoint/scrape)。
 
 ### 响应
 
-SDK将直接返回数据对象。cURL将返回如下所示的有效负载。
+SDK 将直接返回数据对象。cURL 将返回如下所示的有效负载。
 
 <ScrapeResponse />
 
@@ -93,8 +107,8 @@ SDK将直接返回数据对象。cURL将返回如下所示的有效负载。
 
 - Markdown（markdown）
 - HTML（html）
-- 原始HTML（rawHtml）（不做修改）
-- 截图（screenshot或screenshot@fullPage）
+- 原始 HTML（rawHtml）（不做修改）
+- 截图（screenshot 或 screenshot@fullPage）
 - 链接（links）
 - 提取（extract） - 结构化输出
 
@@ -120,7 +134,7 @@ SDK将直接返回数据对象。cURL将返回如下所示的有效负载。
 
 ### 无模式提取（新功能）
 
-现在可以通过仅传递`prompt`给端点来无模式提取。LLM会选择数据的结构。
+现在可以通过仅传递`prompt`给端点来无模式提取。LLM 会选择数据的结构。
 
 <CodeGroup>
 
@@ -142,17 +156,18 @@ SDK将直接返回数据对象。cURL将返回如下所示的有效负载。
 
 ## 与页面进行交互操作
 
-Firecrawl允许您在抓取内容之前对网页执行各种操作。这对于与动态内容互动、导航页面或访问需要用户互动的内容特别有用。
+Firecrawl 允许您在抓取内容之前对网页执行各种操作。这对于与动态内容互动、导航页面或访问需要用户互动的内容特别有用。
 
-以下是如何使用操作导航到google.com，搜索Firecrawl，点击第一个结果，并截屏的示例。
+以下是如何使用操作导航到 google.com，搜索 Firecrawl，点击第一个结果，并截屏的示例。
 
 重要的是几乎总是在其他操作前后使用`wait`操作，以留出足够的时间让页面加载。
 
 ### 示例
+
 <CodeGroup>
 
 <ScrapeActionsPython />
-<ScrapeActionsNode /> 
+<ScrapeActionsNode />
 <ScrapeActionsCURL />
 
 </CodeGroup>
@@ -171,31 +186,30 @@ Firecrawl允许您在抓取内容之前对网页执行各种操作。这对于�
 
 ### 工作原理
 
-当您指定位置设置时，Firecrawl将使用适当的代理（如果有的话），并模拟相应的语言和时区设置。默认情况下，如果未指定位置，则设置为'US'。
+当您指定位置设置时，Firecrawl 将使用适当的代理（如果有的话），并模拟相应的语言和时区设置。默认情况下，如果未指定位置，则设置为'US'。
 
 ### 使用
 
 要使用位置和语言设置，请在请求体中包含`location`对象及其属性：
 
-- `country`: ISO 3166-1 alpha-2国家代码（例如，'US', 'AU', 'DE', 'JP'）。默认为'US'。
+- `country`: ISO 3166-1 alpha-2 国家代码（例如，'US', 'AU', 'DE', 'JP'）。默认为'US'。
 - `languages`: 请求的首选语言和地区优先级数组。默认为指定位置的语言。
 
-
 <CodeGroup>
-<ScrapeLocationPython />
-<ScrapeLocationNode />
-<ScrapeLocationCURL />
+  <ScrapeLocationPython />
+  <ScrapeLocationNode />
+  <ScrapeLocationCURL />
 </CodeGroup>
 
-## 批量抓取多个URL
+## 批量抓取多个 URL
 
-现在可以同时批量抓取多个URL。它接收起始URL和可选参数作为参数。params参数允许您指定批量抓取作业的其他选项，例如输出格式。
+现在可以同时批量抓取多个 URL。它接收起始 URL 和可选参数作为参数。params 参数允许您指定批量抓取作业的其他选项，例如输出格式。
 
 ### 工作原理
 
-这与`/crawl`端点的工作原理非常相似。它提交一个批量抓取作业并返回一个作业ID，用于检查批量抓取的状态。
+这与`/crawl`端点的工作原理非常相似。它提交一个批量抓取作业并返回一个作业 ID，用于检查批量抓取的状态。
 
-SDK提供同步和异步两种方法。同步方法将返回批量抓取作业的结果，而异步方法将返回一个作业ID，您可以使用该ID来检查批量抓取的状态。
+SDK 提供同步和异步两种方法。同步方法将返回批量抓取作业的结果，而异步方法将返回一个作业 ID，您可以使用该 ID 来检查批量抓取的状态。
 
 ### 使用
 
@@ -209,7 +223,7 @@ SDK提供同步和异步两种方法。同步方法将返回批量抓取作业�
 
 ### 响应
 
-如果您使用的是SDK中的同步方法，它将返回批量抓取作业的结果。否则，它将返回一个作业ID，您可以使用该ID来检查批量抓取的状态。
+如果您使用的是 SDK 中的同步方法，它将返回批量抓取作业的结果。否则，它将返回一个作业 ID，您可以使用该 ID 来检查批量抓取的状态。
 
 #### 同步方式
 
@@ -217,4 +231,6 @@ SDK提供同步和异步两种方法。同步方法将返回批量抓取作业�
 
 #### 异步方式
 
-然后您可以使用作业ID通过调用`/batch/scrape/{id}`端点来检查批量抓取的状态。此端点应在作业仍在
+然后，您可以通过调用 `/batch/scrape/{id}` 端点，使用作业 ID 检查批量抓取的状态。此端点应在作业仍在运行或作业完成后立即使用，**因为批量抓取作业会在 24 小时后过期**。
+
+<BatchScrapeAsyncOutput />
