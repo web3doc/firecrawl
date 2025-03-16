@@ -1,10 +1,10 @@
-```js
-Node
-const crawlResponse = await app.checkCrawlStatus("<crawl_id>");
+```js Node
+Node;
+const crawlResponse = await app.checkCrawlStatus('<crawl_id>');
 
 if (!crawlResponse.success) {
-  throw new Error(`Failed to check crawl status: ${crawlResponse.error}`)
+  throw new Error(`Failed to check crawl status: ${crawlResponse.error}`);
 }
 
-console.log(crawlResponse)
+console.log(crawlResponse);
 ```

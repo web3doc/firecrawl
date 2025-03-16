@@ -1,10 +1,10 @@
-```python
+```python Python
 crawl_status = app.crawl_url(
-  'https://firecrawl.dev', 
+  'https://firecrawl.dev',
   params={
-    'limit': 100, 
+    'limit': 100,
     'scrapeOptions': {'formats': ['markdown', 'html']}
-  }, 
+  },
   poll_interval=30
 )
 print(crawl_status)

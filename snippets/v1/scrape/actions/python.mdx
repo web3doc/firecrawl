@@ -1,12 +1,12 @@
-```python
+```python Python
 from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
 
 # 抓取一个网站:
-scrape_result = app.scrape_url('firecrawl.dev', 
+scrape_result = app.scrape_url('firecrawl.dev',
     params={
-        'formats': ['markdown', 'html'], 
+        'formats': ['markdown', 'html'],
         'actions': [
             {"type": "wait", "milliseconds": 2000},
             {"type": "click", "selector": "textarea[title=\"Search\"]"},

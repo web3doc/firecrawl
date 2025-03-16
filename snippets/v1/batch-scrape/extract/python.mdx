@@ -1,11 +1,11 @@
-```python
+```python Python
 from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(api_key="fc-YOUR_API_KEY")
 
 # 批量抓取多个网站:
 batch_scrape_result = app.batch_scrape_urls(
-    ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], 
+    ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'],
     {
         'formats': ['extract'],
         'extract': {
@@ -25,7 +25,7 @@ print(batch_scrape_result)
 
 # 或者，你可以使用异步方法:
 batch_scrape_job = app.async_batch_scrape_urls(
-    ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'], 
+    ['https://docs.firecrawl.dev', 'https://docs.firecrawl.dev/sdks/overview'],
     {
         'formats': ['extract'],
         'extract': {

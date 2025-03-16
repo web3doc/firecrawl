@@ -1,4 +1,4 @@
-```python
+```python Python
 from firecrawl import FirecrawlApp
 
 app = FirecrawlApp(
@@ -7,7 +7,7 @@ app = FirecrawlApp(
 
 # 首先启动一个提取任务
 extract_job = app.async_extract([
-    'https://docs.firecrawl.dev/*', 
+    'https://docs.firecrawl.dev/*',
     'https://firecrawl.dev/'
 ], prompt="从这些页面中提取公司的使命和功能。")
 

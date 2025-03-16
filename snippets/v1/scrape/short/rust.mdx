@@ -1,4 +1,3 @@
-```markdown
 ```rust Rust
 let options = ScrapeOptions {
     formats: vec![ScrapeFormats::Markdown, ScrapeFormats::HTML].into(),
@@ -12,5 +11,4 @@ match scrape_result {
 {}", data.markdown.unwrap()),
     Err(e) => eprintln!("Map failed: {}", e),
 }
-```
 ```
