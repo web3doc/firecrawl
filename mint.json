@@ -289,7 +289,7 @@
     "github": "https://github.com/mendableai/firecrawl",
     "linkedin": "https://www.linkedin.com/company/firecrawl"
   },
-  "integrations": {
+  "analytics": {
     "ga4": {
       "measurementId": "G-923M72W9JB"
     }
