@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Firecrawl Docs",
+  "name": "Firecrawl 文档",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
@@ -13,9 +13,9 @@
   "metadata": {
     "og:title": "Firecrawl 中文文档",
     "og:description": "Firecrawl 让您能够在几秒钟内将网站转化为适用于大语言模型的数据。",
-    "og:url": "https://docs.firecrawl.dev",
+    "og:url": "https://firecrawl.web3doc.top/",
     "og:image": "/images/og.png",
-    "twitter:title": "Firecrawl Docs",
+    "twitter:title": "Firecrawl 文档",
     "twitter:image": "/images/og.png"
   },
   "favicon": "/favicon.png",
@@ -36,11 +36,11 @@
   ],
   "topbarLinks": [
     {
-      "name": "Status",
+      "name": "状态",
       "url": "https://firecrawl.betteruptime.com"
     },
     {
-      "name": "Support",
+      "name": "支持",
       "url": "mailto:help@firecrawl.com"
     }
   ],
@@ -50,55 +50,55 @@
   },
   "tabs": [
     {
-      "name": "SDKs",
+      "name": "开发工具包",
       "url": "sdks",
       "version": "v1"
     },
     {
-      "name": "SDKs",
+      "name": "开发工具包",
       "url": "v0/sdks",
       "version": "v0"
     },
     {
-      "name": "Learn",
+      "name": "学习",
       "url": "https://www.firecrawl.dev/blog/category/tutorials"
     },
     {
-      "name": "API Reference",
+      "name": "API 参考",
       "url": "api-reference",
       "version": "v1"
     },
     {
-      "name": "API Reference",
+      "name": "API 参考",
       "url": "v0/api-reference",
       "version": "v0"
     }
   ],
   "anchors": [
     {
-      "name": "Playground",
+      "name": "演练场",
       "icon": "play",
       "url": "https://firecrawl.dev/playground"
     },
     {
-      "name": "Blog",
+      "name": "博客",
       "icon": "newspaper",
       "url": "https://firecrawl.dev/blog"
     },
     {
-      "name": "Community",
+      "name": "社区",
       "icon": "discord",
       "url": "https://discord.gg/gSmWdAkdwd"
     },
     {
-      "name": "Changelog",
+      "name": "更新日志",
       "icon": "list",
       "url": "https://firecrawl.dev/changelog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "开始使用",
       "pages": [
         "introduction",
         "launch-week",
@@ -110,7 +110,7 @@
       "version": "v1"
     },
     {
-      "group": "Get Started",
+      "group": "开始使用",
       "pages": [
         "v0/introduction",
         "v0/advanced-scraping-guide",
@@ -120,10 +120,10 @@
       "version": "v0"
     },
     {
-      "group": "Features",
+      "group": "功能",
       "pages": [
         {
-          "group": "Scrape",
+          "group": "抓取",
           "icon": "markdown",
           "pages": [
             "features/scrape",
@@ -138,7 +138,7 @@
       "version": "v1"
     },
     {
-      "group": "Alpha Features",
+      "group": "Alpha 功能",
       "pages": [
         {
           "group": "LLMs.txt API",
@@ -152,7 +152,7 @@
       "version": "v1"
     },
     {
-      "group": "Features",
+      "group": "功能",
       "pages": [
         "v0/features/scrape",
         "v0/features/crawl",
@@ -162,7 +162,7 @@
       "version": "v0"
     },
     {
-      "group": "Integrations",
+      "group": "集成",
       "pages": [
         "integrations/langchain",
         "integrations/llamaindex",
@@ -175,7 +175,7 @@
       ]
     },
     {
-      "group": "Contributing",
+      "group": "贡献",
       "pages": [
         "contributing/open-source-or-cloud",
         "contributing/guide",
@@ -183,27 +183,27 @@
       ]
     },
     {
-      "group": "Using the API",
+      "group": "使用 API",
       "pages": [
         "api-reference/introduction"
       ],
       "version": "v1"
     },
     {
-      "group": "Using the API",
+      "group": "使用 API",
       "pages": [
         "v0/api-reference/introduction"
       ],
       "version": "v0"
     },
     {
-      "group": "Overall",
+      "group": "概述",
       "pages": [
         "sdks/overview"
       ]
     },
     {
-      "group": "SDKs",
+      "group": "开发工具包",
       "pages": [
         "sdks/python",
         "sdks/node",
@@ -213,7 +213,7 @@
       "version": "v1"
     },
     {
-      "group": "SDKs",
+      "group": "开发工具包",
       "pages": [
         "v0/sdks/python",
         "v0/sdks/node",
@@ -223,7 +223,7 @@
       "version": "v0"
     },
     {
-      "group": "Scrape Endpoints",
+      "group": "抓取接口",
       "pages": [
         "api-reference/endpoint/scrape",
         "api-reference/endpoint/batch-scrape",
@@ -233,7 +233,7 @@
       "version": "v1"
     },
     {
-      "group": "Crawl Endpoints",
+      "group": "爬取接口",
       "pages": [
         "api-reference/endpoint/crawl-post",
         "api-reference/endpoint/crawl-get",
@@ -243,14 +243,14 @@
       "version": "v1"
     },
     {
-      "group": "Map Endpoints",
+      "group": "映射接口",
       "pages": [
         "api-reference/endpoint/map"
       ],
       "version": "v1"
     },
     {
-      "group": "Extract Endpoints",
+      "group": "提取接口",
       "pages": [
         "api-reference/endpoint/extract",
         "api-reference/endpoint/extract-get"
@@ -258,21 +258,21 @@
       "version": "v1"
     },
     {
-      "group": "Search Endpoints",
+      "group": "搜索接口",
       "pages": [
         "api-reference/endpoint/search"
       ],
       "version": "v1"
     },
     {
-      "group": "Account Endpoints",
+      "group": "账户接口",
       "pages": [
         "api-reference/endpoint/credit-usage"
       ],
       "version": "v1"
     },
     {
-      "group": "Endpoints",
+      "group": "接口",
       "pages": [
         "v0/api-reference/endpoint/scrape",
         "v0/api-reference/endpoint/search",
